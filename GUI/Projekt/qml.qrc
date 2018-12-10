@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Login.qml</file>
+        <file>LoginForm.ui.qml</file>
+        <file>StartingPage.qml</file>
+        <file>StartingPageForm.ui.qml</file>
+        <file>Users.qml</file>
+        <file>UsersForm.ui.qml</file>
+        <file>Statistics.qml</file>
+        <file>StatisticsForm.ui.qml</file>
+        <file>StartingPageForm_copy.ui.qml</file>
+    </qresource>
+</RCC>
