@@ -26,7 +26,7 @@ public:
 
     const std::string &getUserName() const;
 
-    User(const std::string &userName, const std::string &password);
+//    User(const std::string &userName, const std::string &password);
 
     const std::string &getPassword() const;
 

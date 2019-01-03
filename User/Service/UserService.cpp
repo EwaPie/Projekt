@@ -1,8 +1,12 @@
 #include <cstdio>
 #include "UserService.h"
-#include "../Loader/FileUserRepository.h"
-#include "../Loader/FileAclRepository.h"
+#include "../Repository/FileUserRepository.h"
+#include "../Repository/FileAclRepository.h"
 #include "../Validator/UsernameValidator.h"
+#include "../Model/User.h"
+#include "../Exception/PermissionDeniedException .h"
+#include "../Exception/UserIsNotLoggedException.h"
+#include "../Exception/UserNameNotUniqueException.h"
 
 UserService* UserService::getInstance()
 {
@@ -17,14 +21,28 @@ UserService* UserService::instance = nullptr;
 
 UserService::UserService(AbstractUserRepository *pLoader, AbstractACLRepository *pAclRepository)
         : pRepository(pLoader), pAclRepository(pAclRepository) {
-    this->users = pLoader->load();
-    this->acls = pAclRepository->load();
+    try
+    {
+        this->users = pLoader->load();
+    }
+    catch (const std::exception &exception)
+    {
+        this->users = std::vector<User>();
+    }
+
+    try
+    {
+        this->acls = pAclRepository->load();
+    }
+    catch (const std::exception &exception)
+    {
+        this->acls = std::vector<ACL>();
+    }
 }
 
 UserService::~UserService()
 {
     this->pRepository->save(this->users);
-    this->pAclRepository->save(this->acls);
     delete pAclRepository;
     delete pRepository;
     delete UserService::instance;
@@ -32,11 +50,12 @@ UserService::~UserService()
 
 void UserService::addUser(User &user)
 {
-    if(!this->validateUser(user))
+    if(!this->canLoggedUser("admin"))
     {
-        //TODO throw exception
-        return;
+        throw PermissionDeniedException();
     }
+    if(!this->validateUser(user))
+        return;
     unsigned int newID = 1;
 
     if(!this->users.empty())
@@ -44,14 +63,12 @@ void UserService::addUser(User &user)
         newID += this->users.back().getId();
     }
 
-
-
     user.setId(newID);
     this->users.push_back(user);
     this->pRepository->save(this->users);
 }
 
-bool UserService::validateUniquness(const User &user)
+bool UserService::validateUniqueness(const User &user)
 {
     for(const auto &savedUser : this->users)
     {
@@ -61,41 +78,19 @@ bool UserService::validateUniquness(const User &user)
     return true;
 }
 
-void UserService::addACL(const ACL &acl)
+
+
+bool UserService::canLoggedUser(std::string name)
 {
-    if(!this->validateUniquness(acl))
+    if(logedUser == nullptr)
     {
-        //TODO throw exception
-        return;
-    }
-
-    this->acls.push_back(acl);
-    this->pAclRepository->save(this->acls);
-}
-
-bool UserService::validateUniquness(const ACL &acl)
-{
-    for(const ACL &savedAcl : this->acls)
-    {
-        if(savedAcl.getName().compare(acl.getName()))
-            return false;
-    }
-
-    return true;
-}
-
-bool UserService::canLogedUser(std::string name)
-{
-    if(logUser == nullptr)
-    {
-        // TODO: exception
-        return false;
+        throw UserIsNotLoggedException();
     }
     for(const ACL &acl : this->acls)
     {
         if(acl.getName() == name)
         {
-            return this->logUser->hasRole(acl.getRole());
+            return this->logedUser->hasRole(acl.getRole());
         }
     }
     return false;
@@ -103,11 +98,11 @@ bool UserService::canLogedUser(std::string name)
 
 bool UserService::login(std::string userName, std::string password)
 {
-   for(auto user :this->users)
+   for(User &user :this->users)
    {
        if(user.getUserName() == userName && user.getPassword() == password)
        {
-           this->logUser = &user;
+           this->logedUser = &user;
            return true;
        }
    }
@@ -115,12 +110,25 @@ bool UserService::login(std::string userName, std::string password)
 }
 
 bool UserService::validateUser(User &user) {
-    if(this->validateUniquness(user))
-        return false;
-        //TODO: exception
+    if(!this->validateUniqueness(user))
+        throw UserWrongLengthException();
     UsernameValidator usernameValidator(user.getUserName());
-    if(!usernameValidator.validateLenght())
-        return false; //TODO exception
+    if(!usernameValidator.validateLength())
+        throw UserWrongLengthException();
     return true;
+}
+
+bool UserService::deleteUserById(unsigned int id)
+{
+    for(int i = 0; i < this->users.size(); i++)
+    {
+        if(this->users[i].getId() == id)
+        {
+            users.erase(users.begin()+i);
+            this->pRepository->save();
+            return true;
+        }
+    }
+    return false;
 }
 

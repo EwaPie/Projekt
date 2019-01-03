@@ -1,19 +1,17 @@
 #include <fstream>
 #include <sstream>
 #include "FileAclRepository.h"
+#include "../Exception/InvalidFilenameLengthException.h"
+#include "../Exception/CouldNotOpenFileException.h"
 
 std::vector<ACL> FileAclRepository::load() {
     if(this->fileName.length() == 0)
-    {
-        //TODO: throw exception
-    }
+        throw InvalidFilenameLengthException();
 
     std::fstream file(this->fileName);
     if(!file.good() || !file.is_open())
-    {
-        //TODO: thorw exception
-        return std::vector<ACL>();
-    }
+        throw CouldNotOpenFileException();
+
     std::vector<ACL> acls;
     while (!file.eof())
     {
@@ -27,22 +25,6 @@ std::vector<ACL> FileAclRepository::load() {
     }
     file.close();
     return acls;
-}
-
-bool FileAclRepository::save(std::vector<ACL> aclList) {
-    std::ofstream file(this->fileName, std::ios::trunc);
-
-    if(!file.good() || !file.is_open())
-    {
-        //TODO: thorw exception
-    }
-
-    for(const auto &acl: aclList)
-    {
-        file << acl;
-    }
-    file.close();
-    return true;
 }
 
 FileAclRepository::FileAclRepository(const std::string &fileName) : fileName(fileName) {}

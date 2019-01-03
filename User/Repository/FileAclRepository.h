@@ -13,7 +13,6 @@ public:
     FileAclRepository(const std::string &fileName);
 
     std::vector<ACL> load() override;
-    bool save(std::vector<ACL> aclList) override;
 
 
     ACL getACLFromLine(std::string line);

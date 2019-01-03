@@ -3,19 +3,19 @@
 #include <string>
 #include <sstream>
 #include "FileUserRepository.h"
+#include "../Exception/InvalidFilenameLengthException.h"
+#include "../Exception/CouldNotOpenFileException.h"
 
 std::vector<User> FileUserRepository::load()
 {
     if(this->fileName.length() == 0)
-    {
-        //TODO: throw exception
-    }
+        throw InvalidFilenameLengthException();
+
 
     std::ifstream file(this->fileName);
     if(!file.good() || !file.is_open())
-    {
-        //TODO: thorw exception
-    }
+        throw CouldNotOpenFileException();
+
     std::vector<User> users;
     while (!file.eof())
     {
@@ -36,14 +36,11 @@ bool FileUserRepository::save(std::vector<User> userList)
     std::ofstream file(this->fileName, std::ios::trunc);
 
     if(!file.good() || !file.is_open())
-    {
-        //TODO: thorw exception
-    }
+        throw CouldNotOpenFileException();
 
     for(const auto &user: userList)
-    {
         file << user;
-    }
+
     file.close();
     return true;
 }

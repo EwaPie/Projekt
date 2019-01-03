@@ -1,7 +1,3 @@
-//
-// Created by Usamaru on 29.12.18.
-//
-
 #ifndef USER_ACL_H
 #define USER_ACL_H
 

@@ -25,19 +25,12 @@ const std::string &User::getUserName() const {
     return userName;
 }
 
-void User::setUserName(const std::string &userName) {
-    User::userName = userName;
-}
 
 const std::string &User::getPassword() const {
     return password;
 }
 
-void User::setPassword(const std::string &password) {
-    User::password = password;
-}
-
-User::User(const std::string &userName, const std::string &password) : userName(userName), password(password) {}
+//User::User(const std::string &userName, const std::string &password) : userName(userName), password(password) {}
 
 bool User::hasRole(const std::string &role)
 {

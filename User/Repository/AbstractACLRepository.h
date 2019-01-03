@@ -13,7 +13,6 @@ class AbstractACLRepository
 {
 public:
     virtual std::vector<ACL> load() = 0;
-    virtual bool save(std::vector<ACL> aclList) = 0;
 
     virtual ~AbstractACLRepository() {}
 };

@@ -2,7 +2,7 @@
 
 UsernameValidator::UsernameValidator(const std::string &username) : username(username) {}
 
-bool UsernameValidator::validateLenght()
+bool UsernameValidator::validateLength()
 {
     unsigned long length = this->username.length();
     bool min = length > USERNAME_MINLENGTH;
