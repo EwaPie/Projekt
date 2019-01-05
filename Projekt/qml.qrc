@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Login.qml</file>
+        <file>LoginForm.ui.qml</file>
+        <file>StartingPage.qml</file>
+        <file>StartingPageForm.ui.qml</file>
+        <file>Users.qml</file>
+        <file>UsersForm.ui.qml</file>
+        <file>Statistics.qml</file>
+        <file>StatisticsForm.ui.qml</file>
+        <file>Discounts.qml</file>
+        <file>DiscountsForm.ui.qml</file>
+        <file>Hall.qml</file>
+        <file>HallForm.ui.qml</file>
+        <file>Menu.qml</file>
+        <file>MenuForm.ui.qml</file>
+    </qresource>
+</RCC>
