@@ -214,14 +214,15 @@ Page {
 
                 TextField {
                     id: pay_order4
-                    x: 566
-                    y: 212
+                    x: 564
+                    y: 265
+                    readOnly: true
                 }
 
                 Text {
                     id: element4
-                    x: 566
-                    y: 188
+                    x: 564
+                    y: 241
                     width: 77
                     height: 18
                     text: qsTr("Do zapłaty")
@@ -236,6 +237,22 @@ Page {
                     height: 67
                     text: qsTr("Wystaw fakutrę")
                     font.pointSize: 10
+                }
+
+                Text {
+                    id: element5
+                    x: 564
+                    y: 137
+                    width: 77
+                    height: 18
+                    text: qsTr("Ocena")
+                    font.pixelSize: 13
+                }
+
+                TextField {
+                    id: satysfaction
+                    x: 564
+                    y: 161
                 }
             }
         }
