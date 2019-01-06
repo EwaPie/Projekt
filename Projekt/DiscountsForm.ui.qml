@@ -6,7 +6,19 @@ Page {
     id: discountsPage
     width: 800
     height: 680
-    title: "Rabaty"
+    property alias toolButton: toolButton
+    title: qsTr("Rabaty")
+
+    header: ToolBar {
+        id: maintoolbar
+        RowLayout {
+            anchors.fill: parent
+            ToolButton {
+                id: toolButton
+                text: qsTr("‹")
+            }
+        }
+    }
 
     TabBar {
         id: tabBar

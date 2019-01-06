@@ -6,10 +6,27 @@ Page {
     id: hallPage
     width: 800
     height: 680
+    property alias toolButton: toolButton
+    property alias table5: table5
+    property alias table4: table4
+    property alias table3: table3
+    property alias table2: table2
+    property alias table1: table1
     title: "Sala"
 
+    header: ToolBar {
+        id: maintoolbar
+        RowLayout {
+            anchors.fill: parent
+            ToolButton {
+                id: toolButton
+                text: qsTr("‹")
+            }
+        }
+    }
+
     Button {
-        id: button5
+        id: table1
         x: 80
         y: 108
         width: 174
@@ -19,9 +36,9 @@ Page {
     }
 
     Button {
-        id: button7
+        id: table4
         x: 80
-        y: 335
+        y: 360
         width: 263
         height: 131
         text: qsTr("Stolik nr 4")
@@ -61,7 +78,7 @@ Page {
     CheckBox {
         id: checkBox5
         x: 137
-        y: 505
+        y: 530
         width: 149
         height: 40
         text: qsTr("Przypisz do mnie")
@@ -71,7 +88,7 @@ Page {
     CheckBox {
         id: checkBox6
         x: 514
-        y: 505
+        y: 530
         width: 149
         height: 40
         text: qsTr("Przypisz do mnie")
@@ -79,7 +96,7 @@ Page {
     }
 
     Button {
-        id: button6
+        id: table2
         x: 313
         y: 108
         width: 174
@@ -89,7 +106,7 @@ Page {
     }
 
     Button {
-        id: button9
+        id: table3
         x: 546
         y: 108
         width: 174
@@ -99,12 +116,92 @@ Page {
     }
 
     Button {
-        id: button8
+        id: table5
         x: 457
-        y: 335
+        y: 360
         width: 263
         height: 131
         text: qsTr("Stolik nr 5")
         font.pointSize: 10
+    }
+
+    TextField {
+        id: textField
+        x: 80
+        y: 54
+        width: 113
+        height: 40
+    }
+
+    TextField {
+        id: textField1
+        x: 313
+        y: 54
+        width: 113
+        height: 40
+    }
+
+    TextField {
+        id: textField2
+        x: 546
+        y: 54
+        width: 113
+        height: 40
+    }
+
+    TextField {
+        id: textField3
+        x: 80
+        y: 308
+        width: 113
+        height: 40
+    }
+
+    TextField {
+        id: textField4
+        x: 457
+        y: 308
+        width: 113
+        height: 40
+    }
+
+    Text {
+        id: element
+        x: 80
+        y: 34
+        text: qsTr("Czas:")
+        font.pixelSize: 12
+    }
+
+    Text {
+        id: element1
+        x: 313
+        y: 34
+        text: qsTr("Czas:")
+        font.pixelSize: 12
+    }
+
+    Text {
+        id: element2
+        x: 546
+        y: 34
+        text: qsTr("Czas:")
+        font.pixelSize: 12
+    }
+
+    Text {
+        id: element3
+        x: 80
+        y: 288
+        text: qsTr("Czas:")
+        font.pixelSize: 12
+    }
+
+    Text {
+        id: element4
+        x: 457
+        y: 288
+        text: qsTr("Czas:")
+        font.pixelSize: 12
     }
 }

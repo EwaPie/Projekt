@@ -6,7 +6,19 @@ Page {
     id: statisticsPage
     width: 800
     height: 680
+    property alias toolButton: toolButton
     title: "Statystyki"
+
+    header: ToolBar {
+        id: maintoolbar
+        RowLayout {
+            anchors.fill: parent
+            ToolButton {
+              id: toolButton
+              text: qsTr("‹")
+          }
+      }
+    }
 
     TabBar {
         id: tabBar

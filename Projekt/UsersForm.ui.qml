@@ -6,7 +6,19 @@ Page {
     id: userPage
     width: 800
     height: 680
+    property alias toolButton: toolButton
     title: "Użytkownicy"
+
+    header: ToolBar {
+        id: maintoolbar
+        RowLayout {
+            anchors.fill: parent
+            ToolButton {
+              id: toolButton
+              text: qsTr("‹")
+          }
+      }
+    }
 
     StackLayout {
         anchors.fill: parent

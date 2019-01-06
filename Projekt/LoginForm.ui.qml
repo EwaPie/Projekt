@@ -17,6 +17,7 @@ Page {
         width: 203
         height: 90
         text: qsTr("Zaloguj się")
+
     }
 
     TextField {

@@ -10,17 +10,6 @@ ApplicationWindow {
     height: 680
     title: qsTr("Aplikacja")
 
-    header: ToolBar {
-        RowLayout {
-          anchors.fill: parent
-          ToolButton {
-              text: qsTr("‹")
-              onClicked: stackview.push(starting_page)
-
-          }
-      }
-    }
-
     StackView {
         id: stackview
         initialItem: login_page
@@ -29,7 +18,11 @@ ApplicationWindow {
 
     Component {
         id: login_page
-        LoginForm {}
+        LoginForm {
+            login_button.onClicked: {
+                stackview.push(starting_page)
+         }
+        }
     }
 
     Component {
@@ -55,47 +48,115 @@ ApplicationWindow {
 
     Component {
         id: users_page
-        UsersForm {}
+        UsersForm {
+            toolButton.onClicked: {
+                stackview.push(starting_page)
+            }
+        }
     }
 
     Component {
         id: statistics_page
-        StatisticsForm {}
+        StatisticsForm {
+            toolButton.onClicked: {
+                stackview.push(starting_page)
+            }
+        }
     }
 
     Component {
         id: discounts_page
-        DiscountsForm {}
+        DiscountsForm {
+            toolButton.onClicked: {
+                stackview.push(starting_page)
+            }
+        }
     }
 
     Component {
         id: hall_page
-        HallForm {}
+        HallForm {
+            table1.onClicked: {
+                stackview.push(order_1)
+            }
+
+            table2.onClicked: {
+                stackview.push(order_2)
+            }
+
+            table3.onClicked: {
+                stackview.push(order_3)
+            }
+
+            table4.onClicked: {
+                stackview.push(order_4)
+            }
+
+            table5.onClicked: {
+                stackview.push(order_5)
+            }
+
+            toolButton.onClicked: {
+                stackview.push(starting_page)
+            }
+
+
+        }
     }
 
     Component {
         id: menu_page
-        MenuForm {}
+        MenuForm {
+            toolButton.onClicked: {
+                stackview.push(starting_page)
+            }
+
+        }
     }
 
-    function load_page(text){
-     switch(text){
-     case 'Rabaty':
-         stackview.push(discounts_page);
-         break;
-     case 'Sala':
-         stackview.push(hall_page);
-         break;
-     case 'Menu':
-         stackview.push(menu_page);
-         break;
-     case 'Statystyki':
-         stackview.push(statistics_page);
-         break;
-     case 'Uzytkownicy':
-         stackview.push(users_page);
-         break;
-     }
- }
+    Component {
+        id: order_1
+        OrderForm1 {
+            toolButton.onClicked: {
+                stackview.push(starting_page)
+            }
+        }
+    }
+
+    Component {
+        id: order_2
+        OrderForm2 {
+            toolButton.onClicked: {
+                stackview.push(starting_page)
+            }
+        }
+    }
+
+    Component {
+        id: order_3
+        OrderForm3 {
+            toolButton.onClicked: {
+                stackview.push(starting_page)
+            }
+        }
+    }
+
+    Component {
+        id: order_4
+        OrderForm4 {
+            toolButton.onClicked: {
+                stackview.push(starting_page)
+            }
+        }
+    }
+
+    Component {
+        id: order_5
+        OrderForm5 {
+            toolButton.onClicked: {
+                stackview.push(starting_page)
+            }
+        }
+    }
 
 }

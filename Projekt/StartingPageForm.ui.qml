@@ -11,6 +11,17 @@ Page {
     property alias statisticks_button: statisticks_button
     property alias users_button: users_button
     property alias discounts_button: discounts_button
+    title: 'Strona główna'
+
+    header: ToolBar {
+        id: maintoolbar
+        RowLayout {
+          anchors.fill: parent
+          ToolButton {
+              text: qsTr("‹")
+          }
+      }
+    }
 
     Button {
         id: statisticks_button

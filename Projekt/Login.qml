@@ -3,9 +3,6 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 
 LoginForm {
-    login_button.onClicked: {
-
-    }
 
     Loader {
         anchors.fill: parent
