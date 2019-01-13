@@ -13,6 +13,5 @@ void Dish::setType(const string &type) {
     Dish::type = type;
 }
 
-Dish::Dish(const string &name, float priceNetto, float discountedPriceNetto, float taxRate, int realizationTime,
-           const string &type) : MenuItem(name, priceNetto, discountedPriceNetto, taxRate, realizationTime),
-                                 type(type) {}
+Dish::Dish(const string &name, float priceNetto, float discountedPriceNetto, float taxRate, const string &type)
+        : MenuItem(name, priceNetto, discountedPriceNetto, taxRate), type(type) {}

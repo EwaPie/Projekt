@@ -13,8 +13,7 @@ protected:
     bool isAlcohol;
 public:
 
-    Drink(const string &name, float priceNetto, float discountedPriceNetto, float taxRate, int realizationTime,
-          bool isAlcohol);
+    Drink(const string &name, float priceNetto, float discountedPriceNetto, float taxRate, bool isAlcohol);
 
     bool isIsAlcohol() const;
 
