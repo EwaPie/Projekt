@@ -18,8 +18,9 @@ protected:
     float discountedPriceNetto;
     float discountedPriceBurtto;
     float taxRate;
+    int realizationTime;
 public:
-    MenuItem(const string &name, float priceNetto, float discountedPriceNetto, float taxRate);
+    MenuItem(const string &name, float priceNetto, float discountedPriceNetto, float taxRate, int realizationTime);
 
     virtual ~MenuItem();
 
@@ -46,6 +47,10 @@ public:
     float getTaxRate() const;
 
     void setTaxRate(float taxRate);
+
+    int getRealizationTime() const;
+
+    void setRealizationTime(int realizationTime);
 };
 
 
