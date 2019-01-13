@@ -12,22 +12,22 @@ using namespace std;
 
 class ReservationList {
 public:
-    ReservationListElement** pHead;
-    ReservationListElement** pTail;
+    ReservationListElement* pHead;
+    ReservationListElement* pTail;
 
     /**
      *
      * @param ReservationListElement** pHead
      * @param ReservationListElement** pTail
      */
-    ReservationList(ReservationListElement **pHead, ReservationListElement **pTail);
+    ReservationList(ReservationListElement *pHead, ReservationListElement *pTail);
 
     /**
      *
      * @param Reservation** reservation
      * @return int
      */
-    int pushFront(Reservation** reservation);
+    int pushFront(Reservation* reservation);
 
     /**
      *
