@@ -54,7 +54,7 @@ int HallManager::deleteReservation(Reservation **reservation) {
         temp = temp->pNext;
     }
 
-    return 0; //nie znaleziono tej rezerwacji
+    return 0; //nie znaleziono tej rezerwacji wiec 0
 }
 
 Hall *HallManager::getHall() {
