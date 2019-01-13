@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Projekt"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Projekt">
+				<Option output="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/Projekt.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Model"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation/ReservationData"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/ReservationList"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/ReservationList/Model"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Table"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Dish"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Drink"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Exception"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projekt"/>
+					<CompileFile command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Projekt/fast">
+				<Option output="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/Projekt.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Model"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation/ReservationData"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/ReservationList"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/ReservationList/Model"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Table"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Dish"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Drink"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Exception"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projekt/fast"/>
+					<CompileFile command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/cygwin64/bin/make.exe -j4 -f &quot;/cygdrive/c/Prywatne/Kody/Studia/Projekt\ PO/Projekt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/main.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/Projekt/main.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Exception/CouldNotOpenFileException.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Exception/InvalidFilenameLengthException.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Exception/PermissionDeniedException .h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Exception/UserIsNotLoggedException.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Exception/UserNameNotUniqueException.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Exception/UserWrongLengthException.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/ACL.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/ACL.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/User.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/User.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/AbstractACLRepository.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/AbstractUserRepository.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileAclRepository.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileAclRepository.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileUserRepository.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileUserRepository.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service/UserService.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service/UserService.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator/UsernameValidator.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator/UsernameValidator.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/HallManager.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/HallManager.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Model/Hall.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Model/Hall.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation/Reservation.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation/Reservation.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation/ReservationData/ReservationData.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation/ReservationData/ReservationData.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/ReservationList/Model/ReservationListElement.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/ReservationList/Model/ReservationListElement.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/ReservationList/ReservationList.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/ReservationList/ReservationList.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Table/Table.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Table/Table.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Dish/Dish.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Dish/Dish.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Drink/Drink.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Drink/Drink.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/MenuItem.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/MenuItem.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/Bill.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/Bill.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/BillType.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/BufferedStatisticService.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/BufferedStatisticService.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/StatisticService.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
