@@ -13,7 +13,8 @@ protected:
     string type;
 public:
 
-    Dish(const string &name, float priceNetto, float discountedPriceNetto, float taxRate, const string &type);
+    Dish(const string &name, float priceNetto, float discountedPriceNetto, float taxRate, int realizationTime,
+         const string &type);
 
     const string &getType() const;
 
