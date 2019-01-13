@@ -4,37 +4,57 @@ import QtQuick.Layouts 1.3
 
 Page {
     id: loginPage
-    width: 640
-    height: 480
+    width: 800
+    height: 680
+    property alias login_button: login_button
+    property alias mouseArea: mouseArea
     title: "Strona Logowania"
-
-    TextField {
-        id: password
-        x: 173
-        y: 179
-        width: 294
-        height: 40
-        text: qsTr("")
-        placeholderText: "Hasło"
-        echoMode: TextInput.Password
-    }
 
     Button {
         id: login_button
-        x: 251
-        y: 302
-        width: 139
-        height: 50
+        x: 299
+        y: 375
+        width: 203
+        height: 90
         text: qsTr("Zaloguj się")
+
+    }
+
+    TextField {
+        id: password
+        x: 200
+        y: 233
+        width: 400
+        height: 59
+        text: qsTr("")
+        Layout.columnSpan: 3
+
+        placeholderText: "Hasło"
+        echoMode: TextInput.Password
+
+        selectByMouse: true
+        MouseArea {
+            anchors.fill: parent
+            cursorShape: Qt.IBeamCursor
+            acceptedButtons: Qt.NoButton
+        }
     }
 
     TextField {
         id: login
-        x: 173
-        y: 111
-        width: 294
-        height: 40
-        text: qsTr("")
+        x: 200
+        y: 137
+        width: 400
+        height: 55
+        Layout.columnSpan: 3
         placeholderText: "Użytkownik"
+
+        selectByMouse: true
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
+            cursorShape: Qt.IBeamCursor
+            acceptedButtons: Qt.NoButton
+        }
     }
 }
