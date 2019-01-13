@@ -4,43 +4,46 @@
 
 #include "ReservationList.h"
 
-ReservationList::ReservationList(ReservationListElement **pHead, ReservationListElement **pTail) : pHead(pHead),
+ReservationList::ReservationList(ReservationListElement *pHead, ReservationListElement *pTail) : pHead(pHead),
                                                                                                    pTail(pTail) {}
 
-int ReservationList::pushFront(Reservation** reservation) {
+int ReservationList::pushFront(Reservation* reservation) {
 
-    if (*pHead == nullptr)
+    if (pHead == nullptr)
     {
-        auto *reservationListElement = new ReservationListElement(**reservation, nullptr);
-        *this->pHead = reservationListElement;
-        *this->pTail = reservationListElement;
+        auto *reservationListElement = new ReservationListElement(*reservation, nullptr);
+        this->pHead = reservationListElement;
+        this->pTail = reservationListElement;
         return 1;
     }
 
-    auto *reservationListElement = new ReservationListElement(**reservation, (*this->pHead)->pNext);
-    reservationListElement->pNext = *this->pHead;
-    *this->pHead = reservationListElement;
+    auto *reservationListElement = new ReservationListElement(*reservation, this->pHead->pNext);
+    if (this->pHead != nullptr)
+        reservationListElement->pNext = this->pHead;
+    else
+        reservationListElement->pNext = nullptr;
+    this->pHead = reservationListElement;
     return 1;
 }
 
 int ReservationList::pushBack(Reservation** reservation) {
-    if (*pHead == nullptr)
+    if (pHead == nullptr)
     {
         auto *reservationListElement = new ReservationListElement(**reservation, nullptr);
-        *this->pHead = reservationListElement;
-        *this->pTail = reservationListElement;
+        this->pHead = reservationListElement;
+        this->pTail = reservationListElement;
         return 1;
     }
 
     auto *reservationListElement = new ReservationListElement(**reservation, nullptr);
-    (*this->pTail)->pNext = reservationListElement;
-    (*this->pTail) = reservationListElement;
+    this->pTail->pNext = reservationListElement;
+    this->pTail = reservationListElement;
     return 1;
 }
 
 int ReservationList::deleteElement(Reservation **reservation) {
 
-    ReservationListElement *current = *this->pHead;
+    ReservationListElement *current = this->pHead;
     ReservationListElement *prev = nullptr;
 
     while (current != nullptr) {
@@ -48,7 +51,7 @@ int ReservationList::deleteElement(Reservation **reservation) {
 
             if (prev == nullptr)
             {
-                (*this->pHead) = current->pNext;
+                this->pHead = current->pNext;
                 delete current;
                 delete prev;
                 return 1;

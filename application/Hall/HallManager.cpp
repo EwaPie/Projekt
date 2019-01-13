@@ -4,29 +4,29 @@
 
 #include "HallManager.h"
 
-HallManager::HallManager(Hall **hall) : hall(hall) {}
+HallManager::HallManager(Hall *hall) : hall(hall) {}
 
-list<Table> HallManager::getTableList() {
-    return (*this->hall)->getTableList();
+list<Table*> *HallManager::getTableList() {
+    return hall->getTableList();
 }
 
 int HallManager::deleteTable(Table* table) {
 
-    (*this->hall)->getTableList().remove(*table);
+    this->hall->getTableList()->remove(table);
     return 1;
 }
 
 int HallManager::addTable(Table *table) {
-    (*this->hall)->getTableList().push_back(*table);
+    hall->getTableList()->push_back(table);
     return 1;
 }
 
-int HallManager::addReservation(Reservation **reservation) {
+int HallManager::addReservation(Reservation *reservation) {
 
     bool wasFound = false;
 
-    for (auto &it : this->getTableList()) {
-        if (it.getNumberOfSeats() == (*reservation)->getReservationData().getNumberOfPeople())
+    for (auto it : *this->getTableList()) {
+        if (it->getNumberOfSeats() == reservation->getReservationData().getNumberOfPeople())
             wasFound = true;
     }
 
@@ -36,19 +36,19 @@ int HallManager::addReservation(Reservation **reservation) {
         return 0;
     }
 
-    (*(*this->hall)->getPReservationList()).pushFront(reservation);
+    (*hall->getPReservationList()).pushFront(reservation);
     return 1;
 }
 
 int HallManager::deleteReservation(Reservation **reservation) {
 
-    auto temp = *(*this->hall)->getPReservationList()->pHead;
+    auto temp = hall->getPReservationList()->pHead;
 
     while (temp != nullptr)
     {
         if (temp->reservation.getReservationData() == (*reservation)->getReservationData())
         {
-            (*(*this->hall)->getPReservationList()).deleteElement(reservation);
+            (*hall->getPReservationList()).deleteElement(reservation);
             return 1; //znalezione i usuniete
         }
         temp = temp->pNext;
@@ -58,9 +58,14 @@ int HallManager::deleteReservation(Reservation **reservation) {
 }
 
 Hall *HallManager::getHall() {
-    return *this->hall;
+    return hall;
 }
 
 ReservationList *HallManager::getReservationList() {
-    return (*this->hall)->getPReservationList();
+    return hall->getPReservationList();
+}
+
+HallManager::~HallManager() {
+
+    delete this->hall;
 }

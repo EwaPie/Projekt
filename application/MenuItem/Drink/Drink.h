@@ -12,14 +12,9 @@ class Drink: public MenuItem {
 protected:
     bool isAlcohol;
 public:
-    /**
-     *
-     * @param string name
-     * @param float price
-     * @param float discountedPrice
-     * @param bool isAlcohol
-     */
-    Drink(const string &name, float price, float discountedPrice, bool isAlcohol);
+
+    Drink(const string &name, float priceNetto, float discountedPriceNetto, float taxRate, int realizationTime,
+          bool isAlcohol);
 
     bool isIsAlcohol() const;
 
