@@ -5,13 +5,12 @@
 #include "MenuItem.h"
 
 
-MenuItem::MenuItem(const string &name, float priceNetto, float discountedPriceNetto, float taxRate, int realizationTime) : name(name),
+MenuItem::MenuItem(const string &name, float priceNetto, float discountedPriceNetto, float taxRate) : name(name),
                                                                                                       priceNetto(
                                                                                                               priceNetto),
                                                                                                       discountedPriceNetto(
                                                                                                               discountedPriceNetto),
-                                                                                                      taxRate(taxRate),
-                                                                                                      realizationTime(realizationTime){
+                                                                                                      taxRate(taxRate) {
     priceBrutto = priceNetto + priceNetto*taxRate;
     discountedPriceBurtto = discountedPriceNetto * discountedPriceNetto*taxRate;
 }
@@ -62,14 +61,6 @@ float MenuItem::getTaxRate() const {
 
 void MenuItem::setTaxRate(float taxRate) {
     MenuItem::taxRate = taxRate;
-}
-
-int MenuItem::getRealizationTime() const {
-    return realizationTime;
-}
-
-void MenuItem::setRealizationTime(int realizationTime) {
-    MenuItem::realizationTime = realizationTime;
 }
 
 MenuItem::~MenuItem() = default;
