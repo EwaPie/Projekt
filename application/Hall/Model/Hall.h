@@ -14,23 +14,23 @@
 
 class Hall {
 protected:
-    list<Table> tableList;
-    ReservationList **pReservationList;
+    list<Table*> *tableList;
+    ReservationList *pReservationList;
 public:
     /**
      * @param tableList
      * @param pReservationList
      */
-    Hall(const list<Table> &tableList, ReservationList **pReservationList);
+    Hall(list<Table*> *tableList, ReservationList *pReservationList);
 
     virtual ~Hall();
 
-    list<Table> &getTableList();
+    list<Table*> *getTableList();
 
     /**
      * @param tableList
      */
-    void setTableList(const list<Table> &tableList);
+    void setTableList(list<Table*> *tableList);
 
 
     ReservationList *getPReservationList() const;
@@ -38,7 +38,7 @@ public:
     /**
      * @param pReservationList
      */
-    void setPReservationList(ReservationList **pReservationList);
+    void setPReservationList(ReservationList *pReservationList);
 };
 
 

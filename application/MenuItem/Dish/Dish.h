@@ -8,19 +8,12 @@
 #include "../MenuItem.h"
 
 
-
 class Dish: public MenuItem {
 protected:
     string type;
 public:
-    /**
-     *
-     * @param name
-     * @param price
-     * @param discountedPrice
-     * @param type
-     */
-    Dish(const string &name, float price, float discountedPrice, const string &type);
+
+    Dish(const string &name, float priceNetto, float discountedPriceNetto, float taxRate, const string &type);
 
     const string &getType() const;
 

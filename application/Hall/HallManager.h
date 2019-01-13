@@ -14,19 +14,19 @@
 
 class HallManager {
 public:
-    Hall **hall;
+    Hall *hall;
 
     /**
      *
      * @param Hall** hall
      */
-    explicit HallManager(Hall **hall);
+    explicit HallManager(Hall *hall);
 
     /**
      *
      * @return list<Table>
      */
-    list<Table> getTableList();
+    list<Table*> *getTableList();
 
     /**
      *
@@ -47,7 +47,7 @@ public:
      * @param Reservation** reservation
      * @return int
      */
-    int addReservation(Reservation **reservation);
+    int addReservation(Reservation *reservation);
 
     /**
      *
@@ -67,6 +67,8 @@ public:
      * @return ReservationList*
      */
     ReservationList* getReservationList();
+
+    virtual ~HallManager();
 };
 
 

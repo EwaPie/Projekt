@@ -4,25 +4,29 @@
 
 #include "Hall.h"
 
-Hall::Hall(const list<Table> &tableList, ReservationList **pReservationList) : tableList(tableList),
+Hall::Hall(list<Table*> *tableList, ReservationList *pReservationList) : tableList(tableList),
                                                                                pReservationList(pReservationList) {}
 
 Hall::~Hall() {
-
+    for (Table *tab : *tableList)
+    {
+        delete tab;
+    }
+    delete tableList;
 }
 
-list<Table> &Hall::getTableList() {
+list<Table*> *Hall::getTableList() {
     return tableList;
 }
 
-void Hall::setTableList(const list<Table> &tableList) {
+void Hall::setTableList(list<Table*> *tableList) {
     Hall::tableList = tableList;
 }
 
 ReservationList *Hall::getPReservationList() const {
-    return *Hall::pReservationList;
+    return Hall::pReservationList;
 }
 
-void Hall::setPReservationList(ReservationList **pReservationList) {
+void Hall::setPReservationList(ReservationList *pReservationList) {
     Hall::pReservationList = pReservationList;
 }

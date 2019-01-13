@@ -13,43 +13,39 @@ using namespace std;
 class MenuItem {
 protected:
     string name;
-    float price;
-    float discountedPrice;
+    float priceNetto;
+    float priceBrutto;
+    float discountedPriceNetto;
+    float discountedPriceBurtto;
+    float taxRate;
 public:
-    /**
-     *
-     * @param string name
-     * @param float price
-     * @param float discountedPrice
-     */
-    MenuItem(const string &name, float price, float discountedPrice);
+    MenuItem(const string &name, float priceNetto, float discountedPriceNetto, float taxRate);
+
+    virtual ~MenuItem();
 
     const string &getName() const;
 
-    /**
-     *
-     * @param string name
-     */
     void setName(const string &name);
 
-    float getPrice() const;
+    float getPriceNetto() const;
 
-    /**
-     *
-     * @param float price
-     */
-    void setPrice(float price);
+    void setPriceNetto(float priceNetto);
 
-    float getDiscountedPrice() const;
+    float getPriceBrutto() const;
 
-    /**
-     *
-     * @param float discountedPrice
-     */
-    void setDiscountedPrice(float discountedPrice);
+    void setPriceBrutto(float priceBrutto);
 
-    float getRealPrice();
+    float getDiscountedPriceNetto() const;
 
+    void setDiscountedPriceNetto(float discountedPriceNetto);
+
+    float getDiscountedPriceBurtto() const;
+
+    void setDiscountedPriceBurtto(float discountedPriceBurtto);
+
+    float getTaxRate() const;
+
+    void setTaxRate(float taxRate);
 };
 
 
