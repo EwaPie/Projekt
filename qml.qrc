@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Login.qml</file>
+        <file>LoginForm.ui.qml</file>
+        <file>StartingPage.qml</file>
+        <file>StartingPageForm.ui.qml</file>
+        <file>Users.qml</file>
+        <file>UsersForm.ui.qml</file>
+        <file>Statistics.qml</file>
+        <file>StatisticsForm.ui.qml</file>
+        <file>Discounts.qml</file>
+        <file>DiscountsForm.ui.qml</file>
+        <file>Hall.qml</file>
+        <file>HallForm.ui.qml</file>
+        <file>Menu.qml</file>
+        <file>MenuForm.ui.qml</file>
+        <file>Order1.qml</file>
+        <file>OrderForm1.ui.qml</file>
+        <file>OrderForm2.ui.qml</file>
+        <file>Order2.qml</file>
+        <file>OrderForm3.ui.qml</file>
+        <file>OrderForm4.ui.qml</file>
+        <file>OrderForm5.ui.qml</file>
+        <file>Order3.qml</file>
+        <file>Order4.qml</file>
+        <file>Order5.qml</file>
+    </qresource>
+</RCC>
