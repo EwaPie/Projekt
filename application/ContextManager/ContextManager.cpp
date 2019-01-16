@@ -5,13 +5,15 @@
 #include "ContextManager.h"
 
 ContextManager::ContextManager() {
-
     this->initialize();
 }
 
 void ContextManager::initialize() {
 
-    auto *tableList = new list<Table*>;
+    statisticService = shared_ptr<StatisticService>(new BufferedStatisticService());
+    reportService = make_shared<ReportService>();
+
+    auto *tableList = new list<Table *>;
     auto *reservationListElement = new ReservationListElement();
     auto *reservationList = new ReservationList(reservationListElement, reservationListElement);
     Hall *hall = new Hall(tableList, reservationList);
@@ -20,9 +22,9 @@ void ContextManager::initialize() {
     auto *table2 = new Table(2, 2);
     auto *table3 = new Table(3, 8);
     auto *table4 = new Table(4, 4);
-    auto *table5= new Table(5, 10);
+    auto *table5 = new Table(5, 10);
 
-    this->hallManager = new HallManager(hall);
+    this->hallManager = shared_ptr<HallManager>(new HallManager(hall));
 
     hallManager->addTable(table);
     hallManager->addTable(table2);
@@ -31,9 +33,16 @@ void ContextManager::initialize() {
     hallManager->addTable(table5);
 }
 
-ContextManager::~ContextManager() {
+shared_ptr<HallManager> ContextManager::getHallManager() const {
+    return hallManager;
+}
 
-        delete hallManager;
+shared_ptr<StatisticService> ContextManager::getStatisticService() const {
+    return statisticService;
+}
+
+const shared_ptr<ReportService> &ContextManager::getReportService() const {
+    return reportService;
 }
 
 

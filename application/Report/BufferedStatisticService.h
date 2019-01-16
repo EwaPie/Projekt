@@ -8,23 +8,25 @@
 #include "StatisticService.h"
 #include <fstream>
 #include <iostream>
+#include <chrono>
 
 using namespace std;
 
-class BufferedStatisticService : StatisticService {
+class BufferedStatisticService : public StatisticService {
 private:
     const int DEFAULT_BUFF_SIZE = 10;
     int maxBuffSize;
 
-    list<string>* buff;
+    vector<string> buff;
     string filePath;
 
 public:
 
-    BufferedStatisticService(string filePath);
-    ~BufferedStatisticService();
+    BufferedStatisticService();
 
-    bool addEvent(Bill *event) override;
+    ~BufferedStatisticService() override;
+
+    bool addEvent(shared_ptr<Bill> event) override;
 
     void flush();
 
@@ -32,7 +34,7 @@ public:
 
     void setBuffSize(int newBuffSize);
 
-    list<string> *getBufferedEvent();
+    vector <string> getBufferedEvents();
 };
 
 

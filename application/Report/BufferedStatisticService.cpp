@@ -1,24 +1,31 @@
-//
+#include <utility>
 
 #include "BufferedStatisticService.h"
 
 //
 // Created by User on 2019-01-13.
-BufferedStatisticService::BufferedStatisticService(string filePath) {
+BufferedStatisticService::BufferedStatisticService() {
     maxBuffSize = DEFAULT_BUFF_SIZE;
-    buff = new list<string>;
-    this->filePath = filePath;
+    this->filePath = R"(.\statystyka.txt)";
 }
 
 BufferedStatisticService::~BufferedStatisticService() {
-    delete buff;
+    if (!buff.empty()) {
+        flush();
+    }
 }
 
-bool BufferedStatisticService::addEvent(Bill *event) {
-    string eventLine =
-            "billType;" + toString(event->getBillType()) + "amount;" + std::to_string(event->getCurrentAmount());
-    buff->push_back(eventLine);
-    if (buff->size() == maxBuffSize) {
+bool BufferedStatisticService::addEvent(shared_ptr<Bill> event) {
+    // Pobranie aktualnego czasu
+    chrono::milliseconds ms = chrono::duration_cast<chrono::milliseconds>(
+            chrono::system_clock::now().time_since_epoch());
+
+    string eventLine = to_string(ms.count())
+                       + " billType " + toString(event->getBillType())
+                       + " amount " + to_string(event->getCurrentAmount())
+                       + "\n";
+    buff.push_back(eventLine);
+    if (buff.size() == maxBuffSize) {
         flush();
     }
     return true;
@@ -26,22 +33,22 @@ bool BufferedStatisticService::addEvent(Bill *event) {
 
 void BufferedStatisticService::flush() {
     std::ofstream statisticFile(filePath, std::ios::app);
-    for (auto &it: *buff) {
+    for (const auto &it: buff) {
         statisticFile << it << endl;
     }
-    buff->clear();
+    buff.clear();
     statisticFile.close();
 }
 
 void BufferedStatisticService::setFilePath(string filePath) {
-    this->filePath = filePath;
+    this->filePath = std::move(filePath);
 }
 
 void BufferedStatisticService::setBuffSize(int newBuffSize) {
     this->maxBuffSize = newBuffSize;
 }
 
-list<string> *BufferedStatisticService::getBufferedEvent() {
+vector<string> BufferedStatisticService::getBufferedEvents() {
     return buff;
 }
 

@@ -34,6 +34,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/ContextManager"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Model"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation"/>
@@ -44,6 +45,9 @@
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Dish"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Drink"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Exception"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository"/>
@@ -70,6 +74,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/ContextManager"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Model"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation"/>
@@ -80,6 +85,9 @@
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Dish"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Drink"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release"/>
+					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Exception"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model"/>
 					<Add directory="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository"/>
@@ -110,7 +118,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/clock.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/clock.h">
+			<Option target="Projekt"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/main.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/moc_clock.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/moc_predefs.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp">
 			<Option target="Projekt"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/Projekt/main.cpp">
@@ -174,6 +200,12 @@
 			<Option target="Projekt"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator/UsernameValidator.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/ContextManager/ContextManager.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/ContextManager/ContextManager.h">
 			<Option target="Projekt"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/HallManager.cpp">
@@ -249,6 +281,15 @@
 			<Option target="Projekt"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/BufferedStatisticService.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/ReportService.cpp">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/ReportService.h">
+			<Option target="Projekt"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/ReportType.h">
 			<Option target="Projekt"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/StatisticService.h">

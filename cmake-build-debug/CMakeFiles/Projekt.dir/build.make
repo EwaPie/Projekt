@@ -57,9 +57,22 @@ include CMakeFiles/Projekt.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Projekt.dir/flags.make
 
+CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.o: ../application/ContextManager/ContextManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/ContextManager/ContextManager.cpp"
+
+CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/ContextManager/ContextManager.cpp" > CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.i
+
+CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/ContextManager/ContextManager.cpp" -o CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.s
+
 CMakeFiles/Projekt.dir/application/Hall/Model/Hall.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/Hall/Model/Hall.cpp.o: ../application/Hall/Model/Hall.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/Model/Hall.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/Model/Hall.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/Hall/Model/Hall.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Model/Hall.cpp"
 
 CMakeFiles/Projekt.dir/application/Hall/Model/Hall.cpp.i: cmake_force
@@ -72,7 +85,7 @@ CMakeFiles/Projekt.dir/application/Hall/Model/Hall.cpp.s: cmake_force
 
 CMakeFiles/Projekt.dir/application/Hall/Reservation/ReservationData/ReservationData.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/Hall/Reservation/ReservationData/ReservationData.cpp.o: ../application/Hall/Reservation/ReservationData/ReservationData.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/Reservation/ReservationData/ReservationData.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/Reservation/ReservationData/ReservationData.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/Hall/Reservation/ReservationData/ReservationData.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation/ReservationData/ReservationData.cpp"
 
 CMakeFiles/Projekt.dir/application/Hall/Reservation/ReservationData/ReservationData.cpp.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/Projekt.dir/application/Hall/Reservation/ReservationData/ReservationD
 
 CMakeFiles/Projekt.dir/application/Hall/Reservation/Reservation.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/Hall/Reservation/Reservation.cpp.o: ../application/Hall/Reservation/Reservation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/Reservation/Reservation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/Reservation/Reservation.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/Hall/Reservation/Reservation.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation/Reservation.cpp"
 
 CMakeFiles/Projekt.dir/application/Hall/Reservation/Reservation.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/Projekt.dir/application/Hall/Reservation/Reservation.cpp.s: cmake_for
 
 CMakeFiles/Projekt.dir/application/Hall/ReservationList/Model/ReservationListElement.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/Hall/ReservationList/Model/ReservationListElement.cpp.o: ../application/Hall/ReservationList/Model/ReservationListElement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/ReservationList/Model/ReservationListElement.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/ReservationList/Model/ReservationListElement.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/Hall/ReservationList/Model/ReservationListElement.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/ReservationList/Model/ReservationListElement.cpp"
 
 CMakeFiles/Projekt.dir/application/Hall/ReservationList/Model/ReservationListElement.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/Projekt.dir/application/Hall/ReservationList/Model/ReservationListEle
 
 CMakeFiles/Projekt.dir/application/Hall/ReservationList/ReservationList.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/Hall/ReservationList/ReservationList.cpp.o: ../application/Hall/ReservationList/ReservationList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/ReservationList/ReservationList.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/ReservationList/ReservationList.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/Hall/ReservationList/ReservationList.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/ReservationList/ReservationList.cpp"
 
 CMakeFiles/Projekt.dir/application/Hall/ReservationList/ReservationList.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/Projekt.dir/application/Hall/ReservationList/ReservationList.cpp.s: c
 
 CMakeFiles/Projekt.dir/application/Hall/Table/Table.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/Hall/Table/Table.cpp.o: ../application/Hall/Table/Table.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/Table/Table.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/Table/Table.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/Hall/Table/Table.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Table/Table.cpp"
 
 CMakeFiles/Projekt.dir/application/Hall/Table/Table.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/Projekt.dir/application/Hall/Table/Table.cpp.s: cmake_force
 
 CMakeFiles/Projekt.dir/application/Hall/HallManager.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/Hall/HallManager.cpp.o: ../application/Hall/HallManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/HallManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Projekt.dir/application/Hall/HallManager.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/Hall/HallManager.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/HallManager.cpp"
 
 CMakeFiles/Projekt.dir/application/Hall/HallManager.cpp.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/Projekt.dir/application/Hall/HallManager.cpp.s: cmake_force
 
 CMakeFiles/Projekt.dir/application/MenuItem/Dish/Dish.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/MenuItem/Dish/Dish.cpp.o: ../application/MenuItem/Dish/Dish.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Projekt.dir/application/MenuItem/Dish/Dish.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Projekt.dir/application/MenuItem/Dish/Dish.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/MenuItem/Dish/Dish.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Dish/Dish.cpp"
 
 CMakeFiles/Projekt.dir/application/MenuItem/Dish/Dish.cpp.i: cmake_force
@@ -163,7 +176,7 @@ CMakeFiles/Projekt.dir/application/MenuItem/Dish/Dish.cpp.s: cmake_force
 
 CMakeFiles/Projekt.dir/application/MenuItem/Drink/Drink.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/MenuItem/Drink/Drink.cpp.o: ../application/MenuItem/Drink/Drink.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Projekt.dir/application/MenuItem/Drink/Drink.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Projekt.dir/application/MenuItem/Drink/Drink.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/MenuItem/Drink/Drink.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/Drink/Drink.cpp"
 
 CMakeFiles/Projekt.dir/application/MenuItem/Drink/Drink.cpp.i: cmake_force
@@ -176,7 +189,7 @@ CMakeFiles/Projekt.dir/application/MenuItem/Drink/Drink.cpp.s: cmake_force
 
 CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.o: ../application/MenuItem/MenuItem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/MenuItem.cpp"
 
 CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.i: cmake_force
@@ -187,113 +200,9 @@ CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.s"
 	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/MenuItem.cpp" -o CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.s
 
-CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o: CMakeFiles/Projekt.dir/flags.make
-CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o: ../GUI/Projekt/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o"
-	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/main.cpp"
-
-CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.i"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/main.cpp" > CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.i
-
-CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.s"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/main.cpp" -o CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.s
-
-CMakeFiles/Projekt.dir/Projekt/main.cpp.o: CMakeFiles/Projekt.dir/flags.make
-CMakeFiles/Projekt.dir/Projekt/main.cpp.o: ../Projekt/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Projekt.dir/Projekt/main.cpp.o"
-	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/Projekt/main.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/Projekt/main.cpp"
-
-CMakeFiles/Projekt.dir/Projekt/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/Projekt/main.cpp.i"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/Projekt/main.cpp" > CMakeFiles/Projekt.dir/Projekt/main.cpp.i
-
-CMakeFiles/Projekt.dir/Projekt/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/Projekt/main.cpp.s"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/Projekt/main.cpp" -o CMakeFiles/Projekt.dir/Projekt/main.cpp.s
-
-CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o: CMakeFiles/Projekt.dir/flags.make
-CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o: ../User/Model/ACL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o"
-	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/ACL.cpp"
-
-CMakeFiles/Projekt.dir/User/Model/ACL.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Model/ACL.cpp.i"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/ACL.cpp" > CMakeFiles/Projekt.dir/User/Model/ACL.cpp.i
-
-CMakeFiles/Projekt.dir/User/Model/ACL.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Model/ACL.cpp.s"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/ACL.cpp" -o CMakeFiles/Projekt.dir/User/Model/ACL.cpp.s
-
-CMakeFiles/Projekt.dir/User/Model/User.cpp.o: CMakeFiles/Projekt.dir/flags.make
-CMakeFiles/Projekt.dir/User/Model/User.cpp.o: ../User/Model/User.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Projekt.dir/User/Model/User.cpp.o"
-	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Model/User.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/User.cpp"
-
-CMakeFiles/Projekt.dir/User/Model/User.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Model/User.cpp.i"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/User.cpp" > CMakeFiles/Projekt.dir/User/Model/User.cpp.i
-
-CMakeFiles/Projekt.dir/User/Model/User.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Model/User.cpp.s"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/User.cpp" -o CMakeFiles/Projekt.dir/User/Model/User.cpp.s
-
-CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.o: CMakeFiles/Projekt.dir/flags.make
-CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.o: ../User/Repository/FileAclRepository.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.o"
-	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileAclRepository.cpp"
-
-CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.i"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileAclRepository.cpp" > CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.i
-
-CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.s"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileAclRepository.cpp" -o CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.s
-
-CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o: CMakeFiles/Projekt.dir/flags.make
-CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o: ../User/Repository/FileUserRepository.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o"
-	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileUserRepository.cpp"
-
-CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.i"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileUserRepository.cpp" > CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.i
-
-CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.s"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileUserRepository.cpp" -o CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.s
-
-CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o: CMakeFiles/Projekt.dir/flags.make
-CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o: ../User/Service/UserService.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o"
-	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service/UserService.cpp"
-
-CMakeFiles/Projekt.dir/User/Service/UserService.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Service/UserService.cpp.i"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service/UserService.cpp" > CMakeFiles/Projekt.dir/User/Service/UserService.cpp.i
-
-CMakeFiles/Projekt.dir/User/Service/UserService.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Service/UserService.cpp.s"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service/UserService.cpp" -o CMakeFiles/Projekt.dir/User/Service/UserService.cpp.s
-
-CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o: CMakeFiles/Projekt.dir/flags.make
-CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o: ../User/Validator/UsernameValidator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o"
-	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator/UsernameValidator.cpp"
-
-CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.i"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator/UsernameValidator.cpp" > CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.i
-
-CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.s"
-	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator/UsernameValidator.cpp" -o CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.s
-
 CMakeFiles/Projekt.dir/application/Report/Bill.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/Report/Bill.cpp.o: ../application/Report/Bill.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Projekt.dir/application/Report/Bill.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Projekt.dir/application/Report/Bill.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/Report/Bill.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/Bill.cpp"
 
 CMakeFiles/Projekt.dir/application/Report/Bill.cpp.i: cmake_force
@@ -306,7 +215,7 @@ CMakeFiles/Projekt.dir/application/Report/Bill.cpp.s: cmake_force
 
 CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.o: CMakeFiles/Projekt.dir/flags.make
 CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.o: ../application/Report/BufferedStatisticService.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.o"
 	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/BufferedStatisticService.cpp"
 
 CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.i: cmake_force
@@ -317,8 +226,178 @@ CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.s: cmake_
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.s"
 	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/BufferedStatisticService.cpp" -o CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.s
 
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o: ../GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp"
+
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp" > CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.i
+
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp" -o CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.s
+
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o: ../GUI/build-Projekt-Desktop-Release/moc_clock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/moc_clock.cpp"
+
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/moc_clock.cpp" > CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.i
+
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/moc_clock.cpp" -o CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.s
+
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o: ../GUI/build-Projekt-Desktop-Release/qrc_qml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp"
+
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp" > CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.i
+
+CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp" -o CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.s
+
+CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.o: ../GUI/Projekt/clock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/clock.cpp"
+
+CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/clock.cpp" > CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.i
+
+CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/clock.cpp" -o CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.s
+
+CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o: ../GUI/Projekt/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/main.cpp"
+
+CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/main.cpp" > CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.i
+
+CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/main.cpp" -o CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.s
+
+CMakeFiles/Projekt.dir/Projekt/main.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/Projekt/main.cpp.o: ../Projekt/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Projekt.dir/Projekt/main.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/Projekt/main.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/Projekt/main.cpp"
+
+CMakeFiles/Projekt.dir/Projekt/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/Projekt/main.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/Projekt/main.cpp" > CMakeFiles/Projekt.dir/Projekt/main.cpp.i
+
+CMakeFiles/Projekt.dir/Projekt/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/Projekt/main.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/Projekt/main.cpp" -o CMakeFiles/Projekt.dir/Projekt/main.cpp.s
+
+CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o: ../User/Model/ACL.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/ACL.cpp"
+
+CMakeFiles/Projekt.dir/User/Model/ACL.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Model/ACL.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/ACL.cpp" > CMakeFiles/Projekt.dir/User/Model/ACL.cpp.i
+
+CMakeFiles/Projekt.dir/User/Model/ACL.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Model/ACL.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/ACL.cpp" -o CMakeFiles/Projekt.dir/User/Model/ACL.cpp.s
+
+CMakeFiles/Projekt.dir/User/Model/User.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/User/Model/User.cpp.o: ../User/Model/User.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Projekt.dir/User/Model/User.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Model/User.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/User.cpp"
+
+CMakeFiles/Projekt.dir/User/Model/User.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Model/User.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/User.cpp" > CMakeFiles/Projekt.dir/User/Model/User.cpp.i
+
+CMakeFiles/Projekt.dir/User/Model/User.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Model/User.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/User.cpp" -o CMakeFiles/Projekt.dir/User/Model/User.cpp.s
+
+CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.o: ../User/Repository/FileAclRepository.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileAclRepository.cpp"
+
+CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileAclRepository.cpp" > CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.i
+
+CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileAclRepository.cpp" -o CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.s
+
+CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o: ../User/Repository/FileUserRepository.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileUserRepository.cpp"
+
+CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileUserRepository.cpp" > CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.i
+
+CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileUserRepository.cpp" -o CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.s
+
+CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o: ../User/Service/UserService.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service/UserService.cpp"
+
+CMakeFiles/Projekt.dir/User/Service/UserService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Service/UserService.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service/UserService.cpp" > CMakeFiles/Projekt.dir/User/Service/UserService.cpp.i
+
+CMakeFiles/Projekt.dir/User/Service/UserService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Service/UserService.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service/UserService.cpp" -o CMakeFiles/Projekt.dir/User/Service/UserService.cpp.s
+
+CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o: ../User/Validator/UsernameValidator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator/UsernameValidator.cpp"
+
+CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator/UsernameValidator.cpp" > CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.i
+
+CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator/UsernameValidator.cpp" -o CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.s
+
+CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.o: CMakeFiles/Projekt.dir/flags.make
+CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.o: ../application/Report/ReportService.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.o"
+	C:/cygwin64/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.o -c "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/ReportService.cpp"
+
+CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.i"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/ReportService.cpp" > CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.i
+
+CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.s"
+	C:/cygwin64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/ReportService.cpp" -o CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.s
+
 # Object files for target Projekt
 Projekt_OBJECTS = \
+"CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.o" \
 "CMakeFiles/Projekt.dir/application/Hall/Model/Hall.cpp.o" \
 "CMakeFiles/Projekt.dir/application/Hall/Reservation/ReservationData/ReservationData.cpp.o" \
 "CMakeFiles/Projekt.dir/application/Hall/Reservation/Reservation.cpp.o" \
@@ -329,6 +408,12 @@ Projekt_OBJECTS = \
 "CMakeFiles/Projekt.dir/application/MenuItem/Dish/Dish.cpp.o" \
 "CMakeFiles/Projekt.dir/application/MenuItem/Drink/Drink.cpp.o" \
 "CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.o" \
+"CMakeFiles/Projekt.dir/application/Report/Bill.cpp.o" \
+"CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.o" \
+"CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o" \
+"CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o" \
+"CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o" \
+"CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.o" \
 "CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o" \
 "CMakeFiles/Projekt.dir/Projekt/main.cpp.o" \
 "CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o" \
@@ -337,12 +422,12 @@ Projekt_OBJECTS = \
 "CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o" \
 "CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o" \
 "CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o" \
-"CMakeFiles/Projekt.dir/application/Report/Bill.cpp.o" \
-"CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.o"
+"CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.o"
 
 # External object files for target Projekt
 Projekt_EXTERNAL_OBJECTS =
 
+Projekt.exe: CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/application/Hall/Model/Hall.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/application/Hall/Reservation/ReservationData/ReservationData.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/application/Hall/Reservation/Reservation.cpp.o
@@ -353,6 +438,12 @@ Projekt.exe: CMakeFiles/Projekt.dir/application/Hall/HallManager.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/application/MenuItem/Dish/Dish.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/application/MenuItem/Drink/Drink.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.o
+Projekt.exe: CMakeFiles/Projekt.dir/application/Report/Bill.cpp.o
+Projekt.exe: CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.o
+Projekt.exe: CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o
+Projekt.exe: CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o
+Projekt.exe: CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o
+Projekt.exe: CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/Projekt/main.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o
@@ -361,11 +452,10 @@ Projekt.exe: CMakeFiles/Projekt.dir/User/Repository/FileAclRepository.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o
-Projekt.exe: CMakeFiles/Projekt.dir/application/Report/Bill.cpp.o
-Projekt.exe: CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.o
+Projekt.exe: CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.o
 Projekt.exe: CMakeFiles/Projekt.dir/build.make
 Projekt.exe: CMakeFiles/Projekt.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable Projekt.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable Projekt.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Projekt.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -123,6 +123,33 @@ Projekt/fast:
 	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/build
 .PHONY : Projekt/fast
 
+GUI/Projekt/clock.o: GUI/Projekt/clock.cpp.o
+
+.PHONY : GUI/Projekt/clock.o
+
+# target to build an object file
+GUI/Projekt/clock.cpp.o:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.o
+.PHONY : GUI/Projekt/clock.cpp.o
+
+GUI/Projekt/clock.i: GUI/Projekt/clock.cpp.i
+
+.PHONY : GUI/Projekt/clock.i
+
+# target to preprocess a source file
+GUI/Projekt/clock.cpp.i:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.i
+.PHONY : GUI/Projekt/clock.cpp.i
+
+GUI/Projekt/clock.s: GUI/Projekt/clock.cpp.s
+
+.PHONY : GUI/Projekt/clock.s
+
+# target to generate assembly for a file
+GUI/Projekt/clock.cpp.s:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.s
+.PHONY : GUI/Projekt/clock.cpp.s
+
 GUI/Projekt/main.o: GUI/Projekt/main.cpp.o
 
 .PHONY : GUI/Projekt/main.o
@@ -149,6 +176,87 @@ GUI/Projekt/main.s: GUI/Projekt/main.cpp.s
 GUI/Projekt/main.cpp.s:
 	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.s
 .PHONY : GUI/Projekt/main.cpp.s
+
+GUI/build-Projekt-Desktop-Debug/qrc_qml.o: GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o
+
+.PHONY : GUI/build-Projekt-Desktop-Debug/qrc_qml.o
+
+# target to build an object file
+GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o
+.PHONY : GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o
+
+GUI/build-Projekt-Desktop-Debug/qrc_qml.i: GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.i
+
+.PHONY : GUI/build-Projekt-Desktop-Debug/qrc_qml.i
+
+# target to preprocess a source file
+GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.i:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.i
+.PHONY : GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.i
+
+GUI/build-Projekt-Desktop-Debug/qrc_qml.s: GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.s
+
+.PHONY : GUI/build-Projekt-Desktop-Debug/qrc_qml.s
+
+# target to generate assembly for a file
+GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.s:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.s
+.PHONY : GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.s
+
+GUI/build-Projekt-Desktop-Release/moc_clock.o: GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o
+
+.PHONY : GUI/build-Projekt-Desktop-Release/moc_clock.o
+
+# target to build an object file
+GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o
+.PHONY : GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o
+
+GUI/build-Projekt-Desktop-Release/moc_clock.i: GUI/build-Projekt-Desktop-Release/moc_clock.cpp.i
+
+.PHONY : GUI/build-Projekt-Desktop-Release/moc_clock.i
+
+# target to preprocess a source file
+GUI/build-Projekt-Desktop-Release/moc_clock.cpp.i:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.i
+.PHONY : GUI/build-Projekt-Desktop-Release/moc_clock.cpp.i
+
+GUI/build-Projekt-Desktop-Release/moc_clock.s: GUI/build-Projekt-Desktop-Release/moc_clock.cpp.s
+
+.PHONY : GUI/build-Projekt-Desktop-Release/moc_clock.s
+
+# target to generate assembly for a file
+GUI/build-Projekt-Desktop-Release/moc_clock.cpp.s:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.s
+.PHONY : GUI/build-Projekt-Desktop-Release/moc_clock.cpp.s
+
+GUI/build-Projekt-Desktop-Release/qrc_qml.o: GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o
+
+.PHONY : GUI/build-Projekt-Desktop-Release/qrc_qml.o
+
+# target to build an object file
+GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o
+.PHONY : GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o
+
+GUI/build-Projekt-Desktop-Release/qrc_qml.i: GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.i
+
+.PHONY : GUI/build-Projekt-Desktop-Release/qrc_qml.i
+
+# target to preprocess a source file
+GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.i:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.i
+.PHONY : GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.i
+
+GUI/build-Projekt-Desktop-Release/qrc_qml.s: GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.s
+
+.PHONY : GUI/build-Projekt-Desktop-Release/qrc_qml.s
+
+# target to generate assembly for a file
+GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.s:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.s
+.PHONY : GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.s
 
 Projekt/main.o: Projekt/main.cpp.o
 
@@ -338,6 +446,33 @@ User/Validator/UsernameValidator.s: User/Validator/UsernameValidator.cpp.s
 User/Validator/UsernameValidator.cpp.s:
 	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.s
 .PHONY : User/Validator/UsernameValidator.cpp.s
+
+application/ContextManager/ContextManager.o: application/ContextManager/ContextManager.cpp.o
+
+.PHONY : application/ContextManager/ContextManager.o
+
+# target to build an object file
+application/ContextManager/ContextManager.cpp.o:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.o
+.PHONY : application/ContextManager/ContextManager.cpp.o
+
+application/ContextManager/ContextManager.i: application/ContextManager/ContextManager.cpp.i
+
+.PHONY : application/ContextManager/ContextManager.i
+
+# target to preprocess a source file
+application/ContextManager/ContextManager.cpp.i:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.i
+.PHONY : application/ContextManager/ContextManager.cpp.i
+
+application/ContextManager/ContextManager.s: application/ContextManager/ContextManager.cpp.s
+
+.PHONY : application/ContextManager/ContextManager.s
+
+# target to generate assembly for a file
+application/ContextManager/ContextManager.cpp.s:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.s
+.PHONY : application/ContextManager/ContextManager.cpp.s
 
 application/Hall/HallManager.o: application/Hall/HallManager.cpp.o
 
@@ -663,6 +798,33 @@ application/Report/BufferedStatisticService.cpp.s:
 	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.s
 .PHONY : application/Report/BufferedStatisticService.cpp.s
 
+application/Report/ReportService.o: application/Report/ReportService.cpp.o
+
+.PHONY : application/Report/ReportService.o
+
+# target to build an object file
+application/Report/ReportService.cpp.o:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.o
+.PHONY : application/Report/ReportService.cpp.o
+
+application/Report/ReportService.i: application/Report/ReportService.cpp.i
+
+.PHONY : application/Report/ReportService.i
+
+# target to preprocess a source file
+application/Report/ReportService.cpp.i:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.i
+.PHONY : application/Report/ReportService.cpp.i
+
+application/Report/ReportService.s: application/Report/ReportService.cpp.s
+
+.PHONY : application/Report/ReportService.s
+
+# target to generate assembly for a file
+application/Report/ReportService.cpp.s:
+	$(MAKE) -f CMakeFiles/Projekt.dir/build.make CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.s
+.PHONY : application/Report/ReportService.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -672,9 +834,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Projekt"
 	@echo "... edit_cache"
+	@echo "... GUI/Projekt/clock.o"
+	@echo "... GUI/Projekt/clock.i"
+	@echo "... GUI/Projekt/clock.s"
 	@echo "... GUI/Projekt/main.o"
 	@echo "... GUI/Projekt/main.i"
 	@echo "... GUI/Projekt/main.s"
+	@echo "... GUI/build-Projekt-Desktop-Debug/qrc_qml.o"
+	@echo "... GUI/build-Projekt-Desktop-Debug/qrc_qml.i"
+	@echo "... GUI/build-Projekt-Desktop-Debug/qrc_qml.s"
+	@echo "... GUI/build-Projekt-Desktop-Release/moc_clock.o"
+	@echo "... GUI/build-Projekt-Desktop-Release/moc_clock.i"
+	@echo "... GUI/build-Projekt-Desktop-Release/moc_clock.s"
+	@echo "... GUI/build-Projekt-Desktop-Release/qrc_qml.o"
+	@echo "... GUI/build-Projekt-Desktop-Release/qrc_qml.i"
+	@echo "... GUI/build-Projekt-Desktop-Release/qrc_qml.s"
 	@echo "... Projekt/main.o"
 	@echo "... Projekt/main.i"
 	@echo "... Projekt/main.s"
@@ -696,6 +870,9 @@ help:
 	@echo "... User/Validator/UsernameValidator.o"
 	@echo "... User/Validator/UsernameValidator.i"
 	@echo "... User/Validator/UsernameValidator.s"
+	@echo "... application/ContextManager/ContextManager.o"
+	@echo "... application/ContextManager/ContextManager.i"
+	@echo "... application/ContextManager/ContextManager.s"
 	@echo "... application/Hall/HallManager.o"
 	@echo "... application/Hall/HallManager.i"
 	@echo "... application/Hall/HallManager.s"
@@ -732,6 +909,9 @@ help:
 	@echo "... application/Report/BufferedStatisticService.o"
 	@echo "... application/Report/BufferedStatisticService.i"
 	@echo "... application/Report/BufferedStatisticService.s"
+	@echo "... application/Report/ReportService.o"
+	@echo "... application/Report/ReportService.i"
+	@echo "... application/Report/ReportService.s"
 .PHONY : help
 
 

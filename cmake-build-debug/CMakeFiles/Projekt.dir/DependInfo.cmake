@@ -4,7 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/clock.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/GUI/Projekt/clock.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/Projekt/main.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/GUI/Projekt/main.cpp.o"
+  "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Debug/qrc_qml.cpp.o"
+  "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/moc_clock.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/moc_clock.cpp.o"
+  "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/GUI/build-Projekt-Desktop-Release/qrc_qml.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/Projekt/main.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/Projekt/main.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/ACL.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/User/Model/ACL.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Model/User.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/User/Model/User.cpp.o"
@@ -12,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Repository/FileUserRepository.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/User/Repository/FileUserRepository.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Service/UserService.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/User/Service/UserService.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/User/Validator/UsernameValidator.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/User/Validator/UsernameValidator.cpp.o"
+  "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/ContextManager/ContextManager.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/application/ContextManager/ContextManager.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/HallManager.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/application/Hall/HallManager.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Model/Hall.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/application/Hall/Model/Hall.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Hall/Reservation/Reservation.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/application/Hall/Reservation/Reservation.cpp.o"
@@ -24,11 +29,13 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/MenuItem/MenuItem.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/application/MenuItem/MenuItem.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/Bill.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/application/Report/Bill.cpp.o"
   "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/BufferedStatisticService.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/application/Report/BufferedStatisticService.cpp.o"
+  "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/application/Report/ReportService.cpp" "/cygdrive/c/Prywatne/Kody/Studia/Projekt PO/Projekt/cmake-build-debug/CMakeFiles/Projekt.dir/application/Report/ReportService.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../application/ContextManager"
   "../application/Hall"
   "../application/Hall/Model"
   "../application/Hall/Reservation"
@@ -39,6 +46,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../application/MenuItem"
   "../application/MenuItem/Dish"
   "../application/MenuItem/Drink"
+  "../application/Report"
+  "../GUI/build-Projekt-Desktop-Release"
+  "../GUI/Projekt"
   "../User/Exception"
   "../User/Model"
   "../User/Repository"

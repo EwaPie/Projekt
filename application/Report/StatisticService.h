@@ -6,9 +6,13 @@
 #define PROJEKT_STATISTICSERVICE_H
 
 #include "Bill.h"
+#include <memory>
+
 class StatisticService {
 public:
-    virtual bool addEvent(Bill* event) = 0;
+    virtual bool addEvent(shared_ptr<Bill> event) = 0;
+
+    virtual ~StatisticService() = 0;
 };
 
 
