@@ -11,19 +11,32 @@
 #include "../Hall/ReservationList/Model/ReservationListElement.h"
 #include "../Hall/Reservation/Reservation.h"
 #include "../Hall/Reservation/ReservationData/ReservationData.h"
+#include "../Report/StatisticService.h"
+#include "../Report/BufferedStatisticService.h"
+#include "../Report/ReportService.h"
 
 class ContextManager {
-public:
-    HallManager *hallManager;
+private:
 
     ContextManager();
 
-    virtual ~ContextManager();
-
-private:
+    shared_ptr<HallManager> hallManager;
+    shared_ptr<StatisticService> statisticService;
+    shared_ptr<ReportService> reportService;
 
     void initialize();
 
+public:
+    static shared_ptr<ContextManager> getInstance() {
+        static shared_ptr<ContextManager> instance;
+        return instance;
+    }
+
+    shared_ptr<HallManager> getHallManager() const;
+
+    shared_ptr<StatisticService>getStatisticService() const;
+
+    const shared_ptr<ReportService> &getReportService() const;
 
 };
 

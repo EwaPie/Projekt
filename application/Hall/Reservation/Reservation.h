@@ -7,7 +7,7 @@
 
 #include <string>
 #include "ReservationData/ReservationData.h"
-#include "../../InterfacesForFutureClasses/Bill.h"
+#include "../../Report/Bill.h"
 
 using namespace std;
 
