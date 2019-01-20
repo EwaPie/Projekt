@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:component>
+    <h:panelGrid id="Menu">
+        <p:dataTable id="listaMenu" value="#{menuController.dania}" var="result"
+                     styleClass="order-table"
+                     headerClass="order-table-header"
+                     rowClasses="order-table-odd-row,order-table-even-row">
+            <p:column>
+                <p:commandButton id="przyciskUsuniecia" value="Usun"
+                                 update="Menu"
+                                 actionListener="#{menuController.usunDanie(result)}"/>
+                <p:commandButton id="edytujPrzycisk" value="Edytuj"
+                                 update="Menu"
+                                 actionListener="#{menuController.edytujDanie(result)}"/>
+            </p:column>
+            <p:column>
+                <f:facet name="header">Nazwa dania</f:facet>
+                #{result.nazwa}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Cena brutto</f:facet>
+                #{menuController.formatPrice(result.getCennaBrutto())}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Cena netto</f:facet>
+                #{menuController.formatPrice(result.cenaNetto)}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Wysokosc podatku</f:facet>
+                #{result.wysokoscPodatku}%
+            </p:column>
+
+        </p:dataTable>
+        <h:form id="danieForm">
+            <p:panel header="Dodawanie dania">
+                <h:panelGrid columns="2" cellpadding="4">
+                    <h:outputText value="Nazwa: "/>
+                    <p:inputText id="nazwa" value="#{menuController.noweDanie.nazwa}"/>
+
+                    <h:outputText value="Cenna netto: "/>
+                    <p:inputText id="cenaNetto" value="#{menuController.noweDanie.cenaNetto}"/>
+
+                    <h:outputText value="Wysokosc podatku: "/>
+                    <p:inputText id="podatek" value="#{menuController.noweDanie.wysokoscPodatku}"/>
+
+                    <p:commandButton id="submit" value="Dodaj"
+                                     update="Menu"
+                                     rendered="#{!menuController.edycja}"
+                                     actionListener="#{menuController.dodajDanie()}"/>
+
+                    <h:panelGrid id="edycja" rendered="#{menuController.edycja}">
+                        <p:commandButton id="edytuj" value="Zapisz zmiany"
+                                         update="Menu"
+                                         actionListener="#{menuController.dodajDanie()}"/>
+                        <p:commandButton id="anuluj" value="Anuluj"
+                                         update="Menu"
+                                         actionListener="#{menuController.anulujEdycje()}"/>
+                    </h:panelGrid>
+                </h:panelGrid>
+            </p:panel>
+
+            <p:dialog header="Komunikat" widgetVar="dodajDanieDialog"
+                      modal="true" resizable="false">
+                <h:panelGrid id="dodajDaniePanel" columns="1" cellpadding="4">
+                    <h:outputText value="Danie dodano"/>
+                </h:panelGrid>
+            </p:dialog>
+        </h:form>
+    </h:panelGrid>
+</ui:component>
+</html>
