@@ -2,8 +2,8 @@
 // Created by Mateusz on 31.12.2018.
 //
 
-#ifndef RESTAURANT_RESERVATIONLIST_H
-#define RESTAURANT_RESERVATIONLIST_H
+#pragma once
+
 
 #include "Model/ReservationListElement.h"
 #include "../Reservation/Reservation.h"
@@ -46,4 +46,3 @@ public:
 };
 
 
-#endif //RESTAURANT_RESERVATIONLIST_H

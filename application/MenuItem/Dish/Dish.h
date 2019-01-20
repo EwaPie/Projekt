@@ -2,8 +2,8 @@
 // Created by Mateusz on 31.12.2018.
 //
 
-#ifndef RESTAURANT_DISH_H
-#define RESTAURANT_DISH_H
+#pragma once
+
 
 #include "../MenuItem.h"
 
@@ -27,4 +27,3 @@ public:
 };
 
 
-#endif //RESTAURANT_DISH_H

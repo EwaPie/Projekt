@@ -2,8 +2,7 @@
 // Created by Mateusz on 31.12.2018.
 //
 
-#ifndef RESTAURANT_RESERVATION_H
-#define RESTAURANT_RESERVATION_H
+#pragma once
 
 #include <string>
 #include "ReservationData/ReservationData.h"
@@ -46,5 +45,3 @@ public:
     void setBill(const Bill &bill);
 };
 
-
-#endif //RESTAURANT_RESERVATION_H

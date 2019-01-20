@@ -2,8 +2,8 @@
 // Created by Mateusz on 31.12.2018.
 //
 
-#ifndef RESTAURANT_HALLMANAGER_H
-#define RESTAURANT_HALLMANAGER_H
+#pragma once
+
 
 #include <list>
 #include <iostream>
@@ -72,4 +72,3 @@ public:
 };
 
 
-#endif //RESTAURANT_HALLMANAGER_H

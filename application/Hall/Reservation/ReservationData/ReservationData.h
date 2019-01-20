@@ -2,8 +2,8 @@
 // Created by Mateusz on 31.12.2018.
 //
 
-#ifndef RESTAURANT_RESERVATIONDATA_H
-#define RESTAURANT_RESERVATIONDATA_H
+#pragma once
+
 
 #include <string>
 #include <ostream>
@@ -106,5 +106,3 @@ public:
 
 };
 
-
-#endif //RESTAURANT_RESERVATIONDATA_H

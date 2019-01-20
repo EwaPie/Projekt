@@ -2,8 +2,8 @@
 // Created by Mateusz on 31.12.2018.
 //
 
-#ifndef RESTAURANT_RESERVATIONLISTELEMENT_H
-#define RESTAURANT_RESERVATIONLISTELEMENT_H
+#pragma once
+
 
 #include "../../Reservation/Reservation.h"
 
@@ -25,4 +25,3 @@ public:
 };
 
 
-#endif //RESTAURANT_RESERVATIONLISTELEMENT_H
