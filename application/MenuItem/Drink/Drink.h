@@ -2,8 +2,7 @@
 // Created by Mateusz on 31.12.2018.
 //
 
-#ifndef RESTAURANT_DRINK_H
-#define RESTAURANT_DRINK_H
+#pragma once
 
 #include "../MenuItem.h"
 
@@ -21,5 +20,3 @@ public:
     void setIsAlcohol(bool isAlcohol);
 };
 
-
-#endif //RESTAURANT_DRINK_H

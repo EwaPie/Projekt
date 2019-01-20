@@ -1,6 +1,6 @@
 
-#ifndef RESTAURANT_HALLMANAGER_H
-#define RESTAURANT_HALLMANAGER_H
+#pragma once
+
 
 #include <list>
 #include "Model/Hall.h"
@@ -71,4 +71,3 @@ public:
 };
 
 
-#endif //RESTAURANT_HALLMANAGER_H
