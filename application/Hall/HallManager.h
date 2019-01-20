@@ -1,20 +1,19 @@
-//
-// Created by Mateusz on 31.12.2018.
-//
 
 #pragma once
 
 
 #include <list>
-#include <iostream>
 #include "Model/Hall.h"
 #include "ReservationList/ReservationList.h"
 #include "Reservation/Reservation.h"
 #include "Table/Table.h"
 
+using namespace std;
+
 class HallManager {
-public:
+private:
     Hall *hall;
+public:
 
     /**
      *
