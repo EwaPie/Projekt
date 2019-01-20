@@ -109,7 +109,7 @@ bool Bill::closeBill() {
     if (!canClose()) {
         return false;
     }
-    ContextManager::getInstance()->getStatisticService()->addEvent(make_shared<Bill>(this));
+//    ContextManager::getInstance()->getStatisticService()->addEvent(make_shared<Bill>(this));
     closed = true;
     return true;
 }

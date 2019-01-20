@@ -1,9 +1,4 @@
-//
-// Created by User on 2019-01-13.
-//
-
-#ifndef PROJEKT_BILLTYPE_H
-#define PROJEKT_BILLTYPE_H
+#pragma once
 
 #include <string>
 #include <memory>
@@ -25,4 +20,3 @@ inline string toString(const shared_ptr<BillType> &v) {
     }
 }
 
-#endif //PROJEKT_BILLTYPE_H

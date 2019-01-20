@@ -13,10 +13,10 @@ void ContextManager::initialize() {
     statisticService = shared_ptr<StatisticService>(new BufferedStatisticService());
     reportService = make_shared<ReportService>();
 
-    auto *tableList = new list<Table *>;
+    std::list<Table*> tableList;
     auto *reservationListElement = new ReservationListElement();
     auto *reservationList = new ReservationList(reservationListElement, reservationListElement);
-    Hall *hall = new Hall(tableList, reservationList);
+    Hall *hall = new Hall(&tableList, reservationList);
 
     auto *table = new Table(1, 4);
     auto *table2 = new Table(2, 2);
@@ -46,3 +46,9 @@ const shared_ptr<ReportService> &ContextManager::getReportService() const {
 }
 
 
+std::list<MenuItem> ContextManager::getMenuItems()
+{
+    std::list<MenuItem> menu;
+    menu.push_back(MenuItem("Nazwa czegos",24, 21, 0.23, 12345667));
+    return menu;
+}

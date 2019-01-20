@@ -2,8 +2,7 @@
 // Created by Mateusz on 13.01.2019.
 //
 
-#ifndef RESTAURANT_CONTEXTMANAGER_H
-#define RESTAURANT_CONTEXTMANAGER_H
+#pragma once
 
 #include "../Hall/HallManager.h"
 #include "../Hall/Table/Table.h"
@@ -24,6 +23,8 @@ private:
     shared_ptr<StatisticService> statisticService;
     shared_ptr<ReportService> reportService;
 
+    MenuItem menuItems[1] = {MenuItem("Nazwa", 20, 16, 0.23, 32542364)};
+
     void initialize();
 
 public:
@@ -38,7 +39,6 @@ public:
 
     const shared_ptr<ReportService> &getReportService() const;
 
+    std::list<MenuItem> getMenuItems();
 };
 
-
-#endif //RESTAURANT_CONTEXTMANAGER_H

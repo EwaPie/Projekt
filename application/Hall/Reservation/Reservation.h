@@ -8,8 +8,6 @@
 #include "ReservationData/ReservationData.h"
 #include "../../Report/Bill.h"
 
-using namespace std;
-
 class Reservation {
 protected:
     ReservationData reservationData;

@@ -4,10 +4,7 @@
 
 #pragma once
 
-
 #include "../../Reservation/Reservation.h"
-
-using namespace std;
 
 class ReservationListElement {
 public:
@@ -20,7 +17,7 @@ public:
      * @param Reservation reservation
      * @param ReservationListElement* pNext
      */
-    ReservationListElement(const Reservation &reservation, ReservationListElement *pNext);
+    ReservationListElement(const Reservation &reservation, ReservationListElement* pNext);
     ReservationListElement();
 };
 

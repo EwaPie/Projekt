@@ -6,7 +6,7 @@
 
 HallManager::HallManager(Hall *hall) : hall(hall) {}
 
-list<Table*> *HallManager::getTableList() {
+std::list<Table*> *HallManager::getTableList() {
     return hall->getTableList();
 }
 

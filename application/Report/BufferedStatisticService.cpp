@@ -1,9 +1,6 @@
-#include <utility>
-
 #include "BufferedStatisticService.h"
 
-//
-// Created by User on 2019-01-13.
+
 BufferedStatisticService::BufferedStatisticService() {
     maxBuffSize = DEFAULT_BUFF_SIZE;
     this->filePath = R"(.\statystyka.txt)";

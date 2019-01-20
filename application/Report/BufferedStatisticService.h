@@ -1,23 +1,18 @@
-//
-// Created by User on 2019-01-13.
-//
-
-#ifndef PROJEKT_BUFFEREDSTATISTICSERVICE_H
-#define PROJEKT_BUFFEREDSTATISTICSERVICE_H
+#pragma once
 
 #include "StatisticService.h"
 #include <fstream>
 #include <iostream>
 #include <chrono>
 
-using namespace std;
+//using namespace std;
 
 class BufferedStatisticService : public StatisticService {
 private:
     const int DEFAULT_BUFF_SIZE = 10;
     int maxBuffSize;
 
-    vector<string> buff;
+    std::vector<std::string> buff;
     string filePath;
 
 public:
@@ -26,16 +21,14 @@ public:
 
     ~BufferedStatisticService() override;
 
-    bool addEvent(shared_ptr<Bill> event) override;
+    bool addEvent(std::shared_ptr<Bill> event) override;
 
     void flush();
 
-    void setFilePath(string filePath);
+    void setFilePath(std::string filePath);
 
     void setBuffSize(int newBuffSize);
 
-    vector <string> getBufferedEvents();
+    std::vector <std::string> getBufferedEvents();
 };
 
-
-#endif //PROJEKT_BUFFEREDSTATISTICSERVICE_H

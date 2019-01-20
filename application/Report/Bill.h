@@ -2,18 +2,17 @@
 // Created by User on 2019-01-13.
 //
 
-#ifndef PROJEKT_BILL_H
-#define PROJEKT_BILL_H
+#pragma once
 
 #include <vector>
 #include <string>
 
 #include "../MenuItem/MenuItem.h"
 #include "BillType.h"
-#include "../ContextManager/ContextManager.h"
+//#include "../ContextManager/ContextManager.h"
 #include <memory>
 
-using namespace std;
+
 
 class Bill {
 private:
@@ -56,5 +55,3 @@ public:
     void refreshCurrentAmount();
 };
 
-
-#endif //PROJEKT_BILL_H

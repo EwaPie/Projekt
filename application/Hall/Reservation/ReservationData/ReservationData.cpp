@@ -4,8 +4,8 @@
 
 #include "ReservationData.h"
 
-ReservationData::ReservationData(int day, int month, int year, int hour, const string &firstName, const string &lastName,
-                                 const string &phoneNumber, int numberOfPeople) : day(day), month(month), year(year),
+ReservationData::ReservationData(int day, int month, int year, int hour, const std::string &firstName, const std::string &lastName,
+                                 const std::string &phoneNumber, int numberOfPeople) : day(day), month(month), year(year),
                                                                                   hour(hour), firstName(firstName),
                                                                                   lastName(lastName),
                                                                                   phoneNumber(phoneNumber),
@@ -35,27 +35,27 @@ void ReservationData::setYear(int year) {
     ReservationData::year = year;
 }
 
-const string &ReservationData::getFirstName() const {
+const std::string &ReservationData::getFirstName() const {
     return firstName;
 }
 
-void ReservationData::setFirstName(const string &firstName) {
+void ReservationData::setFirstName(const std::string &firstName) {
     ReservationData::firstName = firstName;
 }
 
-const string &ReservationData::getLastName() const {
+const std::string &ReservationData::getLastName() const {
     return lastName;
 }
 
-void ReservationData::setLastName(const string &lastName) {
+void ReservationData::setLastName(const std::string &lastName) {
     ReservationData::lastName = lastName;
 }
 
-const string &ReservationData::getPhoneNumber() const {
+const std::string &ReservationData::getPhoneNumber() const {
     return phoneNumber;
 }
 
-void ReservationData::setPhoneNumber(const string &phoneNumber) {
+void ReservationData::setPhoneNumber(const std::string &phoneNumber) {
     ReservationData::phoneNumber = phoneNumber;
 }
 
@@ -90,7 +90,7 @@ bool ReservationData::operator!=(const ReservationData &rhs) const {
     return !(rhs == *this);
 }
 
-ostream &operator<<(ostream &os, const ReservationData &reservationData) {
+std::ostream &operator<<(std::ostream &os, const ReservationData &reservationData) {
     os << "day: " << reservationData.day << " month: " << reservationData.month << " year: " << reservationData.year
        << " hour: " << reservationData.hour << " firstName: " << reservationData.firstName << " lastName: "
        << reservationData.lastName << " phoneNumber: " << reservationData.phoneNumber << " numberOfPeople: "
