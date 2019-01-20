@@ -5,11 +5,12 @@
 #include "ReservationData.h"
 
 ReservationData::ReservationData(int day, int month, int year, int hour, const std::string &firstName, const std::string &lastName,
-                                 const std::string &phoneNumber, int numberOfPeople) : day(day), month(month), year(year),
-                                                                                  hour(hour), firstName(firstName),
-                                                                                  lastName(lastName),
-                                                                                  phoneNumber(phoneNumber),
-                                                                                  numberOfPeople(numberOfPeople) {}
+                                 const std::string &phoneNumber, int numberOfPeople, int tableId) : day(day), month(month), year(year),
+                                                                                                    hour(hour), firstName(firstName),
+                                                                                                    lastName(lastName),
+                                                                                                    phoneNumber(phoneNumber),
+                                                                                                    numberOfPeople(numberOfPeople),
+                                                                                                    tableId(tableId){}
 
 int ReservationData::getDay() const {
     return day;
@@ -96,6 +97,20 @@ std::ostream &operator<<(std::ostream &os, const ReservationData &reservationDat
        << reservationData.lastName << " phoneNumber: " << reservationData.phoneNumber << " numberOfPeople: "
        << reservationData.numberOfPeople;
     return os;
+}
+
+int ReservationData::getTableId() const {
+    return tableId;
+}
+
+void ReservationData::setTableId(int tableId) {
+    ReservationData::tableId = tableId;
+}
+
+std::string ReservationData::toString() {
+    return "Imie: " + this->getFirstName() + " Nazwisko: " + this->getLastName() + " Data: " + std::to_string(this->getDay()) + "."
+           + std::to_string(this->getMonth()) + "." + std::to_string(this->getYear()) + " Liczba osob: " +
+           std::to_string(this->getNumberOfPeople()) + " Numer stolika: " + std::to_string(this->getTableId());
 }
 
 ReservationData::ReservationData() = default;

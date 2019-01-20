@@ -18,11 +18,16 @@ protected:
     std::string lastName;
     std::string phoneNumber;
     int numberOfPeople;
+    int tableId;
 
 public:
     int getDay() const;
 
     void setDay(int day);
+
+    int getTableId() const;
+
+    void setTableId(int tableId);
 
     int getMonth() const;
 
@@ -90,9 +95,10 @@ public:
      * @param string lastName
      * @param string phoneNumber
      * @param int numberOfPeople
+     * @param int tableId
      */
     ReservationData(int day, int month, int year, int hour, const std::string &firstName, const std::string &lastName,
-                    const std::string &phoneNumber, int numberOfPeople);
+                    const std::string &phoneNumber, int numberOfPeople, int tableId);
 
     ReservationData();
 
@@ -101,6 +107,8 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const ReservationData &reservationData);
 
     bool operator!=(const ReservationData &rhs) const;
+
+    std::string toString();
 
 };
 
