@@ -125,10 +125,13 @@ bool UserService::deleteUserById(unsigned int id)
         if(this->users[i].getId() == id)
         {
             users.erase(users.begin()+i);
-            this->pRepository->save();
+            this->pRepository->save(this->users);
             return true;
         }
     }
     return false;
 }
 
+const std::vector<User> &UserService::getUsers() const {
+    return users;
+}

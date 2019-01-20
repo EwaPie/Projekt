@@ -19,6 +19,8 @@ public:
     bool canLoggedUser(std::string name);
     bool login(std::string userName, std::string password);
 
+    const std::vector<User> &getUsers() const;
+
 private:
     static UserService* instance;
 
