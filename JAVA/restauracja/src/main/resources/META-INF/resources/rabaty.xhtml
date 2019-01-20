@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:component>
+    <h:panelGrid id="Rabat">
+        <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
+                     styleClass="order-table"
+                     headerClass="order-table-header"
+                     rowClasses="order-table-odd-row,order-table-even-row">
+            <p:column>
+                <p:commandButton id="przyciskUsuniecia" value="Usun"
+                                 update="Menu"
+                                 actionListener="#{rabatController.usunRabat(result)}"/>
+                <p:commandButton id="edytujPrzycisk" value="Edytuj"
+                                 update="Menu"
+                                 actionListener="#{rabatController.edytujDanie(result)}"/>
+            </p:column>
+            <p:column>
+                <f:facet name="header">Nazwa rabatu</f:facet>
+                #{result.nazwa}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Wartosc brutto</f:facet>
+                #{rabatController.formatPrice(result.getWartoscZnizkiNetto() * 1.23)}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Wartosc netto</f:facet>
+                #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Wysokosc podatku</f:facet>
+                23%
+            </p:column>
+
+        </p:dataTable>
+        <h:form id="rabatForm">
+            <p:panel header="Dodawanie rabatu">
+                <h:panelGrid columns="2" cellpadding="4">
+                    <h:outputText value="Nazwa: "/>
+                    <p:inputText id="nazwa" value="#{rabatController.nowyRabat.nazwa}"/>
+
+                    <h:outputText value="Wartosc netto: "/>
+                    <p:inputText id="cenaNetto" value="#{rabatController.nowyRabat.wartoscZnizkiNetto}"/>
+
+
+                    <p:commandButton id="submit" value="Dodaj"
+                                     update="Rabat"
+                                     rendered="#{!rabatController.edycja}"
+                                     actionListener="#{rabatController.dodajRabat()}"/>
+
+                    <h:panelGrid id="edycja" rendered="#{rabatController.edycja}">
+                        <p:commandButton id="edytuj" value="Zapisz zmiany"
+                                         update="Rabat"
+                                         actionListener="#{rabatController.dodajDanie()}"/>
+                        <p:commandButton id="anuluj" value="Anuluj"
+                                         update="Rabat"
+                                         actionListener="#{rabatController.anulujEdycje()}"/>
+                    </h:panelGrid>
+                </h:panelGrid>
+            </p:panel>
+
+            <p:dialog header="Komunikat" widgetVar="dodajRabatDialog"
+                      modal="true" resizable="false">
+                <h:panelGrid id="dodajRabatPanel" columns="1" cellpadding="4">
+                    <h:outputText value="Rabat dodano"/>
+                </h:panelGrid>
+            </p:dialog>
+        </h:form>
+    </h:panelGrid>
+</ui:component>
+</html>
