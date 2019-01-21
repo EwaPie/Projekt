@@ -22,3 +22,33 @@
     background: none repeat scroll 0 0 #F9F9F9;
     border-top: 1px solid #BBBBBB;
 }
+
+.stol {
+    display: inline-block;
+    height: 10%;
+    width: 15%;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headerSali {
+    text-align: center;
+    font-size: 200px;
+    font-weight: bold;
+}
+
+.nowy {
+    background-color: green;
+}
+
+.oplacony {
+    background-color: orange;
+}
+
+.zamkniety {
+    background-color: #BBBBBB;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+
+<ui:component>
+
+    <f:metadata>
+        <f:viewParam name="id" value="#{stolController.id}"/>
+        <f:event type="preRenderView" listener="#{stolController.refresh()}"/>
+    </f:metadata>
+
+    <h:head>
+        <h:outputStylesheet library="css" name="tables-style.css"/>
+    </h:head>
+
+    <h:form id="stol">
+
+        <h:panelGrid columns="2" cellpadding="10" border="1" cellspacing="1">
+            <p:button value="Wroc do sali" outcome="sala"/>
+            <p:commandButton value="Otworz nowy rachunek" actionListener="#{stolController.otworzRachunek()}"
+                             update="stol"
+            />
+            <p:outputLabel for="numer" value="Numer stolika"/>
+            <p:outputLabel id="numer" value="#{stolController.stol.id}"/>
+            <p:outputLabel for="wartosc" value="Aktualna wartosc"/>
+            <p:inputNumber id="wartosc" value="#{stolController.stol.rachunek.aktualnaWartosc()}" disabled="true"/>
+
+            <p:outputLabel value="Oplacony"/>
+            <p:commandButton value="Oplac" actionListener="#{stolController.oplac()}"
+                             update="stol"
+                             disabled="#{stolController.stol.rachunek.oplacony}"
+            />
+            <p:outputLabel value="Zamkniety"/>
+            <p:commandButton value="Zamknij" actionListener="#{stolController.zamknij()}"
+                             update="stol"
+                             disabled="#{stolController.stol.rachunek.zamkniety}"
+            />
+        </h:panelGrid>
+        <p:dataTable id="listaMenu" value="#{stolController.stol.rachunek.dania}" var="result"
+                     styleClass="order-table"
+                     headerClass="order-table-header"
+                     rowClasses="order-table-odd-row,order-table-even-row">
+            <p:column>
+                <p:commandButton id="przyciskUsuniecia" value="Usun z rachunku"
+                                 update="stol"
+                                 actionListener="#{stolController.usunZRachunku(result)}"/>
+            </p:column>
+            <p:column>
+                <f:facet name="header">Nazwa dania</f:facet>
+                #{result.nazwa}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Cena netto</f:facet>
+                #{menuController.formatPrice(result.cenaNetto)}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Wysokosc podatku</f:facet>
+                #{result.wysokoscPodatku}%
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Cena brutto</f:facet>
+                #{menuController.formatPrice(result.getCennaBrutto())}
+            </p:column>
+
+        </p:dataTable>
+
+    </h:form>
+
+</ui:component>
+</html>

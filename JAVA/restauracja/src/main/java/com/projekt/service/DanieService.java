@@ -26,6 +26,6 @@ public class DanieService {
     }
 
     public void usunDanie(Danie danie) {
-        danieRepository.usunDanie(danie);
+        danieRepository.usun(danie);
     }
 }
