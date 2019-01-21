@@ -18,4 +18,6 @@ public class OrderService {
     }
 
     public List<Order> getAll(){return orderRepository.getAll();}
+
+    public void save(Order newOrder) {this.orderRepository.save(newOrder);}
 }

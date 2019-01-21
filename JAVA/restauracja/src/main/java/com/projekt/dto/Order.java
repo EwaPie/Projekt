@@ -4,7 +4,7 @@ package com.projekt.dto;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -19,7 +19,8 @@ public class Order {
     @Builder.Default
     private BigDecimal cenaNetto = BigDecimal.ZERO;
 
-    @Builder.Default
     @Getter
-    private Set<Danie> dania;
+    @Builder.Default
+    private List<Danie> dania;
+
 }
