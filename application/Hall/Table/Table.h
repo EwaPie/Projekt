@@ -2,8 +2,7 @@
 // Created by Mateusz on 31.12.2018.
 //
 
-#ifndef RESTAURANT_TABLE_H
-#define RESTAURANT_TABLE_H
+#pragma once
 
 
 class Table {
@@ -48,4 +47,3 @@ public:
 };
 
 
-#endif //RESTAURANT_TABLE_H

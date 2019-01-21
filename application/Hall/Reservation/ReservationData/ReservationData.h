@@ -2,13 +2,11 @@
 // Created by Mateusz on 31.12.2018.
 //
 
-#ifndef RESTAURANT_RESERVATIONDATA_H
-#define RESTAURANT_RESERVATIONDATA_H
+#pragma once
+
 
 #include <string>
 #include <ostream>
-
-using namespace std;
 
 class ReservationData {
 protected:
@@ -16,15 +14,20 @@ protected:
     int month;
     int year;
     int hour;
-    string firstName;
-    string lastName;
-    string phoneNumber;
+    std::string firstName;
+    std::string lastName;
+    std::string phoneNumber;
     int numberOfPeople;
+    int tableId;
 
 public:
     int getDay() const;
 
     void setDay(int day);
+
+    int getTableId() const;
+
+    void setTableId(int tableId);
 
     int getMonth() const;
 
@@ -42,29 +45,29 @@ public:
      */
     void setYear(int year);
 
-    const string &getFirstName() const;
+    const std::string &getFirstName() const;
 
     /**
      *
      * @param string firstName
      */
-    void setFirstName(const string &firstName);
+    void setFirstName(const std::string &firstName);
 
-    const string &getLastName() const;
+    const std::string &getLastName() const;
 
     /**
      *
      * @param string lastName
      */
-    void setLastName(const string &lastName);
+    void setLastName(const std::string &lastName);
 
-    const string &getPhoneNumber() const;
+    const std::string &getPhoneNumber() const;
 
     /**
      *
      * @param string phoneNumber
      */
-    void setPhoneNumber(const string &phoneNumber);
+    void setPhoneNumber(const std::string &phoneNumber);
 
     int getNumberOfPeople() const;
 
@@ -92,19 +95,20 @@ public:
      * @param string lastName
      * @param string phoneNumber
      * @param int numberOfPeople
+     * @param int tableId
      */
-    ReservationData(int day, int month, int year, int hour, const string &firstName, const string &lastName,
-                    const string &phoneNumber, int numberOfPeople);
+    ReservationData(int day, int month, int year, int hour, const std::string &firstName, const std::string &lastName,
+                    const std::string &phoneNumber, int numberOfPeople, int tableId);
 
     ReservationData();
 
     bool operator==(const ReservationData &rhs) const;
 
-    friend ostream &operator<<(ostream &os, const ReservationData &reservationData);
+    friend std::ostream &operator<<(std::ostream &os, const ReservationData &reservationData);
 
     bool operator!=(const ReservationData &rhs) const;
 
+    std::string toString();
+
 };
 
-
-#endif //RESTAURANT_RESERVATIONDATA_H

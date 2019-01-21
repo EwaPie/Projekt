@@ -1,31 +1,28 @@
+#pragma once
 
-#ifndef RESTAURANT_HALLMANAGER_H
-#define RESTAURANT_HALLMANAGER_H
 
 #include <list>
 #include "Model/Hall.h"
-#include "ReservationList/ReservationList.h"
 #include "Reservation/Reservation.h"
 #include "Table/Table.h"
 
-using namespace std;
 
 class HallManager {
 private:
-    Hall *hall;
+    Hall * hall;
 public:
 
     /**
      *
-     * @param Hall** hall
+     * @param Hall * hall
      */
-    explicit HallManager(Hall *hall);
+    explicit HallManager(Hall * hall);
 
     /**
      *
      * @return list<Table>
      */
-    list<Table*> *getTableList();
+    std::list<Table*> *getTableList();
 
     /**
      *
@@ -46,18 +43,19 @@ public:
      * @param Reservation** reservation
      * @return int
      */
-    int addReservation(Reservation *reservation);
+    int addReservation(Reservation * reservation);
 
     /**
      *
      * @param Reservation** reservation
      * @return int
      */
-    int deleteReservation(Reservation **reservation);
+    int deleteReservation(Reservation ** reservation);
 
     /**
      *
      * @return Hall*
+using namespace std;
      */
     Hall* getHall();
 
@@ -71,4 +69,3 @@ public:
 };
 
 
-#endif //RESTAURANT_HALLMANAGER_H

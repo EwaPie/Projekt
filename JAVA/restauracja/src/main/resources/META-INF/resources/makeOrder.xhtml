@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:component>
+    <h:panelGrid id="MakeOrder">
+        <h:form id="MakeOrderForm">
+            <p:dataTable id="makeOrderTable" value="#{menuController.dania}" var="result"
+                         styleClass="order-table"
+                         headerClass="order-table-header"
+                         rowClasses="order-table-odd-row,order-table-even-row">
+                <p:column>
+                    <p:commandButton id="addToOrderButton" update="MakeOrder" actionListener="#{orderController.addToOrder(result)}" value="Dodaj do zamówienia" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Nazwa dania</f:facet>
+                    #{result.nazwa}
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Cena brutto</f:facet>
+                    #{menuController.formatPrice(result.getCennaBrutto())}
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Cena netto</f:facet>
+                    #{menuController.formatPrice(result.cenaNetto)}
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Wysokosc podatku</f:facet>
+                    #{result.wysokoscPodatku}%
+                </p:column>
+            </p:dataTable>
+
+            <p:dataTable id="listaItemow" value="#{orderController.items}" var="result"
+                         styleClass="order-table"
+                         headerClass="order-table-header"
+                         rowClasses="order-table-odd-row,order-table-even-row">
+                <p:column>
+                    <p:commandButton id="przyciskUsuniecia" value="Usun"
+                                     update="MakeOrder"
+                                     actionListener="#{orderController.usunItem(result)}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Nazwa dania</f:facet>
+                    #{result.nazwa}
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Cena brutto</f:facet>
+                    #{menuController.formatPrice(result.getCennaBrutto())}
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Cena netto</f:facet>
+                    #{menuController.formatPrice(result.cenaNetto)}
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Wysokosc podatku</f:facet>
+                    #{result.wysokoscPodatku}%
+                </p:column>
+            </p:dataTable>
+
+            <p:commandButton id="przyciskSkladaniaZamowienia" value="Złóż zamówienie"
+                             update="MakeOrder"
+                             actionListener="#{orderController.makeOrder()}"/>
+
+        </h:form>
+
+        <ui:include id="order" src="order.xhtml"/>
+    </h:panelGrid>
+</ui:component>
+</html>

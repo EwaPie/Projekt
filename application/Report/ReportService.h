@@ -1,12 +1,7 @@
-//
-// Created by User on 2019-01-16.
-//
-
-#ifndef PROJEKT_REPORTSERVICE_H
-#define PROJEKT_REPORTSERVICE_H
+#pragma once
 
 #include <string>
-#include <ReportType.h>
+#include "ReportType.h"
 #include <fstream>
 
 using namespace std;
@@ -22,5 +17,3 @@ public:
     string getIncomeReport(long from, long to) const;
 };
 
-
-#endif //PROJEKT_REPORTSERVICE_H

@@ -4,7 +4,7 @@
 
 #include "Hall.h"
 
-Hall::Hall(list<Table*> *tableList, ReservationList *pReservationList) : tableList(tableList),
+Hall::Hall(std::list<Table*> *tableList, ReservationList *pReservationList) : tableList(tableList),
                                                                                pReservationList(pReservationList) {}
 
 Hall::~Hall() {
@@ -15,11 +15,11 @@ Hall::~Hall() {
     delete tableList;
 }
 
-list<Table*> *Hall::getTableList() {
+std::list<Table*> *Hall::getTableList() {
     return tableList;
 }
 
-void Hall::setTableList(list<Table*> *tableList) {
+void Hall::setTableList(std::list<Table*> *tableList) {
     Hall::tableList = tableList;
 }
 

@@ -1,19 +1,17 @@
 //
 // Created by User on 2019-01-13.
 //
-
-#ifndef PROJEKT_STATISTICSERVICE_H
-#define PROJEKT_STATISTICSERVICE_H
+#pragma once
 
 #include "Bill.h"
 #include <memory>
 
 class StatisticService {
 public:
+    StatisticService(){}
+
     virtual bool addEvent(shared_ptr<Bill> event) = 0;
 
-    virtual ~StatisticService() = 0;
+    virtual ~StatisticService(){}
 };
 
-
-#endif //PROJEKT_STATISTICSERVICE_H

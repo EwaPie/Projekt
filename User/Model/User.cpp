@@ -30,7 +30,7 @@ const std::string &User::getPassword() const {
     return password;
 }
 
-//User::User(const std::string &userName, const std::string &password) : userName(userName), password(password) {}
+User::User(const std::string &userName, const std::string &password) : userName(userName), password(password) {}
 
 bool User::hasRole(const std::string &role)
 {

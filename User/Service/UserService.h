@@ -16,8 +16,10 @@ public:
     static UserService* getInstance();
     void addUser(User &user) noexcept(false);
     bool deleteUserById(unsigned int id);
-    bool canLoggedUser(std::string name) noexcept;
+    bool canLoggedUser(std::string name);
     bool login(std::string userName, std::string password);
+
+    const std::vector<User> &getUsers() const;
 
 private:
     static UserService* instance;

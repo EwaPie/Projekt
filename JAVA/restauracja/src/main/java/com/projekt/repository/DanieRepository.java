@@ -17,6 +17,7 @@ public class DanieRepository {
     public DanieRepository() {
         this.memory = new HashSet<>();
         memory.add(Danie.builder().nazwa("Jajecznica").cenaNetto(BigDecimal.TEN).wysokoscPodatku(8).build());
+        memory.add(Danie.builder().nazwa("Herbata").cenaNetto(BigDecimal.TEN).wysokoscPodatku(8).build());
     }
 
     public void save(Danie danie) {

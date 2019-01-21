@@ -2,8 +2,8 @@
 // Created by Mateusz on 31.12.2018.
 //
 
-#ifndef RESTAURANT_MENUITEM_H
-#define RESTAURANT_MENUITEM_H
+#pragma once
+
 
 #include <iostream>
 #include <string>
@@ -53,5 +53,3 @@ public:
     void setRealizationTime(int realizationTime);
 };
 
-
-#endif //RESTAURANT_MENUITEM_H
