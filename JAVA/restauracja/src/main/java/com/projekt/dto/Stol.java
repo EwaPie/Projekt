@@ -20,6 +20,6 @@ public class Stol {
     private Integer iloscMiejsc = 5;
 
     @Builder.Default
-    private Rachunek rachunek = Rachunek.builder().build();
+    private Order rachunek = Order.builder().build();
 
 }

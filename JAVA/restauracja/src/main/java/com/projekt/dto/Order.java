@@ -1,9 +1,11 @@
 package com.projekt.dto;
 
 
+import com.projekt.enums.TypRachunku;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,6 +23,18 @@ public class Order {
 
     @Getter
     @Builder.Default
-    private List<Danie> dania;
+    private List<Danie> dania = new ArrayList<>();
+
+    @Builder.Default
+    private boolean oplacony = false;
+    @Builder.Default
+    private boolean zamkniety = false;
+
+    @Builder.Default
+    private TypRachunku typRachunku = TypRachunku.PARAGON;
+
+    public BigDecimal aktualnaWartosc() {
+        return dania.stream().map(Danie::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+    }
 
 }

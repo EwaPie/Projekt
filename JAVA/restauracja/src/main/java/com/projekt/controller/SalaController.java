@@ -1,6 +1,6 @@
 package com.projekt.controller;
 
-import com.projekt.dto.Rachunek;
+import com.projekt.dto.Order;
 import com.projekt.dto.Stol;
 import com.projekt.service.StolService;
 import lombok.Getter;
@@ -31,15 +31,15 @@ public class SalaController {
         stoly = stolService.pobierzWszystkieStoly();
     }
 
-    public String zamknietyClass(Rachunek rachunek) {
+    public String zamknietyClass(Order rachunek) {
         return rachunek.isZamkniety() ? ", zamkniety" : "";
     }
 
-    public String oplaconyClass(Rachunek rachunek) {
+    public String oplaconyClass(Order rachunek) {
         return rachunek.isOplacony() ? ", oplacony" : "";
     }
 
-    public String nowyClass(Rachunek rachunek) {
+    public String nowyClass(Order rachunek) {
         return !rachunek.isOplacony() && !rachunek.isZamkniety() ? ", nowy" : "";
     }
 }

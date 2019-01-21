@@ -1,7 +1,7 @@
 package com.projekt.repository;
 
 import com.projekt.dto.Danie;
-import com.projekt.dto.Rachunek;
+import com.projekt.dto.Order;
 import com.projekt.dto.Stol;
 
 import javax.inject.Named;
@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Named
 public class StolRepository {
@@ -20,7 +19,7 @@ public class StolRepository {
         this.memory = new ArrayList<>();
         Danie danie = Danie.builder().nazwa("Hej he").cenaNetto(BigDecimal.TEN).wysokoscPodatku(23).build();
         Danie danie1 = Danie.builder().nazwa("Hej he").cenaNetto(BigDecimal.ONE).wysokoscPodatku(8).build();
-        Rachunek rachunek = Rachunek.builder().dania(new ArrayList<>(Arrays.asList(danie, danie1))).build();
+        Order rachunek = Order.builder().dania(new ArrayList<>(Arrays.asList(danie, danie1))).build();
         memory.add(Stol.builder().rachunek(rachunek).build());
         memory.add(Stol.builder().build());
         memory.add(Stol.builder().build());

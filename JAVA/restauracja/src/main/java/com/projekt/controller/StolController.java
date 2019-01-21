@@ -1,7 +1,7 @@
 package com.projekt.controller;
 
 import com.projekt.dto.Danie;
-import com.projekt.dto.Rachunek;
+import com.projekt.dto.Order;
 import com.projekt.dto.Stol;
 import com.projekt.service.DanieService;
 import com.projekt.service.StolService;
@@ -54,7 +54,7 @@ public class StolController {
     }
 
     public void otworzRachunek() {
-        stol.setRachunek(Rachunek.builder().build());
+        stol.setRachunek(Order.builder().build());
     }
 
     public void oplac() {
