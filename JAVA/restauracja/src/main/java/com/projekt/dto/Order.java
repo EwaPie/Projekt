@@ -33,8 +33,17 @@ public class Order {
     @Builder.Default
     private TypRachunku typRachunku = TypRachunku.PARAGON;
 
+    @Setter
+    @Builder.Default
+    private Rabat rabat = null;
+
     public BigDecimal aktualnaWartosc() {
-        return dania.stream().map(Danie::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+        BigDecimal wartosc = dania.stream().map(Danie::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+        if(rabat != null)
+        {
+            wartosc = wartosc.subtract(rabat.getWartoscZnizkiNetto());
+        }
+        return wartosc;
     }
 
 }

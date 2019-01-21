@@ -6,6 +6,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="index.xhtml">
 <ui:component>
     <h:panelGrid id="Rabat">
         <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
@@ -14,10 +15,10 @@
                      rowClasses="order-table-odd-row,order-table-even-row">
             <p:column>
                 <p:commandButton id="przyciskUsuniecia" value="Usun"
-                                 update="Menu"
+                                 update="Rabat"
                                  actionListener="#{rabatController.usunRabat(result)}"/>
                 <p:commandButton id="edytujPrzycisk" value="Edytuj"
-                                 update="Menu"
+                                 update="Rabat"
                                  actionListener="#{rabatController.edytujDanie(result)}"/>
             </p:column>
             <p:column>
@@ -76,4 +77,5 @@
         </h:form>
     </h:panelGrid>
 </ui:component>
+</ui:composition>
 </html>

@@ -1,9 +1,6 @@
 package com.projekt.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
 import java.math.BigDecimal;
@@ -17,6 +14,8 @@ import java.util.UUID;
 public class Rabat {
 
     private final String id = UUID.randomUUID().toString();
+
+    @Getter
     private String nazwa;
     @Builder.Default
     private BigDecimal wartoscZnizkiNetto = BigDecimal.ZERO;

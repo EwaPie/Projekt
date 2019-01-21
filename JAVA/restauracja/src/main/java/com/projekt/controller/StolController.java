@@ -42,6 +42,8 @@ public class StolController {
         stol = stolService.getById(id);
     }
 
+    public void dodajDoRachunku(Danie danie){stol.getRachunek().getDania().add(danie);}
+
     public void usunZRachunku(Danie danie) {
         stol.getRachunek().getDania().removeIf(d -> d.equals(danie));
     }
@@ -64,4 +66,6 @@ public class StolController {
     public void zamknij() {
         stol.getRachunek().setZamkniety(true);
     }
+
+    public void usunRabat(){stol.getRachunek().setRabat(null);}
 }

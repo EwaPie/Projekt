@@ -5,6 +5,7 @@ import com.projekt.service.RabatService;
 import lombok.Getter;
 import lombok.Setter;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 import java.math.BigDecimal;
@@ -30,7 +31,7 @@ public class RabatController
     @Setter
     private boolean edycja = false;
 
-
+    @Inject
     public RabatController(RabatService rabatService) {
         this.rabatService = rabatService;
         nowyRabat = new Rabat();
