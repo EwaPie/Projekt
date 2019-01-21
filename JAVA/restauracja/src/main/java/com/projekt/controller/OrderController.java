@@ -3,7 +3,6 @@ package com.projekt.controller;
 
 import com.projekt.dto.Danie;
 import com.projekt.dto.Order;
-import com.projekt.repository.OrderRepository;
 import com.projekt.service.OrderService;
 import lombok.Getter;
 import lombok.Setter;
@@ -60,7 +59,7 @@ public class OrderController {
         newOrder.setCenaNettoPoRabacie(sumaNetto);
         newOrder.setDania(items);
         orderService.save(newOrder);
-        items.clear();
+        items = new ArrayList<>();
 
         refresh();
     }
