@@ -23,7 +23,7 @@ public class Order {
 
     @Getter
     @Builder.Default
-    private List<Danie> dania = new ArrayList<>();
+    private List<DanieWrapper> dania = new ArrayList<>();
 
     @Builder.Default
     private boolean oplacony = false;
@@ -38,18 +38,55 @@ public class Order {
     private Rabat rabat = null;
 
     public BigDecimal aktualnaWartosc() {
-        BigDecimal wartosc = dania.stream().map(Danie::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
-        if(rabat != null)
-        {
+        BigDecimal wartosc = dania.stream().map(DanieWrapper::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+        if (rabat != null) {
             wartosc = wartosc.subtract(rabat.getWartoscZnizkiNetto());
         }
         return wartosc;
     }
 
-    public BigDecimal wartoscBezRabatu()
-    {
-        return dania.stream().map(Danie::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+    public BigDecimal wartoscBezRabatu() {
+        return dania.stream().map(DanieWrapper::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
     }
 
+    public Order dodajDanie(Danie danie) {
+        DanieWrapper wrapper = dania
+                .stream()
+                .filter(d -> d.getDanie().equals(danie))
+                .findAny()
+                .orElseGet(() -> {
+                    DanieWrapper w = new DanieWrapper(danie);
+                    dania.add(w);
+                    return w;
+                });
+
+        wrapper.setCount(wrapper.getCount() + 1);
+        return this;
+    }
+
+    public static class OrderBuilder {
+        public OrderBuilder dodajDanie(Danie danie) {
+            if (dania == null) {
+                dania = new ArrayList<>();
+            }
+            DanieWrapper wrapper = dania
+                    .stream()
+                    .filter(d -> d.getDanie().equals(danie))
+                    .findAny()
+                    .orElseGet(() -> {
+                        DanieWrapper w = new DanieWrapper(danie);
+                        dania.add(w);
+                        return w;
+                    });
+
+            wrapper.setCount(wrapper.getCount() + 1);
+            return this;
+        }
+
+        public OrderBuilder dodajDania(List<Danie> dania) {
+            dania.forEach(this::dodajDanie);
+            return this;
+        }
+    }
 
 }

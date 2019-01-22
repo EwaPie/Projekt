@@ -35,60 +35,28 @@
             <p:outputLabel for="wartosc" value="Aktualna wartosc"/>
             <p:inputNumber id="wartosc" value="#{stolController.stol.rachunek.aktualnaWartosc()}" disabled="true"/>
 
-            <p:outputLabel value="Oplacony"/>
             <p:commandButton value="Oplac" actionListener="#{stolController.oplac()}"
                              update="stol"
                              disabled="#{stolController.stol.rachunek.oplacony}"
             />
-            <p:outputLabel value="Zamkniety"/>
             <p:commandButton value="Zamknij" actionListener="#{stolController.zamknij()}"
                              update="stol"
                              disabled="#{stolController.stol.rachunek.zamkniety}"
             />
 
-            <p:outputLabel value="Rabat"/>
-            <p:commandButton value="Usun #{stolController.stol.rachunek.rabat.getNazwa()}" actionListener="#{stolController.usunRabat()}"
-                             update="stol"
-                             disabled="#{stolController.stol.rachunek.rabat == null}"
-            />
+            <p:commandButton value="Dodaj rabat" actionListener="#{stolController.dodajRabat()}" update="stol"/>
+            <p:inputText placeholder="Rabat" value="#{stolController.rabatNazwa}"/>
         </h:panelGrid>
 
-        <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
-                     styleClass="order-table"
-                     headerClass="order-table-header"
-                     rowClasses="order-table-odd-row,order-table-even-row">
-            <p:column>
-                <p:commandButton id="nalozRabat" value="Naloz Rabat"
-                                 update="stol"
-                                 actionListener="#{stolController.stol.rachunek.setRabat(result)}"/>
-            </p:column>
-            <p:column>
-                <f:facet name="header">Nazwa rabatu</f:facet>
-                #{result.nazwa}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Wartosc brutto</f:facet>
-                #{rabatController.formatPrice(result.getWartoscZnizkiNetto() * 1.23)}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Wartosc netto</f:facet>
-                #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Wysokosc podatku</f:facet>
-                23%
-            </p:column>
-
-        </p:dataTable>
         <p:dataTable id="makeOrderTable" value="#{menuController.dania}" var="result"
                      styleClass="order-table"
+                     style="margin: 1%"
                      headerClass="order-table-header"
                      rowClasses="order-table-odd-row,order-table-even-row">
             <p:column>
-                <p:commandButton id="addToOrderButton" update="stol" actionListener="#{stolController.dodajDoRachunku(result)}" value="Dodaj do zamówienia" />
+                <p:commandButton id="addToOrderButton" update="stol"
+                                 actionListener="#{stolController.dodajDoRachunku(result)}"
+                                 value="Dodaj do zamówienia"/>
             </p:column>
             <p:column>
                 <f:facet name="header">Nazwa dania</f:facet>
@@ -100,44 +68,39 @@
                 #{menuController.formatPrice(result.getCennaBrutto())}
             </p:column>
 
-            <p:column>
-                <f:facet name="header">Cena netto</f:facet>
-                #{menuController.formatPrice(result.cenaNetto)}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Wysokosc podatku</f:facet>
-                #{result.wysokoscPodatku}%
-            </p:column>
         </p:dataTable>
 
-        <p:dataTable id="listaMenu" value="#{stolController.stol.rachunek.dania}" var="result"
+        <p:dataTable id="listaMenu" value="#{stolController.stol.rachunek.dania}" var="d"
                      styleClass="order-table"
                      headerClass="order-table-header"
                      rowClasses="order-table-odd-row,order-table-even-row">
             <p:column>
-                <p:commandButton id="przyciskUsuniecia" value="Usun z rachunku"
+                <p:commandButton id="przyciskUsuniecia" value="Usun"
                                  update="stol"
-                                 actionListener="#{stolController.usunZRachunku(result)}"/>
+                                 actionListener="#{stolController.usunZRachunku(d)}"/>
+
+                <p:commandButton id="usun1" value="Usun jedno danie"
+                                 update="stol"
+                                 actionListener="#{stolController.usunJeden(d)}"/>
             </p:column>
             <p:column>
                 <f:facet name="header">Nazwa dania</f:facet>
-                #{result.nazwa}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Cena netto</f:facet>
-                #{menuController.formatPrice(result.cenaNetto)}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Wysokosc podatku</f:facet>
-                #{result.wysokoscPodatku}%
+                #{d.danie.nazwa}
             </p:column>
 
             <p:column>
                 <f:facet name="header">Cena brutto</f:facet>
-                #{menuController.formatPrice(result.getCennaBrutto())}
+                #{menuController.formatPrice(d.danie.getCennaBrutto())}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Ilosc</f:facet>
+                #{d.count}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Razem</f:facet>
+                #{menuController.formatPrice(d.getCennaBruttoRazem())}
             </p:column>
 
         </p:dataTable>
