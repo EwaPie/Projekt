@@ -6,8 +6,13 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-<ui:composition template="index.xhtml">
-<ui:component>
+<h:head>
+    <h:outputStylesheet library="css" name="tables-style.css"/>
+</h:head>
+
+<h:body>
+    <ui:include src="menuBar.xhtml"/>
+
     <h:panelGrid id="Rabat">
         <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
                      styleClass="order-table"
@@ -19,7 +24,7 @@
                                  actionListener="#{rabatController.usunRabat(result)}"/>
                 <p:commandButton id="edytujPrzycisk" value="Edytuj"
                                  update="Rabat"
-                                 actionListener="#{rabatController.edytujDanie(result)}"/>
+                                 actionListener="#{rabatController.edytujRabat(result)}"/>
             </p:column>
             <p:column>
                 <f:facet name="header">Nazwa rabatu</f:facet>
@@ -27,18 +32,13 @@
             </p:column>
 
             <p:column>
-                <f:facet name="header">Wartosc brutto</f:facet>
-                #{rabatController.formatPrice(result.getWartoscZnizkiNetto() * 1.23)}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Wartosc netto</f:facet>
+                <f:facet name="header">Kwota netto rabatu</f:facet>
                 #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
             </p:column>
 
             <p:column>
-                <f:facet name="header">Wysokosc podatku</f:facet>
-                23%
+                <f:facet name="header">Wartosc procentowa rabatu</f:facet>
+                #{result.wartoscProcentowa}
             </p:column>
 
         </p:dataTable>
@@ -48,8 +48,11 @@
                     <h:outputText value="Nazwa: "/>
                     <p:inputText id="nazwa" value="#{rabatController.nowyRabat.nazwa}"/>
 
-                    <h:outputText value="Wartosc netto: "/>
-                    <p:inputText id="cenaNetto" value="#{rabatController.nowyRabat.wartoscZnizkiNetto}"/>
+                    <h:outputText value="Kwota netto rabatu:"/>
+                    <p:inputNumber id="cenaNetto" value="#{rabatController.nowyRabat.wartoscZnizkiNetto}"/>
+
+                    <h:outputText value="Wartosc procentowa rabatu:"/>
+                    <p:inputNumber id="procentowo" value="#{rabatController.nowyRabat.wartoscProcentowa}"/>
 
 
                     <p:commandButton id="submit" value="Dodaj"
@@ -60,7 +63,7 @@
                     <h:panelGrid id="edycja" rendered="#{rabatController.edycja}">
                         <p:commandButton id="edytuj" value="Zapisz zmiany"
                                          update="Rabat"
-                                         actionListener="#{rabatController.dodajDanie()}"/>
+                                         actionListener="#{rabatController.dodajRabat()}"/>
                         <p:commandButton id="anuluj" value="Anuluj"
                                          update="Rabat"
                                          actionListener="#{rabatController.anulujEdycje()}"/>
@@ -76,6 +79,5 @@
             </p:dialog>
         </h:form>
     </h:panelGrid>
-</ui:component>
-</ui:composition>
+</h:body>
 </html>
