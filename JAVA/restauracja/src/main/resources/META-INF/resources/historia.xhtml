@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="index.xhtml">
+<ui:component>
+    <h:panelGrid id="Historia">
+        <p:dataTable id="listHistori" value="#{historyController.history}" var="result"
+                     styleClass="order-table"
+                     headerClass="order-table-header"
+                     rowClasses="order-table-odd-row,order-table-even-row">
+            <p:column>
+                <f:facet name="header">Dla stolika</f:facet>
+                #{result.id}
+            </p:column>
+            <p:column>
+                <f:facet name="header">Wartosc netto</f:facet>
+                #{result.rachunek.aktualnaWartosc()}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Wartosc netto po rabacie</f:facet>
+                #{result.rachunek.wartoscBezRabatu()}
+            </p:column>
+
+        </p:dataTable>
+
+       </h:panelGrid>
+</ui:component>
+</ui:composition>
+</html>

@@ -14,6 +14,8 @@ public class OrderRepository {
 
     private final List<Order> orders;
 
+
+
     @Inject
     public OrderRepository(DanieRepository danieRepository) {
         orders = new ArrayList<>();
@@ -21,14 +23,13 @@ public class OrderRepository {
                 .builder()
                 .cenaNettoPoRabacie(new BigDecimal(20))
                 .cenaNetto(new BigDecimal(30))
-                .dania(danieRepository.getAll())
+                .dodajDania(danieRepository.getAll())
                 .build());
     }
 
     public List<Order> getAll(){return orders;}
 
     public void save(Order order){
-        System.out.println(order.getDania().size());
         orders.add(order);
     }
 }

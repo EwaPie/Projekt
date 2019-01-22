@@ -24,7 +24,6 @@ public class OrderController {
     @Setter
     private List<Danie> items;
 
-
     @Getter
     private List<Order> orders;
 
@@ -51,13 +50,9 @@ public class OrderController {
 
     public void makeOrder()
     {
-        BigDecimal sumaNetto = new BigDecimal(0);
         for (Danie danie: items) {
-            sumaNetto = sumaNetto.add(danie.getCenaNetto());
+            newOrder.dodajDanie(danie);
         }
-        newOrder.setCenaNetto(sumaNetto);
-        newOrder.setCenaNettoPoRabacie(sumaNetto);
-        newOrder.setDania(items);
         orderService.save(newOrder);
         items = new ArrayList<>();
 

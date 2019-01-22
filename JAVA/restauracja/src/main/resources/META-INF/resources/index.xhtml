@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTDs XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-    <h:outputStylesheet name="tables-style.css"/>
+    <h:outputStylesheet library="css" name="tables-style.css"/>
 </h:head>
 
 <h:body>
-    <ui:include id="makeOrder" src="makeOrder.xhtml"/>
-
-    <!--<ui:include id="menu" src="menu.xhtml"/>-->
-
-    <!--<ui:include id="rabat" src="rabaty.xhtml"/>-->
+    <ui:include src="menuBar.xhtml"/>
+    <ui:include src="sala.xhtml"/>
 </h:body>
 </html>

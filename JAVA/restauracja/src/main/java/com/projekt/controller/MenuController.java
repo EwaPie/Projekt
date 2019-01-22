@@ -32,7 +32,7 @@ public class MenuController {
     @Inject
     public MenuController(DanieService danieService) {
         this.danieService = danieService;
-        noweDanie = new Danie();
+        noweDanie = Danie.builder().build();
         refresh();
     }
 
@@ -55,7 +55,7 @@ public class MenuController {
 
     public void dodajDanie() {
         danieService.dodajDanie(noweDanie);
-        noweDanie = new Danie();
+        noweDanie = Danie.builder().build();
         if (edycja) {
             edycja = false;
         }
@@ -74,7 +74,7 @@ public class MenuController {
     }
 
     public void anulujEdycje() {
-        noweDanie = new Danie();
+        noweDanie = Danie.builder().build();
         edycja = false;
     }
 }

@@ -28,7 +28,7 @@ public class DanieRepository {
         return new ArrayList<>(memory);
     }
 
-    public void usunDanie(Danie danie) {
+    public void usun(Danie danie) {
         memory.removeIf(entity -> entity.equals(danie));
     }
 }

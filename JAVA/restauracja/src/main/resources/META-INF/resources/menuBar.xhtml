@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTDs XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<ui:component>
+    <h:form>
+        <p:growl id="messages"/>
+
+        <p:menubar>
+            <p:submenu label="Sala" icon="pi pi-file">
+                <p:menuitem value="Sala" outcome="index"/>
+                <p:submenu label="Stoly" icon="pi pi-file">
+                    <c:forEach items="#{menuBarController.stoly}" var="stol">
+                        <p:menuitem value="Stol #{stol.id}" outcome="stol.xhtml?id=#{stol.id}"/>
+                    </c:forEach>
+                </p:submenu>
+            </p:submenu>
+
+            <p:submenu label="Admin" icon="pi pi-file">
+                <p:menuitem value="Menu" outcome="menu"/>
+                <p:menuitem value="Rabaty" outcome="rabaty"/>
+            </p:submenu>
+
+            <f:facet name="options">
+                <p:commandButton type="button" value="Logout" icon="pi pi-home"/>
+            </f:facet>
+        </p:menubar>
+    </h:form>
+</ui:component>
+</html>

@@ -6,7 +6,12 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-<ui:component>
+<h:head>
+    <h:outputStylesheet library="css" name="tables-style.css"/>
+</h:head>
+
+<h:body>
+    <ui:include src="menuBar.xhtml"/>
     <h:panelGrid id="Menu">
         <p:dataTable id="listaMenu" value="#{menuController.dania}" var="result"
                      styleClass="order-table"
@@ -77,5 +82,5 @@
             </p:dialog>
         </h:form>
     </h:panelGrid>
-</ui:component>
+</h:body>
 </html>
