@@ -1,7 +1,7 @@
 package com.projekt.service;
 
 import com.projekt.dto.Stol;
-import com.projekt.repository.StolHistoryRepository;
+import com.projekt.repository.HistoryRepository;
 import com.projekt.repository.StolRepository;
 
 import javax.inject.Inject;
@@ -12,10 +12,10 @@ import java.util.List;
 public class StolService {
 
     private final StolRepository stolRepository;
-    private final StolHistoryRepository stolHistory;
+    private final HistoryRepository stolHistory;
 
     @Inject
-    public StolService(StolRepository stolRepository, StolHistoryRepository stolHistoryRepository) {
+    public StolService(StolRepository stolRepository, HistoryRepository stolHistoryRepository) {
         this.stolRepository = stolRepository;
         this.stolHistory = stolHistoryRepository;
     }
@@ -35,8 +35,4 @@ public class StolService {
     public Stol getById(Integer id) {
         return stolRepository.getById(id);
     }
-
-    public void dodajDoHistori(Stol stol) {stolHistory.save(stol);}
-
-    public List<Stol> pobierzHistorie(){return stolHistory.pobierzHistorie();}
 }
