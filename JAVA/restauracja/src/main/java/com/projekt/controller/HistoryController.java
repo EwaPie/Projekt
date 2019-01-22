@@ -1,8 +1,8 @@
 package com.projekt.controller;
 
 
-import com.projekt.dto.Stol;
-import com.projekt.service.StolService;
+import com.projekt.dto.Historia;
+import com.projekt.repository.HistoryRepository;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,17 +15,17 @@ import java.util.List;
 @ViewScoped
 public class HistoryController {
 
-    private final StolService stolService;
+    private final HistoryRepository historyRepository;
 
     @Getter
     @Setter
-    private List<Stol> history;
+    private List<Historia> history;
 
     @Inject
-    public HistoryController(StolService stolService) {
-        this.stolService = stolService;
+    public HistoryController(HistoryRepository historyRepository) {
+        this.historyRepository = historyRepository;
         refresh();
     }
 
-    public void refresh(){history = stolService.pobierzHistorie();}
+    public void refresh(){history = historyRepository.pobierzHistorie();}
 }

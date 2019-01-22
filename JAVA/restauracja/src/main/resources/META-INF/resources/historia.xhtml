@@ -15,16 +15,16 @@
                      rowClasses="order-table-odd-row,order-table-even-row">
             <p:column>
                 <f:facet name="header">Dla stolika</f:facet>
-                #{result.id}
+                #{result.stol.id}
             </p:column>
             <p:column>
                 <f:facet name="header">Wartosc netto</f:facet>
-                #{result.rachunek.aktualnaWartosc()}
+                #{result.zamowienie.cenaNetto}
             </p:column>
 
             <p:column>
                 <f:facet name="header">Wartosc netto po rabacie</f:facet>
-                #{result.rachunek.wartoscBezRabatu()}
+                #{result.zamowienie.cenaNettoPoRabacie}
             </p:column>
 
         </p:dataTable>

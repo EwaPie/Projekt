@@ -45,11 +45,4 @@ public class Order {
         }
         return wartosc;
     }
-
-    public BigDecimal wartoscBezRabatu()
-    {
-        return dania.stream().map(Danie::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
-    }
-
-
 }
