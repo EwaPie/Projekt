@@ -35,12 +35,12 @@ public class Order {
 
     @Setter
     @Builder.Default
-    private Rabat rabat = null;
+    private Rabat rabat = new Rabat();
 
     public BigDecimal aktualnaWartosc() {
         BigDecimal wartosc = dania.stream().map(DanieWrapper::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
         if (rabat != null) {
-            wartosc = wartosc.subtract(rabat.getWartoscZnizkiNetto());
+            wartosc = wartosc.subtract(rabat.nalozRabat(wartosc));
         }
         return wartosc;
     }

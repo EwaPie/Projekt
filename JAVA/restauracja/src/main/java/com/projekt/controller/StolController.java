@@ -14,15 +14,12 @@ import com.projekt.service.StolService;
 import lombok.Getter;
 import lombok.Setter;
 import org.primefaces.PrimeFaces;
-import org.springframework.util.StringUtils;
 
 import javax.faces.application.FacesMessage;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Named
 public class StolController {
@@ -90,18 +87,14 @@ public class StolController {
 
         stol.getRachunek().setOplacony(true);
         Order zamownie = stol.getRachunek();
-        BigDecimal wartoscZamowienia = (zamownie
+        BigDecimal wartoscZamowienia = zamownie
                 .getDania()
                 .stream()
                 .map(DanieWrapper::getCennaBrutto)
                 .reduce(BigDecimal::add)
-                .orElse(BigDecimal.ZERO));
+                .orElse(BigDecimal.ZERO);
         zamownie.setCenaNetto(wartoscZamowienia);
-        if (zamownie.getRabat() == null) {
-            zamownie.setCenaNettoPoRabacie(wartoscZamowienia);
-        } else {
-            zamownie.setCenaNettoPoRabacie(wartoscZamowienia.subtract(zamownie.getRabat().getWartoscZnizkiNetto()));
-        }
+        zamownie.setCenaNettoPoRabacie(zamownie.getRabat().nalozRabat(zamownie.getCenaNetto()));
 
         stol.setRachunek(zamownie);
     }
