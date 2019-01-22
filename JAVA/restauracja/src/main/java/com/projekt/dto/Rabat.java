@@ -21,6 +21,8 @@ public class Rabat {
     @Builder.Default
     private BigDecimal wartoscZnizkiNetto = BigDecimal.ZERO;
 
+    private Integer wartoscProcentowa = 0;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

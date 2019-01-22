@@ -7,8 +7,12 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets"
 >
+<h:head>
+    <h:outputStylesheet library="css" name="tables-style.css"/>
+</h:head>
 
-<ui:component>
+<h:body>
+    <ui:include src="menuBar.xhtml"/>
 
     <f:metadata>
         <f:viewParam name="id" value="#{stolController.id}"/>
@@ -74,6 +78,5 @@
         </p:dataTable>
 
     </h:form>
-
-</ui:component>
+</h:body>
 </html>

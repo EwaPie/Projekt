@@ -32,14 +32,14 @@ public class SalaController {
     }
 
     public String zamknietyClass(Order rachunek) {
-        return rachunek.isZamkniety() ? ", zamkniety" : "";
+        return rachunek.isZamkniety() ? " zamkniety" : "";
     }
 
     public String oplaconyClass(Order rachunek) {
-        return rachunek.isOplacony() ? ", oplacony" : "";
+        return rachunek.isOplacony() ? " oplacony" : "";
     }
 
     public String nowyClass(Order rachunek) {
-        return !rachunek.isOplacony() && !rachunek.isZamkniety() ? ", nowy" : "";
+        return !rachunek.isOplacony() && !rachunek.isZamkniety() ? " nowy" : "";
     }
 }
