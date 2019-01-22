@@ -14,6 +14,8 @@ public class OrderRepository {
 
     private final List<Order> orders;
 
+
+
     @Inject
     public OrderRepository(DanieRepository danieRepository) {
         orders = new ArrayList<>();
@@ -28,7 +30,6 @@ public class OrderRepository {
     public List<Order> getAll(){return orders;}
 
     public void save(Order order){
-        System.out.println(order.getDania().size());
         orders.add(order);
     }
 }

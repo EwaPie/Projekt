@@ -4,6 +4,7 @@ import com.projekt.dto.Danie;
 import com.projekt.dto.Order;
 import com.projekt.dto.Stol;
 import com.projekt.service.DanieService;
+import com.projekt.service.OrderService;
 import com.projekt.service.StolService;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +20,7 @@ public class StolController {
 
     private final StolService stolService;
     private final DanieService danieService;
+    private OrderService orderService;
 
     @Getter
     @Setter
@@ -33,9 +35,10 @@ public class StolController {
     private Danie danie;
 
     @Inject
-    public StolController(StolService stolService, DanieService danieService) {
+    public StolController(StolService stolService, DanieService danieService, OrderService orderService) {
         this.stolService = stolService;
         this.danieService = danieService;
+        this.orderService = orderService;
     }
 
     public void refresh() {
@@ -56,6 +59,14 @@ public class StolController {
     }
 
     public void otworzRachunek() {
+        if(stol.getRachunek().getDania().size() > 0)
+        {
+            Order zamowienie = stol.getRachunek();
+            zamowienie.setCenaNettoPoRabacie(zamowienie.aktualnaWartosc());
+            zamowienie.setCenaNetto(zamowienie.wartoscBezRabatu());
+            stol.setRachunek(zamowienie);
+            stolService.dodajDoHistori(stol);
+        }
         stol.setRachunek(Order.builder().build());
     }
 
