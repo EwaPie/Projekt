@@ -20,6 +20,7 @@ public class Rabat {
     @Builder.Default
     private BigDecimal wartoscZnizkiNetto = BigDecimal.ZERO;
 
+    @Builder.Default
     private Integer wartoscProcentowa = 0;
 
     @Override

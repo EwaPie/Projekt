@@ -30,7 +30,7 @@ public class StolController {
     private final StolService stolService;
     private final DanieService danieService;
     private final RabatService rabatService;
-    private OrderService orderService;
+    private final OrderService orderService;
     private final HistoriaService historiaService;
 
     @Getter
@@ -50,9 +50,7 @@ public class StolController {
     private String rabatNazwa;
 
     @Inject
-    public StolController(StolService stolService, DanieService danieService, RabatService rabatService) {
-    public StolController(StolService stolService,
-                          DanieService danieService,
+    public StolController(StolService stolService, DanieService danieService, RabatService rabatService,
                           OrderService orderService,
                           HistoriaService historiaService) {
         this.stolService = stolService;
@@ -82,8 +80,7 @@ public class StolController {
     }
 
     public void otworzRachunek() {
-        if(stol.getRachunek().getDania().size() > 0)
-        {
+        if (stol.getRachunek().getDania().size() > 0) {
             this.historiaService.dodaj(Historia.builder().stol(stol).zamowienie(stol.getRachunek()).build());
         }
         stol.setRachunek(Order.builder().build());
@@ -96,16 +93,13 @@ public class StolController {
         BigDecimal wartoscZamowienia = (zamownie
                 .getDania()
                 .stream()
-                .map(Danie::getCennaBrutto)
+                .map(DanieWrapper::getCennaBrutto)
                 .reduce(BigDecimal::add)
                 .orElse(BigDecimal.ZERO));
         zamownie.setCenaNetto(wartoscZamowienia);
-        if(zamownie.getRabat() == null)
-        {
+        if (zamownie.getRabat() == null) {
             zamownie.setCenaNettoPoRabacie(wartoscZamowienia);
-        }
-        else
-        {
+        } else {
             zamownie.setCenaNettoPoRabacie(wartoscZamowienia.subtract(zamownie.getRabat().getWartoscZnizkiNetto()));
         }
 
@@ -116,5 +110,16 @@ public class StolController {
         stol.getRachunek().setZamkniety(true);
     }
 
-    public void usunRabat(){stol.getRachunek().setRabat(null);}
+    public void dodajRabat() {
+        Optional<Rabat> rabat = rabatService.getAll()
+                .stream()
+                .filter(r -> r.getNazwa().equalsIgnoreCase(rabatNazwa))
+                .findAny();
+        if (!rabat.isPresent()) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bledna wartosc", "Podany rabat nie istnieje");
+            PrimeFaces.current().dialog().showMessageDynamic(message);
+            return;
+        }
+        stol.getRachunek().setRabat(rabat.get());
+    }
 }
