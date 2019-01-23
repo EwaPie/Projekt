@@ -23,7 +23,7 @@ public class OrderRepository {
                 .builder()
                 .cenaNettoPoRabacie(new BigDecimal(20))
                 .cenaNetto(new BigDecimal(30))
-                .dania(danieRepository.getAll())
+                .dodajDania(danieRepository.getAll())
                 .build());
     }
 

@@ -20,7 +20,17 @@ public class Rabat {
     @Builder.Default
     private BigDecimal wartoscZnizkiNetto = BigDecimal.ZERO;
 
+    @Builder.Default
     private Integer wartoscProcentowa = 0;
+
+    public BigDecimal nalozRabat(BigDecimal aktualnaCena) {
+        if (wartoscProcentowa != null && wartoscProcentowa != 0) {
+            return aktualnaCena.multiply(BigDecimal.valueOf(((double) 100 - wartoscProcentowa) / 100));
+        } else if (wartoscZnizkiNetto != null) {
+            return aktualnaCena.subtract(wartoscZnizkiNetto);
+        }
+        return aktualnaCena;
+    }
 
     @Override
     public boolean equals(Object o) {
