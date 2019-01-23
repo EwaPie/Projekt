@@ -75,7 +75,10 @@ public class StolController {
     }
 
     public void oplac() {
-
+        if(stol.getRachunek().getDania().size() == 0)
+        {
+            return;
+        }
         stol.getRachunek().setOplacony(true);
         Order zamownie = stol.getRachunek();
         BigDecimal wartoscZamowienia = (zamownie

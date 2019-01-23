@@ -5,10 +5,16 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-<ui:composition template="index.xhtml">
-<ui:component>
+<h:head>
+    <h:outputStylesheet library="css" name="tables-style.css"/>
+</h:head>
+
+<h:body>
+    <ui:include src="menuBar.xhtml"/>
     <h:panelGrid id="Historia">
+    <b:row>
         <p:dataTable id="listHistori" value="#{historyController.history}" var="result"
                      styleClass="order-table"
                      headerClass="order-table-header"
@@ -28,8 +34,7 @@
             </p:column>
 
         </p:dataTable>
-
+    </b:row>
        </h:panelGrid>
-</ui:component>
-</ui:composition>
+</h:body>
 </html>

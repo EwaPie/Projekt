@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets"
 >
@@ -24,71 +25,44 @@
     </h:head>
 
     <h:form id="stol">
+        <b:row>
+            <b:column span="5">
+                <h:panelGrid style="width:100%" columns="2" cellpadding="10" border="1" cellspacing="1" rowClasses="text_center">
+                    <p:button value="Wroc do sali" outcome="sala"/>
+                    <b:commandButton value="Otworz nowy rachunek" actionListener="#{stolController.otworzRachunek()}"
+                                     update="stol" disabled="#{stolController.stol.rachunek.oplacony == false}"
+                                     look="primary"
+                    />
+                    <p:outputLabel for="numer" value="Numer stolika"/>
+                    <p:outputLabel id="numer" value="#{stolController.stol.id}"/>
+                    <p:outputLabel for="wartosc" value="Aktualna wartosc"/>
+                    <p:inputNumber id="wartosc" value="#{stolController.stol.rachunek.aktualnaWartosc()}" disabled="true"/>
 
-        <h:panelGrid columns="2" cellpadding="10" border="1" cellspacing="1">
-            <p:button value="Wroc do sali" outcome="sala"/>
-            <p:commandButton value="Otworz nowy rachunek" actionListener="#{stolController.otworzRachunek()}"
-                             update="stol"
-            />
-            <p:outputLabel for="numer" value="Numer stolika"/>
-            <p:outputLabel id="numer" value="#{stolController.stol.id}"/>
-            <p:outputLabel for="wartosc" value="Aktualna wartosc"/>
-            <p:inputNumber id="wartosc" value="#{stolController.stol.rachunek.aktualnaWartosc()}" disabled="true"/>
+                    <p:outputLabel value="Oplacony"/>
+                    <b:commandButton value="Oplac" actionListener="#{stolController.oplac()}"
+                                     update="stol" look="success"
+                                     disabled="#{stolController.stol.rachunek.oplacony}"
+                    />
+                    <p:outputLabel value="Zamkniety"/>
+                    <b:commandButton value="Zamknij" actionListener="#{stolController.zamknij()}"
+                                     update="stol" look="warning"
+                                     disabled="#{stolController.stol.rachunek.zamkniety}"
+                    />
 
-            <p:outputLabel value="Oplacony"/>
-            <p:commandButton value="Oplac" actionListener="#{stolController.oplac()}"
-                             update="stol"
-                             disabled="#{stolController.stol.rachunek.oplacony}"
-            />
-            <p:outputLabel value="Zamkniety"/>
-            <p:commandButton value="Zamknij" actionListener="#{stolController.zamknij()}"
-                             update="stol"
-                             disabled="#{stolController.stol.rachunek.zamkniety}"
-            />
-
-            <p:outputLabel value="Rabat"/>
-            <p:commandButton value="Usun #{stolController.stol.rachunek.rabat.getNazwa()}" actionListener="#{stolController.usunRabat()}"
-                             update="stol"
-                             disabled="#{stolController.stol.rachunek.rabat == null}"
-            />
-        </h:panelGrid>
-
-        <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
+                    <p:outputLabel value="Rabat"/>
+                    <b:commandButton value="Usun #{stolController.stol.rachunek.rabat.getNazwa()}" actionListener="#{stolController.usunRabat()}"
+                                     update="stol" look="danger"
+                                     disabled="#{stolController.stol.rachunek.rabat == null}"
+                    />
+                </h:panelGrid>
+            </b:column>
+            <b:column span="7">
+                <p:dataTable style="width:100%" id="makeOrderTable" value="#{menuController.dania}" var="result"
                      styleClass="order-table"
                      headerClass="order-table-header"
                      rowClasses="order-table-odd-row,order-table-even-row">
-            <p:column>
-                <p:commandButton id="nalozRabat" value="Naloz Rabat"
-                                 update="stol"
-                                 actionListener="#{stolController.stol.rachunek.setRabat(result)}"/>
-            </p:column>
-            <p:column>
-                <f:facet name="header">Nazwa rabatu</f:facet>
-                #{result.nazwa}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Wartosc brutto</f:facet>
-                #{rabatController.formatPrice(result.getWartoscZnizkiNetto() * 1.23)}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Wartosc netto</f:facet>
-                #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Wysokosc podatku</f:facet>
-                23%
-            </p:column>
-
-        </p:dataTable>
-        <p:dataTable id="makeOrderTable" value="#{menuController.dania}" var="result"
-                     styleClass="order-table"
-                     headerClass="order-table-header"
-                     rowClasses="order-table-odd-row,order-table-even-row">
-            <p:column>
-                <p:commandButton id="addToOrderButton" update="stol" actionListener="#{stolController.dodajDoRachunku(result)}" value="Dodaj do zamówienia" />
+            <p:column width="25%">
+                <b:commandButton look="success" id="addToOrderButton" update="stol" actionListener="#{stolController.dodajDoRachunku(result)}" value="Dodaj do zamówienia" />
             </p:column>
             <p:column>
                 <f:facet name="header">Nazwa dania</f:facet>
@@ -109,15 +83,51 @@
                 <f:facet name="header">Wysokosc podatku</f:facet>
                 #{result.wysokoscPodatku}%
             </p:column>
-        </p:dataTable>
 
-        <p:dataTable id="listaMenu" value="#{stolController.stol.rachunek.dania}" var="result"
+        </p:dataTable>
+            </b:column>
+        </b:row>
+        <b:row>
+            <b:column span="5">
+                <p:dataTable style="width:100%" id="listaRabat" value="#{rabatController.rabaty}" var="result"
+                             styleClass="order-table"
+                             headerClass="order-table-header"
+                             rowClasses="order-table-odd-row,order-table-even-row">
+                    <p:column>
+                        <p:commandButton id="nalozRabat" value="Naloz Rabat"
+                                         update="stol"
+                                         actionListener="#{stolController.stol.rachunek.setRabat(result)}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Nazwa rabatu</f:facet>
+                        #{result.nazwa}
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">Wartosc brutto</f:facet>
+                        #{rabatController.formatPrice(result.getWartoscZnizkiNetto() * 1.23)}
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">Wartosc netto</f:facet>
+                        #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">Wysokosc podatku</f:facet>
+                        23%
+                    </p:column>
+
+                </p:dataTable>
+            </b:column>
+            <b:column span="7">
+                <p:dataTable style="width:100%" id="listaMenu" value="#{stolController.stol.rachunek.dania}" var="result"
                      styleClass="order-table"
                      headerClass="order-table-header"
                      rowClasses="order-table-odd-row,order-table-even-row">
             <p:column>
-                <p:commandButton id="przyciskUsuniecia" value="Usun z rachunku"
-                                 update="stol"
+                <b:commandButton id="przyciskUsuniecia" value="Usun z rachunku"
+                                 update="stol" look="danger"
                                  actionListener="#{stolController.usunZRachunku(result)}"/>
             </p:column>
             <p:column>
@@ -141,7 +151,8 @@
             </p:column>
 
         </p:dataTable>
-
+            </b:column>
+        </b:row>
     </h:form>
 </h:body>
 </html>

@@ -37,7 +37,7 @@
 
 .headerSali {
     text-align: center;
-    font-size: 200px;
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -51,4 +51,8 @@
 
 .zamkniety {
     background-color: #BBBBBB;
+}
+
+.text_center{
+    text-align: center;
 }

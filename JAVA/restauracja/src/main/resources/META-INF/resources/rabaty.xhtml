@@ -3,6 +3,7 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
@@ -14,35 +15,9 @@
     <ui:include src="menuBar.xhtml"/>
 
     <h:panelGrid id="Rabat">
-        <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
-                     styleClass="order-table"
-                     headerClass="order-table-header"
-                     rowClasses="order-table-odd-row,order-table-even-row">
-            <p:column>
-                <p:commandButton id="przyciskUsuniecia" value="Usun"
-                                 update="Rabat"
-                                 actionListener="#{rabatController.usunRabat(result)}"/>
-                <p:commandButton id="edytujPrzycisk" value="Edytuj"
-                                 update="Rabat"
-                                 actionListener="#{rabatController.edytujRabat(result)}"/>
-            </p:column>
-            <p:column>
-                <f:facet name="header">Nazwa rabatu</f:facet>
-                #{result.nazwa}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Kwota netto rabatu</f:facet>
-                #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
-            </p:column>
-
-            <p:column>
-                <f:facet name="header">Wartosc procentowa rabatu</f:facet>
-                #{result.wartoscProcentowa}
-            </p:column>
-
-        </p:dataTable>
         <h:form id="rabatForm">
+        <b:row>
+
             <p:panel header="Dodawanie rabatu">
                 <h:panelGrid columns="2" cellpadding="4">
                     <h:outputText value="Nazwa: "/>
@@ -55,8 +30,8 @@
                     <p:inputNumber id="procentowo" value="#{rabatController.nowyRabat.wartoscProcentowa}"/>
 
 
-                    <p:commandButton id="submit" value="Dodaj"
-                                     update="Rabat"
+                    <b:commandButton id="submit" value="Dodaj"
+                                     update="Rabat" look="primary"
                                      rendered="#{!rabatController.edycja}"
                                      actionListener="#{rabatController.dodajRabat()}"/>
 
@@ -77,7 +52,38 @@
                     <h:outputText value="Rabat dodano"/>
                 </h:panelGrid>
             </p:dialog>
-        </h:form>
+        </b:row>
+        <b:row>
+            <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
+                     styleClass="order-table"
+                     headerClass="order-table-header"
+                     rowClasses="order-table-odd-row,order-table-even-row">
+            <p:column>
+                <b:commandButton id="przyciskUsuniecia" value="Usun"
+                                 update="Rabat" look="danger"
+                                 actionListener="#{rabatController.usunRabat(result)}"/>
+                <b:commandButton id="edytujPrzycisk" value="Edytuj"
+                                 update="Rabat" look="info"
+                                 actionListener="#{rabatController.edytujRabat(result)}"/>
+            </p:column>
+            <p:column>
+                <f:facet name="header">Nazwa rabatu</f:facet>
+                #{result.nazwa}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Kwota netto rabatu</f:facet>
+                #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">Wartosc procentowa rabatu</f:facet>
+                #{result.wartoscProcentowa}
+            </p:column>
+
+        </p:dataTable>
+        </b:row>
+    </h:form>
     </h:panelGrid>
 </h:body>
 </html>

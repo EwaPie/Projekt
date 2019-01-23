@@ -16,9 +16,7 @@ public class Historia {
 
     private final String id = UUID.randomUUID().toString();
     @Getter
-    @Builder.Default
     private Order zamowienie;
     @Getter
-    @Builder.Default
     private Stol stol;
 }

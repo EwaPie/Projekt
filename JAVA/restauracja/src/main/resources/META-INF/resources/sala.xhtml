@@ -3,6 +3,7 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
@@ -12,34 +13,33 @@
         <h:outputStylesheet library="css" name="tables-style.css"/>
     </h:head>
     <h:panelGroup layout="block" id="sala">
-        <h:panelGroup layout="block" id="headerSali" styleClass="headerSali">
-            <h:outputText value="Sala"/>
-        </h:panelGroup>
         <h:panelGroup layout="block" id="stolyNaSali">
-            <ui:repeat value="#{salaController.stoly}" var="result">
+            <b:row>
+                <ui:repeat value="#{salaController.stoly}" var="result">
+                     <b:column span="3">
+                        <b:well style="width:100%;" layout="block" id="stol#{result.id}"
+                                  styleClass="stol
+                                   #{salaController.nowyClass(result.rachunek)}
+                                   #{salaController.oplaconyClass(result.rachunek)}
+                                   #{salaController.zamknietyClass(result.rachunek)}">
+                        <h:panelGroup layout="block" styleClass="">
+                            <h:outputText value="Numer Stolu :"/>
+                            <h:outputText value="#{result.id}"/>
+                            <br/>
+                            <h:outputText value="Wartosc zamowienia :"/>
+                            <h:outputText value="#{result.rachunek.aktualnaWartosc()}"/>
+                            <br/>
+                        </h:panelGroup>
+                        <h:panelGroup layout="block" styleClass="">
+                            <b:button look="info" value="Otworz stol" outcome="stol">
+                                <f:param name="id" value="#{result.id}"/>
+                            </b:button>
+                        </h:panelGroup>
 
-                <h:panelGroup layout="block" id="stol#{result.id}"
-                              styleClass="stol
-                               #{salaController.nowyClass(result.rachunek)}
-                               #{salaController.oplaconyClass(result.rachunek)}
-                               #{salaController.zamknietyClass(result.rachunek)}">
-                    <h:panelGroup layout="block" styleClass="">
-                        <h:outputText value="Numer Stolu :"/>
-                        <h:outputText value="#{result.id}"/>
-                        <br/>
-                        <h:outputText value="Wartosc zamowienia :"/>
-                        <h:outputText value="#{result.rachunek.aktualnaWartosc()}"/>
-                        <br/>
-                    </h:panelGroup>
-                    <h:panelGroup layout="block" styleClass="">
-                        <p:button value="Otworz stol" outcome="stol">
-                            <f:param name="id" value="#{result.id}"/>
-                        </p:button>
-                    </h:panelGroup>
-
-                </h:panelGroup>
-
-            </ui:repeat>
+                    </b:well>
+                     </b:column>
+                </ui:repeat>
+            </b:row>
         </h:panelGroup>
     </h:panelGroup>
 </ui:component>
