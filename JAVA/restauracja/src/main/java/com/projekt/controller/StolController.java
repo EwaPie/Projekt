@@ -77,33 +77,28 @@ public class StolController {
     }
 
     public void otworzRachunek() {
-        if (stol.getRachunek().getDania().size() > 0) {
-            this.historiaService.dodaj(Historia.builder().stol(stol).zamowienie(stol.getRachunek()).build());
-        }
         stol.setRachunek(Order.builder().build());
     }
 
     public void oplac() {
-        if(stol.getRachunek().getDania().size() == 0)
-        {
-            return;
-        }
-        stol.getRachunek().setOplacony(true);
         Order zamownie = stol.getRachunek();
+        zamownie.setOplacony(true);
         BigDecimal wartoscZamowienia = zamownie
                 .getDania()
                 .stream()
-                .map(DanieWrapper::getCennaBrutto)
+                .map(DanieWrapper::getCennaBruttoRazem)
                 .reduce(BigDecimal::add)
                 .orElse(BigDecimal.ZERO);
-        zamownie.setCenaNetto(wartoscZamowienia);
-        zamownie.setCenaNettoPoRabacie(zamownie.getRabat().nalozRabat(zamownie.getCenaNetto()));
-
-        stol.setRachunek(zamownie);
+        zamownie.setCenaBrutto(wartoscZamowienia);
+        zamownie.setCenaBruttoPoRabacie(zamownie.getRabat().nalozRabat(zamownie.getCenaBrutto()));
     }
 
     public void zamknij() {
-        stol.getRachunek().setZamkniety(true);
+        Order zamownie = stol.getRachunek();
+        zamownie.setZamkniety(true);
+        if (zamownie.getCenaBrutto().compareTo(BigDecimal.ZERO) != 0) {
+            this.historiaService.dodaj(Historia.builder().stol(stol).zamowienie(stol.getRachunek()).build());
+        }
     }
 
     public void dodajRabat() {
@@ -117,5 +112,19 @@ public class StolController {
             return;
         }
         stol.getRachunek().setRabat(rabat.get());
+    }
+
+    public void usunRabat() {
+        Optional<Rabat> rabat = rabatService.getAll()
+                .stream()
+                .filter(r -> r.getNazwa().equalsIgnoreCase(rabatNazwa))
+                .findAny();
+        if (!rabat.isPresent()) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bledna wartosc", "Podany rabat nie istnieje");
+            PrimeFaces.current().dialog().showMessageDynamic(message);
+            return;
+        }
+        stol.getRachunek().setRabat(Rabat.EMPTY);
+        rabatNazwa = null;
     }
 }

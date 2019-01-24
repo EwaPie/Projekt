@@ -65,7 +65,7 @@ public class StatystykiController implements Serializable
 //                    .pobierzHistorie()
 //                    .stream()
 //                    .map(Historia::getZamowienie)
-//                    .map(Order::getCenaNettoPoRabacie)
+//                    .map(Order::getCenaBruttoPoRabacie)
 //                    .reduce(BigDecimal::add)
 //                    .orElse(BigDecimal.ZERO);
 //            pieChart.set("Stol: " + szukanyStol.getId().toString(), count);
@@ -87,7 +87,7 @@ public class StatystykiController implements Serializable
                     .stream()
                     .filter(historia -> historia.getStol().getId().equals(szukanyStol.getId()))
                     .map(Historia::getZamowienie)
-                    .map(Order::getCenaNettoPoRabacie)
+                    .map(Order::getCenaBruttoPoRabacie)
                     .reduce(BigDecimal::add)
                     .orElse(BigDecimal.ZERO);
             System.out.println("stol: " + szukanyStol.getId().toString() + " Kwota: " + count.toString());

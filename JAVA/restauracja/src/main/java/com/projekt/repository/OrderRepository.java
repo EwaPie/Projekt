@@ -21,8 +21,8 @@ public class OrderRepository {
         orders = new ArrayList<>();
         orders.add(Order
                 .builder()
-                .cenaNettoPoRabacie(new BigDecimal(20))
-                .cenaNetto(new BigDecimal(30))
+                .cenaBruttoPoRabacie(new BigDecimal(20))
+                .cenaBrutto(new BigDecimal(30))
                 .dodajDania(danieRepository.getAll())
                 .build());
     }

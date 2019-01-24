@@ -17,9 +17,9 @@ public class Order {
 
     private final String id = UUID.randomUUID().toString();
     @Builder.Default
-    private BigDecimal cenaNettoPoRabacie = BigDecimal.ZERO;
+    private BigDecimal cenaBruttoPoRabacie = BigDecimal.ZERO;
     @Builder.Default
-    private BigDecimal cenaNetto = BigDecimal.ZERO;
+    private BigDecimal cenaBrutto = BigDecimal.ZERO;
 
     @Getter
     @Builder.Default
@@ -38,15 +38,15 @@ public class Order {
     private Rabat rabat = new Rabat();
 
     public BigDecimal aktualnaWartosc() {
-        BigDecimal wartosc = dania.stream().map(DanieWrapper::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+        BigDecimal wartosc = dania.stream().map(DanieWrapper::getCennaBruttoRazem).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
         if (rabat != null) {
-            wartosc = wartosc.subtract(rabat.nalozRabat(wartosc));
+            wartosc = rabat.nalozRabat(wartosc);
         }
         return wartosc;
     }
 
     public BigDecimal wartoscBezRabatu() {
-        return dania.stream().map(DanieWrapper::getCennaBrutto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+        return dania.stream().map(DanieWrapper::getCennaBruttoRazem).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
     }
 
     public Order dodajDanie(Danie danie) {

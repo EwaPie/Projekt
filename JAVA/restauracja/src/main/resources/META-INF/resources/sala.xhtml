@@ -12,32 +12,33 @@
     <h:head>
         <h:outputStylesheet library="css" name="tables-style.css"/>
     </h:head>
+    <ui:include src="menuBar.xhtml"/>
     <h:panelGroup layout="block" id="sala">
         <h:panelGroup layout="block" id="stolyNaSali">
             <b:row>
                 <ui:repeat value="#{salaController.stoly}" var="result">
-                     <b:column span="3">
+                    <b:column span="3">
                         <b:well style="width:100%;" layout="block" id="stol#{result.id}"
-                                  styleClass="stol
+                                styleClass="stol
                                    #{salaController.nowyClass(result.rachunek)}
                                    #{salaController.oplaconyClass(result.rachunek)}
                                    #{salaController.zamknietyClass(result.rachunek)}">
-                        <h:panelGroup layout="block" styleClass="">
-                            <h:outputText value="Numer Stolu :"/>
-                            <h:outputText value="#{result.id}"/>
-                            <br/>
-                            <h:outputText value="Wartosc zamowienia :"/>
-                            <h:outputText value="#{result.rachunek.aktualnaWartosc()}"/>
-                            <br/>
-                        </h:panelGroup>
-                        <h:panelGroup layout="block" styleClass="">
-                            <b:button look="info" value="Otworz stol" outcome="stol">
-                                <f:param name="id" value="#{result.id}"/>
-                            </b:button>
-                        </h:panelGroup>
+                            <h:panelGroup layout="block" styleClass="">
+                                <h:outputText value="Numer Stolu :"/>
+                                <h:outputText value="#{result.id}"/>
+                                <br/>
+                                <h:outputText value="Wartosc zamowienia :"/>
+                                <h:outputText value="#{result.rachunek.aktualnaWartosc()}"/>
+                                <br/>
+                            </h:panelGroup>
+                            <h:panelGroup layout="block" styleClass="">
+                                <b:button look="info" value="Otworz stol" outcome="stol">
+                                    <f:param name="id" value="#{result.id}"/>
+                                </b:button>
+                            </h:panelGroup>
 
-                    </b:well>
-                     </b:column>
+                        </b:well>
+                    </b:column>
                 </ui:repeat>
             </b:row>
         </h:panelGroup>

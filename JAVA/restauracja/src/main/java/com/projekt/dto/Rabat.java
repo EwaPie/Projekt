@@ -13,6 +13,8 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Rabat {
 
+    public static final Rabat EMPTY = new Rabat();
+
     private final String id = UUID.randomUUID().toString();
 
     @Getter
@@ -30,6 +32,14 @@ public class Rabat {
             return aktualnaCena.subtract(wartoscZnizkiNetto);
         }
         return aktualnaCena;
+    }
+
+    public boolean isEmpty() {
+        if (wartoscProcentowa != null && wartoscProcentowa != 0) {
+            return false;
+        }
+
+        return wartoscZnizkiNetto == null;
     }
 
     @Override
