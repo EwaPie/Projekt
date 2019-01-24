@@ -77,7 +77,7 @@ public class StatystykiController implements Serializable {
 
     public BarChartModel rozkladKwotNaStolik() {
         BarChartModel model = new BarChartModel();
-        model.setTitle("Rozkład dań na stoliki");
+        model.setTitle("Rozkład obrotu na stoliki");
 
         for (Stol stol : stolService.pobierzWszystkieStoly()) {
             ChartSeries seria = new ChartSeries();
