@@ -46,7 +46,8 @@
                     />
                     <b:commandButton value="Zamknij" actionListener="#{stolController.zamknij()}"
                                      update="stol" look="warning"
-                                     disabled="#{stolController.stol.rachunek.zamkniety}"
+                                     disabled="#{stolController.stol.rachunek.zamkniety or
+                                     stolController.stol.rachunek.dania.isEmpty()}"
                     />
 
                     <p:commandButton value="Dodaj rabat" actionListener="#{stolController.dodajRabat()}"
@@ -55,7 +56,7 @@
                     <p:commandButton value="Usun rabat" actionListener="#{stolController.usunRabat()}"
                                      update="stol" rendered="#{!stolController.stol.rachunek.rabat.isEmpty()}"/>
                     <p:inputText placeholder="Rabat" value="#{stolController.rabatNazwa}"
-                                 disabled="#{stolController.stol.rachunek.rabat.isEmpty()}"/>
+                                 disabled="#{!stolController.stol.rachunek.rabat.isEmpty()}"/>
 
                 </h:panelGrid>
             </b:column>
