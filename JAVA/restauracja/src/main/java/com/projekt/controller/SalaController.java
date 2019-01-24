@@ -21,10 +21,44 @@ public class SalaController {
     @Setter
     private List<Stol> stoly;
 
+    @Getter
+    @Setter
+    private Stol nowyStol = Stol.builder().build();
+
+    @Getter
+    @Setter
+    private boolean edycja = false;
+
     @Inject
     public SalaController(StolService stolService) {
         this.stolService = stolService;
         refresh();
+    }
+
+
+    public void dodajStol() {
+        stolService.dodaj(nowyStol);
+        nowyStol = Stol.builder().build();
+        if (edycja) {
+            edycja = false;
+        }
+
+        refresh();
+    }
+
+    public void usunStol(Stol stol) {
+        stolService.usun(stol);
+        refresh();
+    }
+
+    public void edytujStol(Stol stol) {
+        nowyStol = stol;
+        edycja = true;
+    }
+
+    public void anulujEdycje() {
+        nowyStol = Stol.builder().build();
+        edycja = false;
     }
 
     private void refresh() {

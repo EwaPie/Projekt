@@ -25,9 +25,7 @@ import java.util.Optional;
 public class StolController {
 
     private final StolService stolService;
-    private final DanieService danieService;
     private final RabatService rabatService;
-    private final OrderService orderService;
     private final HistoriaService historiaService;
 
     @Getter
@@ -47,13 +45,9 @@ public class StolController {
     private String rabatNazwa;
 
     @Inject
-    public StolController(StolService stolService, DanieService danieService, RabatService rabatService,
-                          OrderService orderService,
-                          HistoriaService historiaService) {
+    public StolController(StolService stolService, RabatService rabatService, HistoriaService historiaService) {
         this.stolService = stolService;
-        this.danieService = danieService;
         this.rabatService = rabatService;
-        this.orderService = orderService;
         this.historiaService = historiaService;
     }
 

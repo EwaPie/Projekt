@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <h:outputStylesheet library="css" name="tables-style.css"/>
+</h:head>
+
+<h:body>
+    <ui:include src="menuBar.xhtml"/>
+    <h:panelGrid id="Sala">
+        <h:form id="salaForm">
+            <b:row>
+                <p:panel header="Dodanie stolika">
+                    <h:panelGrid columns="2" cellpadding="4">
+                        <h:outputText value="Ilosc miejsc: "/>
+                        <p:inputText id="iloscMiejsc" value="#{salaController.nowyStol.iloscMiejsc}"/>
+
+                        <b:commandButton id="submit" value="Dodaj"
+                                         update="Sala" look="primary"
+                                         rendered="#{!salaController.edycja}"
+                                         actionListener="#{salaController.dodajStol()}"/>
+
+                        <h:panelGrid id="edycja" rendered="#{salaController.edycja}">
+                            <p:commandButton id="edytuj" value="Zapisz zmiany"
+                                             update="Sala"
+                                             actionListener="#{salaController.dodajStol()}"/>
+                            <p:commandButton id="anuluj" value="Anuluj"
+                                             update="Sala"
+                                             actionListener="#{salaController.anulujEdycje()}"/>
+                        </h:panelGrid>
+                    </h:panelGrid>
+                </p:panel>
+
+                <p:dialog header="Komunikat" widgetVar="dodajStolDialog"
+                          modal="true" resizable="false">
+                    <h:panelGrid id="dodajStolPanel" columns="1" cellpadding="4">
+                        <h:outputText value="Stol dodano"/>
+                    </h:panelGrid>
+                </p:dialog>
+            </b:row>
+            <b:row>
+                <p:dataTable id="listaStolow" value="#{salaController.stoly}" var="s"
+                             style="text-align: center"
+                             styleClass="order-table"
+                             headerClass="order-table-header"
+                             rowClasses="order-table-odd-row,order-table-even-row">
+                    <p:column>
+                        <b:row>
+                            <b:column span="2" offset="2">
+                                <b:commandButton id="przyciskUsuniecia" value="Usun"
+                                                 update="Sala" look="danger"
+                                                 actionListener="#{salaController.usunStol(s)}"/>
+                            </b:column>
+                            <b:column span="2" offset="2">
+                                <b:commandButton id="edytujPrzycisk" value="Edytuj"
+                                                 update="Sala" look="info"
+                                                 actionListener="#{salaController.edytujStol(s)}"/>
+                            </b:column>
+                        </b:row>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Id</f:facet>
+                        #{s.id}
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">Ilosc miejsc</f:facet>
+                        #{s.iloscMiejsc}
+                    </p:column>
+
+                </p:dataTable>
+            </b:row>
+        </h:form>
+    </h:panelGrid>
+</h:body>
+</html>

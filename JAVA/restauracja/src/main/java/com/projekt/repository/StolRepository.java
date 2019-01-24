@@ -25,12 +25,6 @@ public class StolRepository {
         memory.add(Stol.builder().build());
         memory.add(Stol.builder().build());
         memory.add(Stol.builder().build());
-        memory.add(Stol.builder().build());
-        memory.add(Stol.builder().build());
-        memory.add(Stol.builder().build());
-        memory.add(Stol.builder().build());
-        memory.add(Stol.builder().build());
-        memory.add(Stol.builder().build());
     }
 
     public void save(Stol stol) {
@@ -42,7 +36,7 @@ public class StolRepository {
     }
 
     public void usun(Stol stol) {
-        memory.removeIf(entity -> entity.equals(stol));
+        memory.removeIf(entity -> entity.getId().equals(stol.getId()));
     }
 
     public Stol getById(Integer id) {
