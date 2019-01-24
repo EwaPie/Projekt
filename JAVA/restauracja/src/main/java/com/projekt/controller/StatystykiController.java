@@ -76,7 +76,7 @@ public class StatystykiController implements Serializable
     public BarChartModel rozkladKwotNaStolik()
     {
         BarChartModel model = new BarChartModel();
-        model.setTitle("Rozkład dań na stoliki");
+        model.setTitle("Rozkład obrotu na stoliki");
 
         for(Stol szukanyStol : stolService.pobierzWszystkieStoly())
         {
@@ -90,7 +90,6 @@ public class StatystykiController implements Serializable
                     .map(Order::getCenaBruttoPoRabacie)
                     .reduce(BigDecimal::add)
                     .orElse(BigDecimal.ZERO);
-            System.out.println("stol: " + szukanyStol.getId().toString() + " Kwota: " + count.toString());
             seria.set("wartosc", count);
             model.addSeries(seria);
         }
