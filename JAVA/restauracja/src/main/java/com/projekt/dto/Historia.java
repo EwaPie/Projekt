@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Historia {
-
+    @Getter
     private final String id = UUID.randomUUID().toString();
     @Getter
     private Order zamowienie;

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <h:outputStylesheet library="css" name="tables-style.css"/>
+</h:head>
+
+<h:body>
+    <f:metadata>
+        <f:viewParam name="id" value="#{szczegolyHistoriiController.id}"/>
+        <f:event type="preRenderView" listener="#{szczegolyHistoriiController.refresh()}"/>
+    </f:metadata>
+    <ui:include src="menuBar.xhtml"/>
+    <h:panelGrid id="SzczegolyHistoria">
+    <b:row>
+        <b:column span="4">
+            <h:panelGrid columns="2" cellpadding="30" border="1" cellspacing="2">
+                <b:column>
+                    <p:outputLabel for="id" value="Id zamówienia"/>
+                </b:column>
+                <b:column>
+                    <h:outputText id="id" value="#{szczegolyHistoriiController.id}" />
+                </b:column>
+
+                <b:column>
+                    <p:outputLabel for="idStolika" value="Id stolika"/>
+                </b:column>
+
+                <b:column>
+                    <h:outputText id="idStolika" value="#{szczegolyHistoriiController.historia.stol.id}" />
+                </b:column>
+
+                <b:column>
+                    <p:outputLabel for="wartosc" value="Wartosc zamówienia"/>
+                </b:column>
+
+                <b:column>
+                    <h:outputText id="wartosc" value="#{szczegolyHistoriiController.historia.zamowienie.cenaBrutto}" />
+                </b:column>
+
+            </h:panelGrid>
+        </b:column>
+        <b:column span="8">
+            <p:dataTable id="listaMenu" value="#{szczegolyHistoriiController.historia.zamowienie.dania}" var="d"
+                         styleClass="order-table"
+                         headerClass="order-table-header"
+                         rowClasses="order-table-odd-row,order-table-even-row">
+                <p:column>
+                    <f:facet name="header">Nazwa dania</f:facet>
+                    #{d.danie.nazwa}
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Cena brutto</f:facet>
+                    #{menuController.formatPrice(d.danie.getCennaBrutto())}
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Ilosc</f:facet>
+                    #{d.count}
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Razem</f:facet>
+                    #{menuController.formatPrice(d.getCennaBruttoRazem())}
+                </p:column>
+
+            </p:dataTable>
+        </b:column>
+    </b:row>
+       </h:panelGrid>
+</h:body>
+</html>

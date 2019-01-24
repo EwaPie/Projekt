@@ -28,4 +28,6 @@ public class HistoriaService {
     public List<Historia> pobierzHistorieStolu(Integer id) {
         return historyRepository.pobierzHistorieStolu(id);
     }
+
+    public Historia pojedynczaHistoria(String id) {return historyRepository.pobierzJedna(id);}
 }

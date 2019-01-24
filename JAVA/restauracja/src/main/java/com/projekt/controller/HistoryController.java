@@ -2,7 +2,9 @@ package com.projekt.controller;
 
 
 import com.projekt.dto.Historia;
-import com.projekt.repository.HistoryRepository;
+import com.projekt.dto.Stol;
+import com.projekt.service.HistoriaService;
+import com.projekt.service.StolService;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,17 +17,47 @@ import java.util.List;
 @ViewScoped
 public class HistoryController {
 
-    private final HistoryRepository historyRepository;
+    private final HistoriaService historiaService;
+    private final StolService stolService;
 
     @Getter
     @Setter
     private List<Historia> history;
 
+    @Getter
+    @Setter
+    private List<Historia> pofiltrowanaHistoria;
+    @Getter
+    @Setter
+    private Stol stol = null;
+
     @Inject
-    public HistoryController(HistoryRepository historyRepository) {
-        this.historyRepository = historyRepository;
+    public HistoryController(HistoriaService historiaService, StolService stolService) {
+        this.historiaService = historiaService;
+        this.stolService = stolService;
         refresh();
     }
 
-    public void refresh(){history = historyRepository.pobierzHistorie();}
+    public void refresh(){
+        if(stol == null)
+        {
+            history = historiaService.pobierzHistorie();
+        }
+        else
+        {
+            history = historiaService.pobierzHistorieStolu(stol.getId());
+        }
+    }
+
+
+    public List<Stol> pobierzDostepneStoly() {
+        List<Stol> stoly =  this.stolService.pobierzWszystkieStoly();
+        return stoly;
+    }
+
+    public List<Historia> pobierzHistorie()
+    {
+        refresh();
+        return history;
+    }
 }
