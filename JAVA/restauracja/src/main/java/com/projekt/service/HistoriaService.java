@@ -17,7 +17,15 @@ public class HistoriaService {
         this.historyRepository = historyRepository;
     }
 
-    public void dodaj(Historia historia) {historyRepository.save(historia);}
+    public void dodaj(Historia historia) {
+        historyRepository.save(historia);
+    }
 
-    public List<Historia> pobierzHistorie() {return historyRepository.pobierzHistorie();}
+    public List<Historia> pobierzHistorie() {
+        return historyRepository.pobierzHistorie();
+    }
+
+    public List<Historia> pobierzHistorieStolu(Integer id) {
+        return historyRepository.pobierzHistorieStolu(id);
+    }
 }
