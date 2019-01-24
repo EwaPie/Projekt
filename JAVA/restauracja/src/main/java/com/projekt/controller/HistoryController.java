@@ -4,7 +4,6 @@ package com.projekt.controller;
 import com.projekt.dto.Historia;
 import com.projekt.dto.Stol;
 import com.projekt.service.HistoriaService;
-import com.projekt.service.StolService;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +17,7 @@ import java.util.List;
 public class HistoryController {
 
     private final HistoriaService historiaService;
-    private final StolService stolService;
+
 
     @Getter
     @Setter
@@ -32,9 +31,8 @@ public class HistoryController {
     private Stol stol = null;
 
     @Inject
-    public HistoryController(HistoriaService historiaService, StolService stolService) {
+    public HistoryController(HistoriaService historiaService) {
         this.historiaService = historiaService;
-        this.stolService = stolService;
         refresh();
     }
 
@@ -47,17 +45,5 @@ public class HistoryController {
         {
             history = historiaService.pobierzHistorieStolu(stol.getId());
         }
-    }
-
-
-    public List<Stol> pobierzDostepneStoly() {
-        List<Stol> stoly =  this.stolService.pobierzWszystkieStoly();
-        return stoly;
-    }
-
-    public List<Historia> pobierzHistorie()
-    {
-        refresh();
-        return history;
     }
 }
