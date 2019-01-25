@@ -4,8 +4,10 @@ import com.projekt.dto.Stol;
 import com.projekt.service.StolService;
 
 import javax.annotation.PostConstruct;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.IOException;
 import java.util.List;
 
 @Named

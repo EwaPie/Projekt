@@ -6,90 +6,92 @@
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:sec="http://www.springframework.org/security/tags">
 <h:head>
     <h:outputStylesheet library="css" name="tables-style.css"/>
 </h:head>
 
 <h:body>
     <ui:include src="menuBar.xhtml"/>
+    <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <h:panelGrid id="Rabat">
+            <h:form id="rabatForm">
+                <b:row>
 
-    <h:panelGrid id="Rabat">
-        <h:form id="rabatForm">
-            <b:row>
+                    <p:panel header="Dodawanie rabatu">
+                        <h:panelGrid columns="2" cellpadding="4">
+                            <h:outputText value="Nazwa: "/>
+                            <p:inputText id="nazwa" value="#{rabatController.nowyRabat.nazwa}"/>
 
-                <p:panel header="Dodawanie rabatu">
-                    <h:panelGrid columns="2" cellpadding="4">
-                        <h:outputText value="Nazwa: "/>
-                        <p:inputText id="nazwa" value="#{rabatController.nowyRabat.nazwa}"/>
+                            <h:outputText value="Kwota netto rabatu:"/>
+                            <p:inputNumber id="cenaNetto" value="#{rabatController.nowyRabat.wartoscZnizkiNetto}"/>
 
-                        <h:outputText value="Kwota netto rabatu:"/>
-                        <p:inputNumber id="cenaNetto" value="#{rabatController.nowyRabat.wartoscZnizkiNetto}"/>
-
-                        <h:outputText value="Wartosc procentowa rabatu:"/>
-                        <p:inputNumber id="procentowo" value="#{rabatController.nowyRabat.wartoscProcentowa}"/>
+                            <h:outputText value="Wartosc procentowa rabatu:"/>
+                            <p:inputNumber id="procentowo" value="#{rabatController.nowyRabat.wartoscProcentowa}"/>
 
 
-                        <b:commandButton id="submit" value="Dodaj"
-                                         update="Rabat" look="primary"
-                                         rendered="#{!rabatController.edycja}"
-                                         actionListener="#{rabatController.dodajRabat()}"/>
-
-                        <h:panelGrid id="edycja" rendered="#{rabatController.edycja}">
-                            <p:commandButton id="edytuj" value="Zapisz zmiany"
-                                             update="Rabat"
+                            <b:commandButton id="submit" value="Dodaj"
+                                             update="Rabat" look="primary"
+                                             rendered="#{!rabatController.edycja}"
                                              actionListener="#{rabatController.dodajRabat()}"/>
-                            <p:commandButton id="anuluj" value="Anuluj"
-                                             update="Rabat"
-                                             actionListener="#{rabatController.anulujEdycje()}"/>
+
+                            <h:panelGrid id="edycja" rendered="#{rabatController.edycja}">
+                                <p:commandButton id="edytuj" value="Zapisz zmiany"
+                                                 update="Rabat"
+                                                 actionListener="#{rabatController.dodajRabat()}"/>
+                                <p:commandButton id="anuluj" value="Anuluj"
+                                                 update="Rabat"
+                                                 actionListener="#{rabatController.anulujEdycje()}"/>
+                            </h:panelGrid>
                         </h:panelGrid>
-                    </h:panelGrid>
-                </p:panel>
+                    </p:panel>
 
-                <p:dialog header="Komunikat" widgetVar="dodajRabatDialog"
-                          modal="true" resizable="false">
-                    <h:panelGrid id="dodajRabatPanel" columns="1" cellpadding="4">
-                        <h:outputText value="Rabat dodano"/>
-                    </h:panelGrid>
-                </p:dialog>
-            </b:row>
-            <b:row>
-                <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
-                             styleClass="order-table"
-                             headerClass="order-table-header"
-                             rowClasses="order-table-odd-row,order-table-even-row">
-                    <p:column>
-                        <b:row>
-                            <b:column span="2" offset="2">
-                                <b:commandButton id="przyciskUsuniecia" value="Usun"
-                                                 update="Rabat" look="danger"
-                                                 actionListener="#{rabatController.usunRabat(result)}"/>
-                            </b:column>
-                            <b:column span="2" offset="2">
-                                <b:commandButton id="edytujPrzycisk" value="Edytuj"
-                                                 update="Rabat" look="info"
-                                                 actionListener="#{rabatController.edytujRabat(result)}"/>
-                            </b:column>
-                        </b:row>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">Nazwa rabatu</f:facet>
-                        #{result.nazwa}
-                    </p:column>
+                    <p:dialog header="Komunikat" widgetVar="dodajRabatDialog"
+                              modal="true" resizable="false">
+                        <h:panelGrid id="dodajRabatPanel" columns="1" cellpadding="4">
+                            <h:outputText value="Rabat dodano"/>
+                        </h:panelGrid>
+                    </p:dialog>
+                </b:row>
+                <b:row>
+                    <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
+                                 styleClass="order-table"
+                                 headerClass="order-table-header"
+                                 rowClasses="order-table-odd-row,order-table-even-row">
+                        <p:column>
+                            <b:row>
+                                <b:column span="2" offset="2">
+                                    <b:commandButton id="przyciskUsuniecia" value="Usun"
+                                                     update="Rabat" look="danger"
+                                                     actionListener="#{rabatController.usunRabat(result)}"/>
+                                </b:column>
+                                <b:column span="2" offset="2">
+                                    <b:commandButton id="edytujPrzycisk" value="Edytuj"
+                                                     update="Rabat" look="info"
+                                                     actionListener="#{rabatController.edytujRabat(result)}"/>
+                                </b:column>
+                            </b:row>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">Nazwa rabatu</f:facet>
+                            #{result.nazwa}
+                        </p:column>
 
-                    <p:column>
-                        <f:facet name="header">Kwota netto rabatu</f:facet>
-                        #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
-                    </p:column>
+                        <p:column>
+                            <f:facet name="header">Kwota netto rabatu</f:facet>
+                            #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
+                        </p:column>
 
-                    <p:column>
-                        <f:facet name="header">Wartosc procentowa rabatu</f:facet>
-                        #{result.wartoscProcentowa}
-                    </p:column>
+                        <p:column>
+                            <f:facet name="header">Wartosc procentowa rabatu</f:facet>
+                            #{result.wartoscProcentowa}
+                        </p:column>
 
-                </p:dataTable>
-            </b:row>
-        </h:form>
-    </h:panelGrid>
+                    </p:dataTable>
+                </b:row>
+            </h:form>
+        </h:panelGrid>
+    </sec:authorize>
 </h:body>
 </html>
