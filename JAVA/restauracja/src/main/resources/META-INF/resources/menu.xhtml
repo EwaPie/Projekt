@@ -21,13 +21,16 @@
                     <p:panel header="Dodawanie dania">
                         <h:panelGrid columns="2" cellpadding="4">
                             <h:outputText value="Nazwa: "/>
-                            <p:inputText id="nazwa" value="#{menuController.noweDanie.nazwa}"/>
+                            <p:inputText id="nazwa" value="#{menuController.noweDanie.nazwa}" required="true"
+                                         validator="noBlankValidator"/>
 
-                            <h:outputText value="Cenna netto: "/>
-                            <p:inputText id="cenaNetto" value="#{menuController.noweDanie.cenaNetto}"/>
+                            <h:outputText value="Cena netto: "/>
+                            <p:inputNumber id="cenaNetto" value="#{menuController.noweDanie.cenaNetto}" required="true"
+                                           minValue="0"/>
 
                             <h:outputText value="Wysokosc podatku: "/>
-                            <p:inputText id="podatek" value="#{menuController.noweDanie.wysokoscPodatku}"/>
+                            <p:inputNumber id="podatek" value="#{menuController.noweDanie.wysokoscPodatku}"
+                                           required="true" minValue="0" maxValue="100"/>
 
                             <b:commandButton id="submit" value="Dodaj"
                                              update="Menu" look="primary"
@@ -52,6 +55,8 @@
                         </h:panelGrid>
                     </p:dialog>
                 </b:row>
+            </h:form>
+            <h:form id="danieLista">
                 <b:row>
                     <p:dataTable id="listaMenu" value="#{menuController.dania}" var="result"
                                  style="text-align: center"

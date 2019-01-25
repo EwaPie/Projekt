@@ -37,11 +37,11 @@ public class SalaController {
 
 
     public void dodajStol() {
-        stolService.dodaj(nowyStol);
-        nowyStol = Stol.builder().build();
-        if (edycja) {
-            edycja = false;
+        if (!edycja) {
+            stolService.dodaj(nowyStol);
         }
+        nowyStol = Stol.builder().build();
+        edycja = false;
 
         refresh();
     }

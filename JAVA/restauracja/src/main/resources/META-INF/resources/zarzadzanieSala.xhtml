@@ -21,7 +21,8 @@
                     <p:panel header="Dodanie stolika">
                         <h:panelGrid columns="2" cellpadding="4">
                             <h:outputText value="Ilosc miejsc: "/>
-                            <p:inputText id="iloscMiejsc" value="#{salaController.nowyStol.iloscMiejsc}"/>
+                            <p:inputNumber id="iloscMiejsc" value="#{salaController.nowyStol.iloscMiejsc}"
+                                           required="true" minValue="0" padControl="false"/>
 
                             <b:commandButton id="submit" value="Dodaj"
                                              update="Sala" look="primary"
@@ -46,6 +47,8 @@
                         </h:panelGrid>
                     </p:dialog>
                 </b:row>
+            </h:form>
+            <h:form id="salaLista">
                 <b:row>
                     <p:dataTable id="listaStolow" value="#{salaController.stoly}" var="s"
                                  style="text-align: center"

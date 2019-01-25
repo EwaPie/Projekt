@@ -27,9 +27,11 @@ public class Rabat {
 
     public BigDecimal nalozRabat(BigDecimal aktualnaCena) {
         if (wartoscProcentowa != null && wartoscProcentowa != 0) {
-            return aktualnaCena.multiply(BigDecimal.valueOf(((double) 100 - wartoscProcentowa) / 100));
+            BigDecimal poRabacie = aktualnaCena.multiply(BigDecimal.valueOf(((double) 100 - wartoscProcentowa) / 100));
+            return poRabacie.compareTo(BigDecimal.ZERO) < 0 ? BigDecimal.ZERO : poRabacie;
         } else if (wartoscZnizkiNetto != null) {
-            return aktualnaCena.subtract(wartoscZnizkiNetto);
+            BigDecimal poRabacie = aktualnaCena.subtract(wartoscZnizkiNetto);
+            return poRabacie.compareTo(BigDecimal.ZERO) < 0 ? BigDecimal.ZERO : poRabacie;
         }
         return aktualnaCena;
     }

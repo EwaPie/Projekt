@@ -44,18 +44,19 @@ public class RabatController {
 
     public void dodajRabat() {
 
-        if (nowyRabat.getWartoscZnizkiNetto().compareTo(BigDecimal.ZERO) != 0
-                && nowyRabat.getWartoscProcentowa() != 0) {
+        if (nowyRabat.isEmpty()) {
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bledna wartosc", "Mozesz wybrac znizke procentowa lub kwotowa");
             PrimeFaces.current().dialog().showMessageDynamic(message);
             return;
         }
 
-        rabatService.dodajRabat(nowyRabat);
-        nowyRabat = new Rabat();
-        if (edycja) {
-            edycja = false;
+        if (!edycja) {
+            rabatService.dodajRabat(nowyRabat);
+
         }
+        nowyRabat = new Rabat();
+        edycja = false;
+
         refresh();
     }
 

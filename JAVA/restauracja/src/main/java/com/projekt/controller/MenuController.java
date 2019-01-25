@@ -54,12 +54,12 @@ public class MenuController {
     }
 
     public void dodajDanie() {
-        danieService.dodajDanie(noweDanie);
-        noweDanie = Danie.builder().build();
-        if (edycja) {
-            edycja = false;
-        }
 
+        if (!edycja) {
+            danieService.dodajDanie(noweDanie);
+        }
+        noweDanie = Danie.builder().build();
+        edycja = false;
         refresh();
     }
 

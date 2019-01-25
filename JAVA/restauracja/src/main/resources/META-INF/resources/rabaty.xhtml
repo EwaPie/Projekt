@@ -22,13 +22,16 @@
                     <p:panel header="Dodawanie rabatu">
                         <h:panelGrid columns="2" cellpadding="4">
                             <h:outputText value="Nazwa: "/>
-                            <p:inputText id="nazwa" value="#{rabatController.nowyRabat.nazwa}"/>
+                            <p:inputText id="nazwa" value="#{rabatController.nowyRabat.nazwa}" required="true"
+                                         validator="noBlankValidator"/>
 
                             <h:outputText value="Kwota netto rabatu:"/>
-                            <p:inputNumber id="cenaNetto" value="#{rabatController.nowyRabat.wartoscZnizkiNetto}"/>
+                            <p:inputNumber id="cenaNetto" value="#{rabatController.nowyRabat.wartoscZnizkiNetto}"
+                                           minValue="0"/>
 
                             <h:outputText value="Wartosc procentowa rabatu:"/>
-                            <p:inputNumber id="procentowo" value="#{rabatController.nowyRabat.wartoscProcentowa}"/>
+                            <p:inputNumber id="procentowo" value="#{rabatController.nowyRabat.wartoscProcentowa}"
+                                           minValue="0" maxValue="100"/>
 
 
                             <b:commandButton id="submit" value="Dodaj"
@@ -54,6 +57,8 @@
                         </h:panelGrid>
                     </p:dialog>
                 </b:row>
+            </h:form>
+            <h:form id="rabatLista">
                 <b:row>
                     <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
                                  styleClass="order-table"
