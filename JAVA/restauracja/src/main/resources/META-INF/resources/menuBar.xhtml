@@ -17,8 +17,8 @@
             <p:submenu label="Sala" icon="pi pi-file">
                 <p:menuitem value="Sala" outcome="index"/>
                 <p:submenu label="Stoly" icon="pi pi-file">
-                    <c:forEach items="#{menuBarController.table}" var="stol">
-                        <p:menuitem value="Stol #{stol.id}" outcome="stol.xhtml?id=#{stol.id}"/>
+                    <c:forEach items="#{menuBarController.table}" var="table">
+                        <p:menuitem value="Stol #{table.id}" outcome="table.xhtml?id=#{table.id}"/>
                     </c:forEach>
                 </p:submenu>
             </p:submenu>
@@ -26,12 +26,12 @@
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <p:submenu label="Admin" icon="pi pi-file">
                     <p:menuitem value="Menu" outcome="menu"/>
-                    <p:menuitem value="Rabaty" outcome="rabaty"/>
-                    <p:menuitem value="Zarzadzanie sala" outcome="zarzadzanieSala"/>
+                    <p:menuitem value="Rabaty" outcome="discount"/>
+                    <p:menuitem value="Zarzadzanie sala" outcome="hallManagement"/>
                 </p:submenu>
             </sec:authorize>
-            <p:menuitem value="Statystyki" outcome="statystyki"/>
-            <p:menuitem value="Historia" outcome="historia"/>
+            <p:menuitem value="Statystyki" outcome="statistic"/>
+            <p:menuitem value="Historia" outcome="history"/>
 
             <f:facet name="options">
                 <sec:authorize access="hasRole('ROLE_KELNER')">

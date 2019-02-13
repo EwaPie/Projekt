@@ -61,7 +61,7 @@
                 </h:panelGrid>
             </b:column>
             <b:column span="7">
-                <p:dataTable id="listaRabat" value="#{discountController.di}" var="result"
+                <p:dataTable id="listaRabat" value="#{discountController.discounts}" var="result"
                              styleClass="order-table"
                              headerClass="order-table-header"
                              rowClasses="order-table-odd-row,order-table-even-row">
@@ -72,7 +72,7 @@
 
                     <p:column>
                         <f:facet name="header">Kwota netto rabatu</f:facet>
-                        #{discountController.formatPrice(result.netDiscountValue())}
+                        #{discountController.formatPrice(result.netDiscountValue)}
                     </p:column>
 
                     <p:column>
@@ -104,7 +104,7 @@
 
                     <p:column>
                         <f:facet name="header">Cena brutto</f:facet>
-                        #{menuController.formatPrice(dinner.grossPrice())}
+                        #{menuController.formatPrice(dinner.grossPrice)}
                     </p:column>
 
                 </p:dataTable>
@@ -127,12 +127,12 @@
                     </p:column>
                     <p:column>
                         <f:facet name="header">Nazwa dania</f:facet>
-                        #{d.dinner.name}
+                        #{d.name}
                     </p:column>
 
                     <p:column>
                         <f:facet name="header">Cena brutto</f:facet>
-                        #{menuController.formatPrice(d.dinner.grossPrice())}
+                        #{menuController.formatPrice(d.grossPrice)}
                     </p:column>
 
                     <p:column>
@@ -142,7 +142,7 @@
 
                     <p:column>
                         <f:facet name="header">Razem</f:facet>
-                        #{menuController.formatPrice(d.totalGrossPrice())}
+                        #{menuController.formatPrice(d.totalGrossPrice)}
                     </p:column>
 
                 </p:dataTable>

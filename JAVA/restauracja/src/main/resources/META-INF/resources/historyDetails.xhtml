@@ -58,7 +58,7 @@
 
                 <p:column>
                     <f:facet name="header">Cena brutto</f:facet>
-                    #{menuController.formatPrice(d.dinner.grossPrice())}
+                    #{menuController.formatPrice(d.dinner.grossPrice)}
                 </p:column>
 
                 <p:column>
@@ -68,7 +68,7 @@
 
                 <p:column>
                     <f:facet name="header">Razem</f:facet>
-                    #{menuController.formatPrice(d.totalGrossPrice())}
+                    #{menuController.formatPrice(d.totalGrossPrice)}
                 </p:column>
 
             </p:dataTable>
