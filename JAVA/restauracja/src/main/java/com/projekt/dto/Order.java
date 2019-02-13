@@ -6,7 +6,6 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Data
 @Builder
@@ -14,14 +13,13 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Order {
 
-    private final String id = UUID.randomUUID().toString();
+    private Integer id;
 
     @Builder.Default
     private BigDecimal grossPrice = BigDecimal.ZERO;
 
-    @Getter
     @Builder.Default
-    private List<DinnerWrapper> dania = new ArrayList<>();
+    private List<DinnerWrapper> dinners = new ArrayList<>();
 
     @Builder.Default
     private boolean paid = false;
@@ -31,26 +29,25 @@ public class Order {
     @Builder.Default
     private AccountType accountType = AccountType.RECEIPT;
 
-    @Setter
     @Builder.Default
     private Discount discount = new Discount();
 
     public BigDecimal actualPrice() {
-        BigDecimal price = dania.stream().map(DinnerWrapper::getTotalGrossPrice).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+        BigDecimal price = dinners.stream().map(DinnerWrapper::getTotalGrossPrice).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
         if (discount != null) {
             price = discount.applyDiscount(price);
         }
         return price;
     }
 
-    public Order dodajDanie(Dinner dinner) {
-        DinnerWrapper wrapper = dania
+    public Order addDinner(Dinner dinner) {
+        DinnerWrapper wrapper = this.dinners
                 .stream()
                 .filter(d -> d.getDinner().equals(dinner))
                 .findAny()
                 .orElseGet(() -> {
                     DinnerWrapper w = new DinnerWrapper(dinner);
-                    dania.add(w);
+                    this.dinners.add(w);
                     return w;
                 });
 
@@ -59,17 +56,17 @@ public class Order {
     }
 
     public static class OrderBuilder {
-        public OrderBuilder dodajDanie(Dinner dinner) {
-            if (dania == null) {
-                dania = new ArrayList<>();
+        public OrderBuilder addDinner(Dinner dinner) {
+            if (dinner == null) {
+                dinners = new ArrayList<>();
             }
-            DinnerWrapper wrapper = dania
+            DinnerWrapper wrapper = dinners
                     .stream()
                     .filter(d -> d.getDinner().equals(dinner))
                     .findAny()
                     .orElseGet(() -> {
                         DinnerWrapper w = new DinnerWrapper(dinner);
-                        dania.add(w);
+                        dinners.add(w);
                         return w;
                     });
 
@@ -77,8 +74,8 @@ public class Order {
             return this;
         }
 
-        public OrderBuilder dodajDania(List<Dinner> dania) {
-            dania.forEach(this::dodajDanie);
+        public OrderBuilder addDinners(List<Dinner> dinners) {
+            dinners.forEach(this::addDinner);
             return this;
         }
     }

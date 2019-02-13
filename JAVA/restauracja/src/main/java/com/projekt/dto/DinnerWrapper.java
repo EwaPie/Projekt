@@ -7,7 +7,6 @@ import lombok.ToString;
 
 import java.math.BigDecimal;
 
-
 @RequiredArgsConstructor
 @ToString(callSuper = true)
 public class DinnerWrapper {

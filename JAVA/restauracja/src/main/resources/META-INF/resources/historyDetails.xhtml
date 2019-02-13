@@ -13,8 +13,8 @@
 
 <h:body>
     <f:metadata>
-        <f:viewParam name="id" value="#{szczegolyHistoriiController.id}"/>
-        <f:event type="preRenderView" listener="#{szczegolyHistoriiController.refresh()}"/>
+        <f:viewParam name="id" value="#{historyDetailsController.id}"/>
+        <f:event type="preRenderView" listener="#{historyDetailsController.refresh()}"/>
     </f:metadata>
     <ui:include src="menuBar.xhtml"/>
     <h:panelGrid id="SzczegolyHistoria">
@@ -25,7 +25,7 @@
                     <p:outputLabel for="id" value="Id zamówienia"/>
                 </b:column>
                 <b:column>
-                    <h:outputText id="id" value="#{szczegolyHistoriiController.id}" />
+                    <h:outputText id="id" value="#{historyDetailsController.id}" />
                 </b:column>
 
                 <b:column>
@@ -33,7 +33,7 @@
                 </b:column>
 
                 <b:column>
-                    <h:outputText id="idStolika" value="#{szczegolyHistoriiController.history.table.id}" />
+                    <h:outputText id="idStolika" value="#{historyDetailsController.history.table.id}" />
                 </b:column>
 
                 <b:column>
@@ -41,13 +41,13 @@
                 </b:column>
 
                 <b:column>
-                    <h:outputText id="wartosc" value="#{szczegolyHistoriiController.history.order.grossPrice}" />
+                    <h:outputText id="wartosc" value="#{historyDetailsController.history.order.grossPrice}" />
                 </b:column>
 
             </h:panelGrid>
         </b:column>
         <b:column span="8">
-            <p:dataTable id="listaMenu" value="#{szczegolyHistoriiController.history.order.dania}" var="d"
+            <p:dataTable id="listaMenu" value="#{historyDetailsController.history.order.dinners}" var="d"
                          styleClass="order-table"
                          headerClass="order-table-header"
                          rowClasses="order-table-odd-row,order-table-even-row">

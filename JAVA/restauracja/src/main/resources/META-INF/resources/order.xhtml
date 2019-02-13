@@ -14,7 +14,7 @@
                      rowClasses="order-table-odd-row,order-table-even-row">
             <p:column>
                 <f:facet name="header">Dania</f:facet>
-                <p:repeat value="#{result.getDania()}" var="dinner">
+                <p:repeat value="#{result.dinners()}" var="dinner">
                     <h:outputText value="#{dinner.nazwa}" />
                     <br />
                 </p:repeat>

@@ -12,11 +12,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
-        http.authorizeRequests().anyRequest().authenticated()
+        http.authorizeRequests()
+                .antMatchers("/h2").permitAll()
+                .antMatchers("/**").authenticated()
                 .and()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/index.xhtml")
                 .and()
                 .csrf().disable();
+
+        http.headers().frameOptions().disable();
 
     }
 

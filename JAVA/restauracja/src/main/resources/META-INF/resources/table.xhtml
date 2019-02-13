@@ -42,12 +42,12 @@
                     <b:commandButton value="Oplac" actionListener="#{tableController.oplac()}"
                                      update="stol" look="info"
                                      disabled="#{tableController.stol.order.paid or
-                                     tableController.stol.order.dania.isEmpty()}"
+                                     tableController.stol.order.dinners.isEmpty()}"
                     />
                     <b:commandButton value="Zamknij" actionListener="#{tableController.zamknij()}"
                                      update="stol" look="warning"
                                      disabled="#{tableController.stol.order.close or
-                                     tableController.stol.order.dania.isEmpty()}"
+                                     tableController.stol.order.dinners.isEmpty()}"
                     />
 
                     <p:commandButton value="Dodaj rabat" actionListener="#{tableController.dodajRabat()}"
@@ -110,7 +110,7 @@
                 </p:dataTable>
             </b:column>
             <b:column span="6">
-                <p:dataTable id="listaMenu" value="#{tableController.stol.order.dania}" var="d"
+                <p:dataTable id="listaMenu" value="#{tableController.stol.order.dinners}" var="d"
                              styleClass="order-table"
                              headerClass="order-table-header"
                              rowClasses="order-table-odd-row,order-table-even-row">

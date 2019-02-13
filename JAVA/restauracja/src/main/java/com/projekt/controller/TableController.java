@@ -46,11 +46,11 @@ public class TableController {
     }
 
     public void dodajDoRachunku(Dinner dinner) {
-        stol.getOrder().dodajDanie(dinner);
+        stol.getOrder().addDinner(dinner);
     }
 
     public void usunZRachunku(DinnerWrapper danie) {
-        stol.getOrder().getDania().removeIf(d -> d.equals(danie));
+        stol.getOrder().getDinners().removeIf(d -> d.equals(danie));
     }
 
     public void usunJeden(DinnerWrapper danie) {
@@ -68,7 +68,7 @@ public class TableController {
         Order zamownie = stol.getOrder();
         zamownie.setPaid(true);
         BigDecimal wartoscZamowienia = zamownie
-                .getDania()
+                .getDinners()
                 .stream()
                 .map(DinnerWrapper::getTotalGrossPrice)
                 .reduce(BigDecimal::add)

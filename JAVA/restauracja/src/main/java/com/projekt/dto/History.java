@@ -1,22 +1,13 @@
 package com.projekt.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.inject.Named;
-import java.util.UUID;
-
-@Named
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class History {
-    @Getter
-    private final String id = UUID.randomUUID().toString();
-    @Getter
+    private Integer id;
     private Order order;
-    @Getter
     private Table table;
 }

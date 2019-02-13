@@ -1,21 +1,17 @@
 package com.projekt.dto;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
 @Builder
 @EqualsAndHashCode(of = {"id"})
+@NoArgsConstructor
+@AllArgsConstructor
 public class Dinner {
-    // jsf nie radzi sobie z id w formie UUID :/
-    private static AtomicInteger ID = new AtomicInteger(0);
 
-    @Builder.Default
-    private final Integer id = ID.getAndIncrement();
+    private Integer id;
 
     private String name;
     @Builder.Default

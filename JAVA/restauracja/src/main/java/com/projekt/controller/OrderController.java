@@ -48,7 +48,7 @@ public class OrderController {
     public void makeOrder()
     {
         for (Dinner dinner : items) {
-            newOrder.dodajDanie(dinner);
+            newOrder.addDinner(dinner);
         }
         orderService.add(newOrder);
         items = new ArrayList<>();

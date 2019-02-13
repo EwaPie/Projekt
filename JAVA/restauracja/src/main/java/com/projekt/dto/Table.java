@@ -1,20 +1,17 @@
 package com.projekt.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-
-import java.util.concurrent.atomic.AtomicInteger;
-
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Table {
 
-    // jsf nie radzi sobie z id w formie UUID :/
-    private static AtomicInteger ID = new AtomicInteger(1);
-
-    @Builder.Default
-    private final Integer id = ID.getAndIncrement();
+    private Integer id;
 
     @Builder.Default
     private Integer numberOfSeats = 5;
