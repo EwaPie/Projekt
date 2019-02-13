@@ -21,26 +21,26 @@
                     <p:panel header="Dodawanie dania">
                         <h:panelGrid columns="2" cellpadding="4">
                             <h:outputText value="Nazwa: "/>
-                            <p:inputText id="nazwa" value="#{menuController.noweDanie.nazwa}" required="true"
+                            <p:inputText id="nazwa" value="#{menuController.newDinner.name}" required="true"
                                          validator="noBlankValidator"/>
 
                             <h:outputText value="Cena netto: "/>
-                            <p:inputNumber id="cenaNetto" value="#{menuController.noweDanie.cenaNetto}" required="true"
+                            <p:inputNumber id="cenaNetto" value="#{menuController.newDinner.netPrice}" required="true"
                                            minValue="0"/>
 
                             <h:outputText value="Wysokosc podatku: "/>
-                            <p:inputNumber id="podatek" value="#{menuController.noweDanie.wysokoscPodatku}"
+                            <p:inputNumber id="podatek" value="#{menuController.newDinner.taxAmount}"
                                            required="true" minValue="0" maxValue="100"/>
 
                             <b:commandButton id="submit" value="Dodaj"
                                              update="Menu" look="primary"
                                              rendered="#{!menuController.edycja}"
-                                             actionListener="#{menuController.dodajDanie()}"/>
+                                             actionListener="#{menuController.addDinner()}"/>
 
                             <h:panelGrid id="edycja" rendered="#{menuController.edycja}">
                                 <p:commandButton id="edytuj" value="Zapisz zmiany"
                                                  update="Menu"
-                                                 actionListener="#{menuController.dodajDanie()}"/>
+                                                 actionListener="#{menuController.addDinner()}"/>
                                 <p:commandButton id="anuluj" value="Anuluj"
                                                  update="Menu"
                                                  actionListener="#{menuController.anulujEdycje()}"/>
@@ -68,7 +68,7 @@
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="przyciskUsuniecia" value="Usun"
                                                      update="Menu" look="danger"
-                                                     actionListener="#{menuController.usunDanie(result)}"/>
+                                                     actionListener="#{menuController.removeDinner(result)}"/>
                                 </b:column>
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="edytujPrzycisk" value="Edytuj"
@@ -79,22 +79,22 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">Nazwa dania</f:facet>
-                            #{result.nazwa}
+                            #{result.name}
                         </p:column>
 
                         <p:column>
                             <f:facet name="header">Cena brutto</f:facet>
-                            #{menuController.formatPrice(result.getCennaBrutto())}
+                            #{menuController.formatPrice(result.grossPrice())}
                         </p:column>
 
                         <p:column>
                             <f:facet name="header">Cena netto</f:facet>
-                            #{menuController.formatPrice(result.cenaNetto)}
+                            #{menuController.formatPrice(result.netPrice)}
                         </p:column>
 
                         <p:column>
                             <f:facet name="header">Wysokosc podatku</f:facet>
-                            #{result.wysokoscPodatku}%
+                            #{result.taxAmount}%
                         </p:column>
 
                     </p:dataTable>

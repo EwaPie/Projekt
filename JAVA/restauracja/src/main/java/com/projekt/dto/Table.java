@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
 @Builder
-public class Stol {
+public class Table {
 
     // jsf nie radzi sobie z id w formie UUID :/
     private static AtomicInteger ID = new AtomicInteger(1);
@@ -17,9 +17,9 @@ public class Stol {
     private final Integer id = ID.getAndIncrement();
 
     @Builder.Default
-    private Integer iloscMiejsc = 5;
+    private Integer numberOfSeats = 5;
 
     @Builder.Default
-    private Order rachunek = Order.builder().build();
+    private Order order = Order.builder().build();
 
 }

@@ -14,19 +14,19 @@
                      rowClasses="order-table-odd-row,order-table-even-row">
             <p:column>
                 <f:facet name="header">Dania</f:facet>
-                <p:repeat value="#{result.getDania()}" var="danie">
-                    <h:outputText value="#{danie.nazwa}" />
+                <p:repeat value="#{result.getDania()}" var="dinner">
+                    <h:outputText value="#{dinner.nazwa}" />
                     <br />
                 </p:repeat>
             </p:column>
             <p:column>
                 <f:facet name="header">Cenna netto</f:facet>
-                #{result.cenaBrutto}
+                #{result.grossPrice}
             </p:column>
 
             <p:column>
                 <f:facet name="header">Cena netto po rabacie</f:facet>
-                #{result.cenaBruttoPoRabacie}
+                #{result.discount.applyDiscount(result.grossPrice)}
             </p:column>
 
 

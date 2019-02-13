@@ -19,22 +19,22 @@
                 </p:column>
                 <p:column>
                     <f:facet name="header">Nazwa dania</f:facet>
-                    #{result.nazwa}
+                    #{result.name}
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">Cena brutto</f:facet>
-                    #{menuController.formatPrice(result.getCennaBrutto())}
+                    #{menuController.formatPrice(result.grossPrice())}
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">Cena netto</f:facet>
-                    #{menuController.formatPrice(result.cenaNetto)}
+                    #{menuController.formatPrice(result.netPrice)}
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">Wysokosc podatku</f:facet>
-                    #{result.wysokoscPodatku}%
+                    #{result.taxAmount}%
                 </p:column>
             </p:dataTable>
 
@@ -49,22 +49,22 @@
                 </p:column>
                 <p:column>
                     <f:facet name="header">Nazwa dania</f:facet>
-                    #{result.nazwa}
+                    #{result.name}
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">Cena brutto</f:facet>
-                    #{menuController.formatPrice(result.getCennaBrutto())}
+                    #{menuController.formatPrice(result.grossPrice())}
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">Cena netto</f:facet>
-                    #{menuController.formatPrice(result.cenaNetto)}
+                    #{menuController.formatPrice(result.netPrice)}
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">Wysokosc podatku</f:facet>
-                    #{result.wysokoscPodatku}%
+                    #{result.taxAmount}%
                 </p:column>
             </p:dataTable>
 

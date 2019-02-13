@@ -17,7 +17,7 @@
             <p:submenu label="Sala" icon="pi pi-file">
                 <p:menuitem value="Sala" outcome="index"/>
                 <p:submenu label="Stoly" icon="pi pi-file">
-                    <c:forEach items="#{menuBarController.stoly}" var="stol">
+                    <c:forEach items="#{menuBarController.table}" var="stol">
                         <p:menuitem value="Stol #{stol.id}" outcome="stol.xhtml?id=#{stol.id}"/>
                     </c:forEach>
                 </p:submenu>

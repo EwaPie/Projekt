@@ -21,21 +21,21 @@
                     <p:panel header="Dodanie stolika">
                         <h:panelGrid columns="2" cellpadding="4">
                             <h:outputText value="Ilosc miejsc: "/>
-                            <p:inputNumber id="iloscMiejsc" value="#{salaController.nowyStol.iloscMiejsc}"
+                            <p:inputNumber id="iloscMiejsc" value="#{hallController.nowyStol.numberOfSeats}"
                                            required="true" minValue="0" padControl="false"/>
 
                             <b:commandButton id="submit" value="Dodaj"
                                              update="Sala" look="primary"
-                                             rendered="#{!salaController.edycja}"
-                                             actionListener="#{salaController.dodajStol()}"/>
+                                             rendered="#{!hallController.edycja}"
+                                             actionListener="#{hallController.dodajStol()}"/>
 
-                            <h:panelGrid id="edycja" rendered="#{salaController.edycja}">
+                            <h:panelGrid id="edycja" rendered="#{hallController.edycja}">
                                 <p:commandButton id="edytuj" value="Zapisz zmiany"
                                                  update="Sala"
-                                                 actionListener="#{salaController.dodajStol()}"/>
+                                                 actionListener="#{hallController.dodajStol()}"/>
                                 <p:commandButton id="anuluj" value="Anuluj"
                                                  update="Sala"
-                                                 actionListener="#{salaController.anulujEdycje()}"/>
+                                                 actionListener="#{hallController.anulujEdycje()}"/>
                             </h:panelGrid>
                         </h:panelGrid>
                     </p:panel>
@@ -50,7 +50,7 @@
             </h:form>
             <h:form id="salaLista">
                 <b:row>
-                    <p:dataTable id="listaStolow" value="#{salaController.stoly}" var="s"
+                    <p:dataTable id="listaStolow" value="#{hallController.tables}" var="s"
                                  style="text-align: center"
                                  styleClass="order-table"
                                  headerClass="order-table-header"
@@ -60,12 +60,12 @@
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="przyciskUsuniecia" value="Usun"
                                                      update="Sala" look="danger"
-                                                     actionListener="#{salaController.usunStol(s)}"/>
+                                                     actionListener="#{hallController.usunStol(s)}"/>
                                 </b:column>
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="edytujPrzycisk" value="Edytuj"
                                                      update="Sala" look="info"
-                                                     actionListener="#{salaController.edytujStol(s)}"/>
+                                                     actionListener="#{hallController.edytujStol(s)}"/>
                                 </b:column>
                             </b:row>
                         </p:column>
@@ -76,7 +76,7 @@
 
                         <p:column>
                             <f:facet name="header">Ilosc miejsc</f:facet>
-                            #{s.iloscMiejsc}
+                            #{s.numberOfSeats}
                         </p:column>
 
                     </p:dataTable>

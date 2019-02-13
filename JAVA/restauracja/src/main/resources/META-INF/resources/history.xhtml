@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <h:outputStylesheet library="css" name="tables-style.css"/>
+</h:head>
+
+<h:body>
+    <ui:include src="menuBar.xhtml"/>
+    <b:container fluid="true" contentDisabled="false">
+        <h:panelGrid id="history">
+            <b:row>
+                <b:column span="2"/>
+                <b:column span="8">
+                    <h:form id="formListy">
+                        <p:dataTable id="listHistory" value="#{historyController.history}" var="result"
+                                     widgetVar="resultTable"
+                                     styleClass="order-table"
+                                     headerClass="order-table-header"
+                                     rowClasses="order-table-odd-row,order-table-even-row">
+                            <p:column>
+                                <b:link id="infoButton" value="Info" outcome="szczegolyHistorii.xhtml?id=#{result.id}"
+                                        look="info"/>
+                            </p:column>
+                            <p:column filterBy="#{result.table.id}" sortBy="#{result.table.id}"
+                                      filterMatchMode="contains">
+                                <f:facet name="header">Id stolika</f:facet>
+                                <h:outputText value="#{result.table.id}"/>
+                            </p:column>
+                            <p:column filterBy="#{result.order.grossPrice}" filterMatchMode="contains"
+                                      sortBy="#{result.order.grossPrice}">
+                                <f:facet name="header">Wartosc netto</f:facet>
+                                <h:outputText value="#{result.order.grossPrice}"/>
+                            </p:column>
+
+                            <p:column filterBy="#{result.order.discount.applyDiscount(result.order.grossPrice)}" filterMatchMode="contains"
+                                      sortBy="#{result.order.discount.applyDiscount(result.order.grossPrice)}">
+                                <f:facet name="header">Wartosc netto po rabacie</f:facet>
+                                <h:outputText value="#{result.order.discount.applyDiscount(result.order.grossPrice)}"/>
+                            </p:column>
+
+                        </p:dataTable>
+                    </h:form>
+                </b:column>
+
+            </b:row>
+        </h:panelGrid>
+    </b:container>
+</h:body>
+</html>

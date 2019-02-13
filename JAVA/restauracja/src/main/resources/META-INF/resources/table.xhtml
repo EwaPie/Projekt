@@ -16,8 +16,8 @@
     <ui:include src="menuBar.xhtml"/>
 
     <f:metadata>
-        <f:viewParam name="id" value="#{stolController.id}"/>
-        <f:event type="preRenderView" listener="#{stolController.refresh()}"/>
+        <f:viewParam name="id" value="#{tableController.id}"/>
+        <f:event type="preRenderView" listener="#{tableController.refresh()}"/>
     </f:metadata>
 
     <h:head>
@@ -29,55 +29,55 @@
             <b:column span="5">
                 <h:panelGrid columns="2" style="width:100%" cellpadding="30" border="1" cellspacing="2">
                     <p:button value="Wroc do sali" outcome="index"/>
-                    <b:commandButton value="Otworz nowy rachunek" actionListener="#{stolController.otworzRachunek()}"
+                    <b:commandButton value="Otworz nowy rachunek" actionListener="#{tableController.otworzRachunek()}"
                                      update="stol" look="primary"
-                                     disabled="#{!stolController.stol.rachunek.oplacony
-                                      or !stolController.stol.rachunek.zamkniety}"
+                                     disabled="#{!tableController.stol.order.paid
+                                      or !tableController.stol.order.close}"
                     />
                     <p:outputLabel for="numer" value="Numer stolika"/>
-                    <p:outputLabel id="numer" value="#{stolController.stol.id}"/>
+                    <p:outputLabel id="numer" value="#{tableController.stol.id}"/>
                     <p:outputLabel for="wartosc" value="Aktualna wartosc"/>
-                    <p:outputLabel id="wartosc" value="#{stolController.stol.rachunek.aktualnaWartosc()}"/>
+                    <p:outputLabel id="wartosc" value="#{tableController.stol.order.actualPrice()}"/>
 
-                    <b:commandButton value="Oplac" actionListener="#{stolController.oplac()}"
+                    <b:commandButton value="Oplac" actionListener="#{tableController.oplac()}"
                                      update="stol" look="info"
-                                     disabled="#{stolController.stol.rachunek.oplacony or
-                                     stolController.stol.rachunek.dania.isEmpty()}"
+                                     disabled="#{tableController.stol.order.paid or
+                                     tableController.stol.order.dania.isEmpty()}"
                     />
-                    <b:commandButton value="Zamknij" actionListener="#{stolController.zamknij()}"
+                    <b:commandButton value="Zamknij" actionListener="#{tableController.zamknij()}"
                                      update="stol" look="warning"
-                                     disabled="#{stolController.stol.rachunek.zamkniety or
-                                     stolController.stol.rachunek.dania.isEmpty()}"
+                                     disabled="#{tableController.stol.order.close or
+                                     tableController.stol.order.dania.isEmpty()}"
                     />
 
-                    <p:commandButton value="Dodaj rabat" actionListener="#{stolController.dodajRabat()}"
-                                     update="stol" rendered="#{stolController.stol.rachunek.rabat.isEmpty()}"/>
+                    <p:commandButton value="Dodaj rabat" actionListener="#{tableController.dodajRabat()}"
+                                     update="stol" rendered="#{tableController.stol.order.discount.isEmpty()}"/>
 
-                    <p:commandButton value="Usun rabat" actionListener="#{stolController.usunRabat()}"
-                                     update="stol" rendered="#{!stolController.stol.rachunek.rabat.isEmpty()}"/>
-                    <p:inputText placeholder="Rabat" value="#{stolController.rabatNazwa}"
-                                 disabled="#{!stolController.stol.rachunek.rabat.isEmpty()}"/>
+                    <p:commandButton value="Usun rabat" actionListener="#{tableController.usunRabat()}"
+                                     update="stol" rendered="#{!tableController.stol.order.discount.isEmpty()}"/>
+                    <p:inputText placeholder="Rabat" value="#{tableController.rabatNazwa}"
+                                 disabled="#{!tableController.stol.order.discount.isEmpty()}"/>
 
                 </h:panelGrid>
             </b:column>
             <b:column span="7">
-                <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
+                <p:dataTable id="listaRabat" value="#{discountController.di}" var="result"
                              styleClass="order-table"
                              headerClass="order-table-header"
                              rowClasses="order-table-odd-row,order-table-even-row">
                     <p:column>
                         <f:facet name="header">Nazwa rabatu</f:facet>
-                        #{result.nazwa}
+                        #{result.name}
                     </p:column>
 
                     <p:column>
                         <f:facet name="header">Kwota netto rabatu</f:facet>
-                        #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
+                        #{discountController.formatPrice(result.netDiscountValue())}
                     </p:column>
 
                     <p:column>
                         <f:facet name="header">Wartosc procentowa rabatu</f:facet>
-                        #{result.wartoscProcentowa}
+                        #{result.percentage}
                     </p:column>
 
                 </p:dataTable>
@@ -85,7 +85,7 @@
         </b:row>
         <b:row>
             <b:column span="6">
-                <p:dataTable id="makeOrderTable" value="#{menuController.dania}" var="danie"
+                <p:dataTable id="makeOrderTable" value="#{menuController.dania}" var="dinner"
                              styleClass="order-table"
                              style="margin: 1%"
                              headerClass="order-table-header"
@@ -93,46 +93,46 @@
                     <p:column>
                         <b:commandButton id="addToOrderButton" update="stol"
                                          look="success"
-                                         disabled="#{stolController.stol.rachunek.oplacony}"
-                                         actionListener="#{stolController.dodajDoRachunku(danie)}"
+                                         disabled="#{tableController.stol.order.paid}"
+                                         actionListener="#{tableController.dodajDoRachunku(dinner)}"
                                          value="Dodaj do zamówienia"/>
                     </p:column>
                     <p:column>
                         <f:facet name="header">Nazwa dania</f:facet>
-                        #{danie.nazwa}
+                        #{dinner.name}
                     </p:column>
 
                     <p:column>
                         <f:facet name="header">Cena brutto</f:facet>
-                        #{menuController.formatPrice(danie.getCennaBrutto())}
+                        #{menuController.formatPrice(dinner.grossPrice())}
                     </p:column>
 
                 </p:dataTable>
             </b:column>
             <b:column span="6">
-                <p:dataTable id="listaMenu" value="#{stolController.stol.rachunek.dania}" var="d"
+                <p:dataTable id="listaMenu" value="#{tableController.stol.order.dania}" var="d"
                              styleClass="order-table"
                              headerClass="order-table-header"
                              rowClasses="order-table-odd-row,order-table-even-row">
                     <p:column>
                         <p:commandButton id="przyciskUsuniecia" value="Usun zamowienie"
                                          update="stol"
-                                         disabled="#{stolController.stol.rachunek.oplacony}"
-                                         actionListener="#{stolController.usunZRachunku(d)}"/>
+                                         disabled="#{tableController.stol.order.paid}"
+                                         actionListener="#{tableController.usunZRachunku(d)}"/>
 
-                        <p:commandButton id="usun1" value="Usun jedno danie"
+                        <p:commandButton id="usun1" value="Usun jedno dinner"
                                          update="stol"
-                                         disabled="#{stolController.stol.rachunek.oplacony}"
-                                         actionListener="#{stolController.usunJeden(d)}"/>
+                                         disabled="#{tableController.stol.order.paid}"
+                                         actionListener="#{tableController.usunJeden(d)}"/>
                     </p:column>
                     <p:column>
                         <f:facet name="header">Nazwa dania</f:facet>
-                        #{d.danie.nazwa}
+                        #{d.dinner.name}
                     </p:column>
 
                     <p:column>
                         <f:facet name="header">Cena brutto</f:facet>
-                        #{menuController.formatPrice(d.danie.getCennaBrutto())}
+                        #{menuController.formatPrice(d.dinner.grossPrice())}
                     </p:column>
 
                     <p:column>
@@ -142,7 +142,7 @@
 
                     <p:column>
                         <f:facet name="header">Razem</f:facet>
-                        #{menuController.formatPrice(d.getCennaBruttoRazem())}
+                        #{menuController.formatPrice(d.totalGrossPrice())}
                     </p:column>
 
                 </p:dataTable>

@@ -22,30 +22,30 @@
                     <p:panel header="Dodawanie rabatu">
                         <h:panelGrid columns="2" cellpadding="4">
                             <h:outputText value="Nazwa: "/>
-                            <p:inputText id="nazwa" value="#{rabatController.nowyRabat.nazwa}" required="true"
+                            <p:inputText id="nazwa" value="#{discountController.nowyRabat.name}" required="true"
                                          validator="noBlankValidator"/>
 
                             <h:outputText value="Kwota netto rabatu:"/>
-                            <p:inputNumber id="cenaNetto" value="#{rabatController.nowyRabat.wartoscZnizkiNetto}"
+                            <p:inputNumber id="cenaNetto" value="#{discountController.nowyRabat.netDiscountValue}"
                                            minValue="0"/>
 
                             <h:outputText value="Wartosc procentowa rabatu:"/>
-                            <p:inputNumber id="procentowo" value="#{rabatController.nowyRabat.wartoscProcentowa}"
+                            <p:inputNumber id="procentowo" value="#{discountController.nowyRabat.percentage}"
                                            minValue="0" maxValue="100"/>
 
 
                             <b:commandButton id="submit" value="Dodaj"
                                              update="Rabat" look="primary"
-                                             rendered="#{!rabatController.edycja}"
-                                             actionListener="#{rabatController.dodajRabat()}"/>
+                                             rendered="#{!discountController.edycja}"
+                                             actionListener="#{discountController.dodajRabat()}"/>
 
-                            <h:panelGrid id="edycja" rendered="#{rabatController.edycja}">
+                            <h:panelGrid id="edycja" rendered="#{discountController.edycja}">
                                 <p:commandButton id="edytuj" value="Zapisz zmiany"
                                                  update="Rabat"
-                                                 actionListener="#{rabatController.dodajRabat()}"/>
+                                                 actionListener="#{discountController.dodajRabat()}"/>
                                 <p:commandButton id="anuluj" value="Anuluj"
                                                  update="Rabat"
-                                                 actionListener="#{rabatController.anulujEdycje()}"/>
+                                                 actionListener="#{discountController.anulujEdycje()}"/>
                             </h:panelGrid>
                         </h:panelGrid>
                     </p:panel>
@@ -60,7 +60,7 @@
             </h:form>
             <h:form id="rabatLista">
                 <b:row>
-                    <p:dataTable id="listaRabat" value="#{rabatController.rabaty}" var="result"
+                    <p:dataTable id="listaRabat" value="#{discountController.discounts}" var="result"
                                  styleClass="order-table"
                                  headerClass="order-table-header"
                                  rowClasses="order-table-odd-row,order-table-even-row">
@@ -69,28 +69,28 @@
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="przyciskUsuniecia" value="Usun"
                                                      update="Rabat" look="danger"
-                                                     actionListener="#{rabatController.usunRabat(result)}"/>
+                                                     actionListener="#{discountController.usunRabat(result)}"/>
                                 </b:column>
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="edytujPrzycisk" value="Edytuj"
                                                      update="Rabat" look="info"
-                                                     actionListener="#{rabatController.edytujRabat(result)}"/>
+                                                     actionListener="#{discountController.edytujRabat(result)}"/>
                                 </b:column>
                             </b:row>
                         </p:column>
                         <p:column>
                             <f:facet name="header">Nazwa rabatu</f:facet>
-                            #{result.nazwa}
+                            #{result.name}
                         </p:column>
 
                         <p:column>
                             <f:facet name="header">Kwota netto rabatu</f:facet>
-                            #{rabatController.formatPrice(result.getWartoscZnizkiNetto())}
+                            #{discountController.formatPrice(result.netDiscountValue())}
                         </p:column>
 
                         <p:column>
                             <f:facet name="header">Wartosc procentowa rabatu</f:facet>
-                            #{result.wartoscProcentowa}
+                            #{result.percentage}
                         </p:column>
 
                     </p:dataTable>

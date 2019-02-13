@@ -14,16 +14,13 @@ public class OrderRepository {
 
     private final List<Order> orders;
 
-
-
     @Inject
-    public OrderRepository(DanieRepository danieRepository) {
+    public OrderRepository(DinnerRepository dinnerRepository) {
         orders = new ArrayList<>();
         orders.add(Order
                 .builder()
-                .cenaBruttoPoRabacie(new BigDecimal(20))
-                .cenaBrutto(new BigDecimal(30))
-                .dodajDania(danieRepository.getAll())
+                .grossPrice(new BigDecimal(30))
+                .dodajDania(dinnerRepository.getAll())
                 .build());
     }
 

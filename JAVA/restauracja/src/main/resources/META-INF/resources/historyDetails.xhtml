@@ -33,7 +33,7 @@
                 </b:column>
 
                 <b:column>
-                    <h:outputText id="idStolika" value="#{szczegolyHistoriiController.historia.stol.id}" />
+                    <h:outputText id="idStolika" value="#{szczegolyHistoriiController.history.table.id}" />
                 </b:column>
 
                 <b:column>
@@ -41,24 +41,24 @@
                 </b:column>
 
                 <b:column>
-                    <h:outputText id="wartosc" value="#{szczegolyHistoriiController.historia.zamowienie.cenaBrutto}" />
+                    <h:outputText id="wartosc" value="#{szczegolyHistoriiController.history.order.grossPrice}" />
                 </b:column>
 
             </h:panelGrid>
         </b:column>
         <b:column span="8">
-            <p:dataTable id="listaMenu" value="#{szczegolyHistoriiController.historia.zamowienie.dania}" var="d"
+            <p:dataTable id="listaMenu" value="#{szczegolyHistoriiController.history.order.dania}" var="d"
                          styleClass="order-table"
                          headerClass="order-table-header"
                          rowClasses="order-table-odd-row,order-table-even-row">
                 <p:column>
                     <f:facet name="header">Nazwa dania</f:facet>
-                    #{d.danie.nazwa}
+                    #{d.dinner.name}
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">Cena brutto</f:facet>
-                    #{menuController.formatPrice(d.danie.getCennaBrutto())}
+                    #{menuController.formatPrice(d.dinner.grossPrice())}
                 </p:column>
 
                 <p:column>
@@ -68,7 +68,7 @@
 
                 <p:column>
                     <f:facet name="header">Razem</f:facet>
-                    #{menuController.formatPrice(d.getCennaBruttoRazem())}
+                    #{menuController.formatPrice(d.totalGrossPrice())}
                 </p:column>
 
             </p:dataTable>

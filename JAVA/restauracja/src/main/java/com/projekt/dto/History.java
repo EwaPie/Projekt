@@ -12,11 +12,11 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Historia {
+public class History {
     @Getter
     private final String id = UUID.randomUUID().toString();
     @Getter
-    private Order zamowienie;
+    private Order order;
     @Getter
-    private Stol stol;
+    private Table table;
 }

@@ -1,80 +1,76 @@
 package com.projekt.controller;
 
-import com.projekt.dto.Danie;
-import com.projekt.service.DanieService;
+import com.projekt.dto.Dinner;
+import com.projekt.service.DinnerService;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.List;
 
-@Named
-@ViewScoped
+@Controller
+@Scope("view")
 public class MenuController {
 
-    private final DanieService danieService;
+    private final DinnerService dinnerService;
+    private final DecimalFormat df;
 
     @Getter
     @Setter
-    private Danie noweDanie;
+    private Dinner newDinner;
 
     @Getter
     @Setter
     private boolean edycja = false;
 
     @Getter
-    private List<Danie> dania;
+    private List<Dinner> dania;
 
-    @Inject
-    public MenuController(DanieService danieService) {
-        this.danieService = danieService;
-        noweDanie = Danie.builder().build();
+    public MenuController(DinnerService danieService) {
+        this.dinnerService = danieService;
+
+        df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
+        df.setMinimumFractionDigits(0);
+        df.setGroupingUsed(false);
+
+        newDinner = Dinner.builder().build();
         refresh();
     }
 
     private void refresh() {
-        dania = danieService.pobierzWszystkieDania();
+        dania = dinnerService.getAll();
     }
 
-    public String formatPrice(BigDecimal value) {
-
-        DecimalFormat df = new DecimalFormat();
-
-        df.setMaximumFractionDigits(2);
-
-        df.setMinimumFractionDigits(0);
-
-        df.setGroupingUsed(false);
-
-        return df.format(value);
+    public String formatPrice(BigDecimal price) {
+        return df.format(price);
     }
 
-    public void dodajDanie() {
+    public void addDinner() {
 
         if (!edycja) {
-            danieService.dodajDanie(noweDanie);
+            dinnerService.add(newDinner);
         }
-        noweDanie = Danie.builder().build();
+        newDinner = Dinner.builder().build();
         edycja = false;
         refresh();
     }
 
-    public void usunDanie(Danie danie) {
-        danieService.usunDanie(danie);
+    public void removeDinner(Dinner dinner) {
+        dinnerService.remove(dinner);
         refresh();
     }
 
-    public void edytujDanie(Danie danie) {
-        noweDanie = danie;
+    public void edytujDanie(Dinner dinner) {
+        newDinner = dinner;
         edycja = true;
     }
 
     public void anulujEdycje() {
-        noweDanie = Danie.builder().build();
+        newDinner = Dinner.builder().build();
         edycja = false;
     }
 }

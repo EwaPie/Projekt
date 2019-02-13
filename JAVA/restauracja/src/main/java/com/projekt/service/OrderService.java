@@ -2,22 +2,18 @@ package com.projekt.service;
 
 import com.projekt.dto.Order;
 import com.projekt.repository.OrderRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.List;
 
-@Named
+@Service
+@RequiredArgsConstructor
 public class OrderService {
 
     private final OrderRepository orderRepository;
 
-    @Inject
-    public OrderService(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
-    }
-
     public List<Order> getAll(){return orderRepository.getAll();}
 
-    public void save(Order newOrder) {this.orderRepository.save(newOrder);}
+    public void add(Order newOrder) {this.orderRepository.save(newOrder);}
 }

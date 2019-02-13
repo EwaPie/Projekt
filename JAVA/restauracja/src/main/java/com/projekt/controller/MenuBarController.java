@@ -1,30 +1,21 @@
 package com.projekt.controller;
 
-import com.projekt.dto.Stol;
-import com.projekt.service.StolService;
+import com.projekt.dto.Table;
+import com.projekt.service.TableService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
-import javax.annotation.PostConstruct;
-import javax.faces.context.FacesContext;
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.io.IOException;
 import java.util.List;
 
-@Named
+@Controller
+@Scope("view")
+@RequiredArgsConstructor
 public class MenuBarController {
 
-    private final StolService stolService;
+    private final TableService tableService;
 
-    @Inject
-    public MenuBarController(StolService stolService) {
-        this.stolService = stolService;
-    }
-
-    @PostConstruct
-    public void init() {
-    }
-
-    public List<Stol> getStoly() {
-        return stolService.pobierzWszystkieStoly();
+    public List<Table> getTable() {
+        return tableService.getAll();
     }
 }

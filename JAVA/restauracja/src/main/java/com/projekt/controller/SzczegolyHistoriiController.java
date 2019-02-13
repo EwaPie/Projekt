@@ -1,9 +1,8 @@
 package com.projekt.controller;
 
 
-import com.projekt.dto.Historia;
-import com.projekt.dto.Stol;
-import com.projekt.service.HistoriaService;
+import com.projekt.dto.History;
+import com.projekt.service.HistoryService;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,20 +14,21 @@ import javax.inject.Named;
 @ViewScoped
 public class SzczegolyHistoriiController {
 
-    private final HistoriaService historiaService;
+    private final HistoryService historyService;
 
     @Setter
     @Getter
     private String id;
 
     @Getter
-    private Historia historia;
+    private History history;
     @Inject
-    public SzczegolyHistoriiController(HistoriaService historiaService) {
-        this.historiaService = historiaService;
+    public SzczegolyHistoriiController(HistoryService historyService) {
+        this.historyService = historyService;
         refresh();
     }
 
-    public void refresh(){historia = historiaService.pojedynczaHistoria(id);}
+    public void refresh(){
+        history = historyService.getById(id);}
 
 }

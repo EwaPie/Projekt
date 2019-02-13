@@ -1,45 +1,52 @@
 package com.projekt.controller;
 
-import com.projekt.dto.Rabat;
-import com.projekt.service.RabatService;
+import com.projekt.dto.Discount;
+import com.projekt.service.DiscountService;
 import lombok.Getter;
 import lombok.Setter;
 import org.primefaces.PrimeFaces;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.List;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
-@Named
-@ViewScoped
-public class RabatController {
+@Controller
+@Scope("view")
+public class DiscountController {
 
-    private final RabatService rabatService;
+    private final DiscountService discountService;
+    private final DecimalFormat df;
 
     @Getter
-    private List<Rabat> rabaty;
+    private List<Discount> discounts;
 
     @Getter
     @Setter
-    private Rabat nowyRabat;
+    private Discount nowyRabat;
 
     @Getter
     @Setter
     private boolean edycja = false;
 
-    @Inject
-    public RabatController(RabatService rabatService) {
-        this.rabatService = rabatService;
-        nowyRabat = new Rabat();
+    public DiscountController(DiscountService discountService) {
+        this.discountService = discountService;
+
+        df = new DecimalFormat();
+
+        df.setMaximumFractionDigits(2);
+        df.setMinimumFractionDigits(0);
+        df.setGroupingUsed(false);
+
+        nowyRabat = new Discount();
         refresh();
     }
 
     private void refresh() {
-        rabaty = rabatService.getAll();
+        discounts = discountService.getAll();
     }
 
     public void dodajRabat() {
@@ -51,38 +58,31 @@ public class RabatController {
         }
 
         if (!edycja) {
-            rabatService.dodajRabat(nowyRabat);
+            discountService.add(nowyRabat);
 
         }
-        nowyRabat = new Rabat();
+        nowyRabat = new Discount();
         edycja = false;
 
         refresh();
     }
 
     public String formatPrice(BigDecimal value) {
-
-        DecimalFormat df = new DecimalFormat();
-
-        df.setMaximumFractionDigits(2);
-        df.setMinimumFractionDigits(0);
-        df.setGroupingUsed(false);
-
         return df.format(value);
     }
 
-    public void usunRabat(Rabat rabat) {
-        this.rabatService.usunRabat(rabat);
+    public void usunRabat(Discount rabat) {
+        this.discountService.remove(rabat);
         refresh();
     }
 
-    public void edytujRabat(Rabat rabat) {
+    public void edytujRabat(Discount rabat) {
         nowyRabat = rabat;
         edycja = true;
     }
 
     public void anulujEdycje() {
-        nowyRabat = new Rabat();
+        nowyRabat = new Discount();
         edycja = false;
     }
 }

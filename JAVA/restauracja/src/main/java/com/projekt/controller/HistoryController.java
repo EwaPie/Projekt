@@ -1,49 +1,24 @@
 package com.projekt.controller;
 
-
-import com.projekt.dto.Historia;
-import com.projekt.dto.Stol;
-import com.projekt.service.HistoriaService;
+import com.projekt.dto.History;
+import com.projekt.service.HistoryService;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.List;
 
-@Named
-@ViewScoped
+@Controller
+@Scope("view")
 public class HistoryController {
 
-    private final HistoriaService historiaService;
-
-
     @Getter
     @Setter
-    private List<Historia> history;
+    private List<History> history;
 
-    @Getter
-    @Setter
-    private List<Historia> pofiltrowanaHistoria;
-    @Getter
-    @Setter
-    private Stol stol = null;
-
-    @Inject
-    public HistoryController(HistoriaService historiaService) {
-        this.historiaService = historiaService;
-        refresh();
+    public HistoryController(HistoryService historyService) {
+        history = historyService.getAll();
     }
 
-    public void refresh(){
-        if(stol == null)
-        {
-            history = historiaService.pobierzHistorie();
-        }
-        else
-        {
-            history = historiaService.pobierzHistorieStolu(stol.getId());
-        }
-    }
 }

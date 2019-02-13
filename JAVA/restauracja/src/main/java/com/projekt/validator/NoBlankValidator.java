@@ -20,8 +20,11 @@ public class NoBlankValidator implements Validator {
             FacesMessage msg =
                     new FacesMessage("Niepoprawna wartosc pola Nazwa",
                             "Pole nie moze byc puste");
+
             msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+
             PrimeFaces.current().dialog().showMessageDynamic(msg);
+
             throw new ValidatorException(msg);
 
         }

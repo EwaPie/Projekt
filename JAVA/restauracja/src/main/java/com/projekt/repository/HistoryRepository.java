@@ -1,7 +1,7 @@
 package com.projekt.repository;
 
-import com.projekt.dto.DanieWrapper;
-import com.projekt.dto.Historia;
+import com.projekt.dto.DinnerWrapper;
+import com.projekt.dto.History;
 import com.projekt.dto.Order;
 import org.springframework.util.LinkedMultiValueMap;
 
@@ -14,43 +14,42 @@ import java.util.stream.Collectors;
 @Named
 public class HistoryRepository {
 
-    private final Map<Integer, List<Historia>> historia;
+    private final Map<Integer, List<History>> historia;
 
     @Inject
-    public HistoryRepository(StolRepository stolRepository, DanieRepository danieRepository) {
+    public HistoryRepository(TableRepository tableRepository, DinnerRepository dinnerRepository) {
         this.historia = new LinkedMultiValueMap<>();
-        List<Historia> fake = new ArrayList<>();
-        DanieWrapper danie = new DanieWrapper(danieRepository.getAll().get(1));
+        List<History> fake = new ArrayList<>();
+        DinnerWrapper danie = new DinnerWrapper(dinnerRepository.getAll().get(1));
         danie.setCount(1);
-        List<DanieWrapper> fakeList = new ArrayList<>();
+        List<DinnerWrapper> fakeList = new ArrayList<>();
         fakeList.add(danie);
-        fake.add(Historia
+        fake.add(History
                 .builder()
-                .stol(stolRepository.getAll().get(1))
-                .zamowienie(Order
+                .table(tableRepository.getAll().get(1))
+                .order(Order
                         .builder()
                         .dania(fakeList)
-                        .cenaBrutto(new BigDecimal(20))
-                        .cenaBruttoPoRabacie(new BigDecimal(10))
+                        .grossPrice(new BigDecimal(20))
                         .build())
                 .build());
-       this.historia.computeIfAbsent(stolRepository.getAll().get(1).getId(), key -> fake);
+       this.historia.computeIfAbsent(tableRepository.getAll().get(1).getId(), key -> fake);
     }
 
-    public void save(Historia historia) {
-        this.historia.computeIfAbsent(historia.getStol().getId(), key -> new LinkedList<>())
-                .add(historia);
+    public void save(History history) {
+        this.historia.computeIfAbsent(history.getTable().getId(), key -> new LinkedList<>())
+                .add(history);
     }
 
-    public List<Historia> pobierzHistorie() {
+    public List<History> pobierzHistorie() {
         return historia.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
     }
 
-    public List<Historia> pobierzHistorieStolu(Integer id) {
+    public List<History> pobierzHistorieStolu(Integer id) {
         return historia.getOrDefault(id, Collections.emptyList());
     }
 
-    public Historia pobierzJedna(String id) {
+    public History pobierzJedna(String id) {
         return historia
                 .values()
                 .stream()
