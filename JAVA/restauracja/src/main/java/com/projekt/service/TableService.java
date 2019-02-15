@@ -8,6 +8,7 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,11 +23,20 @@ public class TableService {
     }
 
     public void add(Table table) {
+        if (table.getId() != null) {
+            Optional<com.projekt.model.Table> entity = tableRepository.findById(table.getId());
+
+            if (entity.isPresent()) {
+                tableRepository.save(mapper.merge(entity.get(), table));
+                return;
+            }
+        }
         tableRepository.save(mapper.dtoToEntity(table));
+
     }
 
     public void remove(Table table) {
-        tableRepository.delete(mapper.dtoToEntity(table));
+        tableRepository.deleteById(table.getId());
     }
 
     public Table getById(Integer id) {

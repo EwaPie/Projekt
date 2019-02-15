@@ -2,6 +2,7 @@ package com.projekt.controller;
 
 import com.projekt.dto.Discount;
 import com.projekt.service.DiscountService;
+import com.projekt.util.DecimalFormatter;
 import lombok.Getter;
 import lombok.Setter;
 import org.primefaces.PrimeFaces;
@@ -9,39 +10,30 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import javax.faces.application.FacesMessage;
-import javax.inject.Inject;
 import java.util.List;
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 
 @Controller
 @Scope("view")
 public class DiscountController {
 
     private final DiscountService discountService;
-    private final DecimalFormat df;
 
     @Getter
     private List<Discount> discounts;
 
     @Getter
     @Setter
-    private Discount nowyRabat;
+    private Discount discount;
 
     @Getter
     @Setter
-    private boolean edycja = false;
+    private boolean edit = false;
 
     public DiscountController(DiscountService discountService) {
         this.discountService = discountService;
 
-        df = new DecimalFormat();
-
-        df.setMaximumFractionDigits(2);
-        df.setMinimumFractionDigits(0);
-        df.setGroupingUsed(false);
-
-        nowyRabat = new Discount();
+        discount = new Discount();
         refresh();
     }
 
@@ -49,40 +41,39 @@ public class DiscountController {
         discounts = discountService.getAll();
     }
 
-    public void dodajRabat() {
+    public void add() {
 
-        if (nowyRabat.isEmpty()) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bledna wartosc", "Mozesz wybrac znizke procentowa lub kwotowa");
+        if (discount.isEmpty()) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bledna wartosc",
+                    "Mozesz wybrac znizke procentowa lub kwotowa");
             PrimeFaces.current().dialog().showMessageDynamic(message);
             return;
         }
 
-        if (!edycja) {
-            discountService.add(nowyRabat);
+        discountService.add(discount);
 
-        }
-        nowyRabat = new Discount();
-        edycja = false;
+        discount = new Discount();
+        edit = false;
 
         refresh();
     }
 
     public String formatPrice(BigDecimal value) {
-        return df.format(value);
+        return DecimalFormatter.formatOrEmpty(value);
     }
 
-    public void usunRabat(Discount rabat) {
+    public void remove(Discount rabat) {
         this.discountService.remove(rabat);
         refresh();
     }
 
-    public void edytujRabat(Discount rabat) {
-        nowyRabat = rabat;
-        edycja = true;
+    public void editDiscount(Discount rabat) {
+        discount = rabat;
+        edit = true;
     }
 
-    public void anulujEdycje() {
-        nowyRabat = new Discount();
-        edycja = false;
+    public void abortEdit() {
+        discount = new Discount();
+        edit = false;
     }
 }

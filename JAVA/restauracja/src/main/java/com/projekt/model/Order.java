@@ -1,10 +1,7 @@
 package com.projekt.model;
 
 import com.projekt.enums.AccountType;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -15,6 +12,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "dinner")
+@EqualsAndHashCode(exclude = "dinner")
 @Entity
 @javax.persistence.Table(name = "ORDERS")
 public class Order {
@@ -26,7 +25,7 @@ public class Order {
     private BigDecimal grossPrice;
 
     @Builder.Default
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<DinnerToOrder> dinner = new ArrayList<>();
 
     private boolean paid;
@@ -34,11 +33,11 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private Discount discount;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "table_id")
     private Table table;
 

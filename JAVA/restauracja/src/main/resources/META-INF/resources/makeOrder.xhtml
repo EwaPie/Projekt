@@ -10,7 +10,7 @@
 <ui:component>
     <h:panelGrid id="MakeOrder">
         <h:form id="MakeOrderForm">
-            <p:dataTable id="makeOrderTable" value="#{menuController.dania}" var="result"
+            <p:dataTable id="makeOrderTable" value="#{menuController.dinner}" var="result"
                          styleClass="order-table"
                          headerClass="order-table-header"
                          rowClasses="order-table-odd-row,order-table-even-row">
@@ -45,7 +45,7 @@
                 <p:column>
                     <p:commandButton id="przyciskUsuniecia" value="Usun"
                                      update="MakeOrder"
-                                     actionListener="#{orderController.usunItem(result)}"/>
+                                     actionListener="#{orderController.removeFromOrder(result)}"/>
                 </p:column>
                 <p:column>
                     <f:facet name="header">Nazwa dania</f:facet>

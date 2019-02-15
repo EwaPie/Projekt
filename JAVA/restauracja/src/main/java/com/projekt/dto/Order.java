@@ -11,6 +11,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(exclude = "dinners")
+@ToString(exclude = "dinners")
 public class Order {
 
     private Integer id;

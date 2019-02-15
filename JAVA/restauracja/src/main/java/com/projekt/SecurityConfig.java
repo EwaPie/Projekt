@@ -13,8 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
         http.authorizeRequests()
-                .antMatchers("/h2").permitAll()
-                .antMatchers("/**").authenticated()
+                .anyRequest().authenticated()
                 .and()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/index.xhtml")
                 .and()

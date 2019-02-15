@@ -34,16 +34,16 @@
 
                             <b:commandButton id="submit" value="Dodaj"
                                              update="Menu" look="primary"
-                                             rendered="#{!menuController.edycja}"
-                                             actionListener="#{menuController.addDinner()}"/>
+                                             rendered="#{!menuController.edit}"
+                                             actionListener="#{menuController.add()}"/>
 
-                            <h:panelGrid id="edycja" rendered="#{menuController.edycja}">
+                            <h:panelGrid id="edycja" rendered="#{menuController.edit}">
                                 <p:commandButton id="edytuj" value="Zapisz zmiany"
                                                  update="Menu"
-                                                 actionListener="#{menuController.addDinner()}"/>
+                                                 actionListener="#{menuController.add()}"/>
                                 <p:commandButton id="anuluj" value="Anuluj"
                                                  update="Menu"
-                                                 actionListener="#{menuController.anulujEdycje()}"/>
+                                                 actionListener="#{menuController.abort()}"/>
                             </h:panelGrid>
                         </h:panelGrid>
                     </p:panel>
@@ -58,7 +58,7 @@
             </h:form>
             <h:form id="danieLista">
                 <b:row>
-                    <p:dataTable id="listaMenu" value="#{menuController.dania}" var="result"
+                    <p:dataTable id="listaMenu" value="#{menuController.dinner}" var="result"
                                  style="text-align: center"
                                  styleClass="order-table"
                                  headerClass="order-table-header"
@@ -68,12 +68,12 @@
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="przyciskUsuniecia" value="Usun"
                                                      update="Menu" look="danger"
-                                                     actionListener="#{menuController.removeDinner(result)}"/>
+                                                     actionListener="#{menuController.remove(result)}"/>
                                 </b:column>
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="edytujPrzycisk" value="Edytuj"
                                                      update="Menu" look="info"
-                                                     actionListener="#{menuController.edytujDanie(result)}"/>
+                                                     actionListener="#{menuController.editDinner(result)}"/>
                                 </b:column>
                             </b:row>
                         </p:column>

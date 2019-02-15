@@ -15,9 +15,9 @@ public class DinnerToOrder {
 
     private Integer count;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Dinner dinner;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Order order;
 }

@@ -22,30 +22,30 @@
                     <p:panel header="Dodawanie rabatu">
                         <h:panelGrid columns="2" cellpadding="4">
                             <h:outputText value="Nazwa: "/>
-                            <p:inputText id="nazwa" value="#{discountController.nowyRabat.name}" required="true"
+                            <p:inputText id="nazwa" value="#{discountController.discount.name}" required="true"
                                          validator="noBlankValidator"/>
 
                             <h:outputText value="Kwota netto rabatu:"/>
-                            <p:inputNumber id="cenaNetto" value="#{discountController.nowyRabat.netDiscountValue}"
+                            <p:inputNumber id="cenaNetto" value="#{discountController.discount.netDiscountValue}"
                                            minValue="0"/>
 
                             <h:outputText value="Wartosc procentowa rabatu:"/>
-                            <p:inputNumber id="procentowo" value="#{discountController.nowyRabat.percentage}"
+                            <p:inputNumber id="procentowo" value="#{discountController.discount.percentage}"
                                            minValue="0" maxValue="100"/>
 
 
                             <b:commandButton id="submit" value="Dodaj"
                                              update="Rabat" look="primary"
-                                             rendered="#{!discountController.edycja}"
-                                             actionListener="#{discountController.dodajRabat()}"/>
+                                             rendered="#{!discountController.edit}"
+                                             actionListener="#{discountController.add()}"/>
 
-                            <h:panelGrid id="edycja" rendered="#{discountController.edycja}">
+                            <h:panelGrid id="edycja" rendered="#{discountController.edit}">
                                 <p:commandButton id="edytuj" value="Zapisz zmiany"
                                                  update="Rabat"
-                                                 actionListener="#{discountController.dodajRabat()}"/>
+                                                 actionListener="#{discountController.add()}"/>
                                 <p:commandButton id="anuluj" value="Anuluj"
                                                  update="Rabat"
-                                                 actionListener="#{discountController.anulujEdycje()}"/>
+                                                 actionListener="#{discountController.abortEdit()}"/>
                             </h:panelGrid>
                         </h:panelGrid>
                     </p:panel>
@@ -69,12 +69,12 @@
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="przyciskUsuniecia" value="Usun"
                                                      update="Rabat" look="danger"
-                                                     actionListener="#{discountController.usunRabat(result)}"/>
+                                                     actionListener="#{discountController.remove(result)}"/>
                                 </b:column>
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="edytujPrzycisk" value="Edytuj"
                                                      update="Rabat" look="info"
-                                                     actionListener="#{discountController.edytujRabat(result)}"/>
+                                                     actionListener="#{discountController.editDiscount(result)}"/>
                                 </b:column>
                             </b:row>
                         </p:column>

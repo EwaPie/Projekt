@@ -2,13 +2,13 @@ package com.projekt.controller;
 
 import com.projekt.dto.Dinner;
 import com.projekt.service.DinnerService;
+import com.projekt.util.DecimalFormatter;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.List;
 
 @Controller
@@ -16,7 +16,6 @@ import java.util.List;
 public class MenuController {
 
     private final DinnerService dinnerService;
-    private final DecimalFormat df;
 
     @Getter
     @Setter
@@ -24,53 +23,46 @@ public class MenuController {
 
     @Getter
     @Setter
-    private boolean edycja = false;
+    private boolean edit = false;
 
     @Getter
-    private List<Dinner> dania;
+    private List<Dinner> dinner;
 
     public MenuController(DinnerService danieService) {
         this.dinnerService = danieService;
-
-        df = new DecimalFormat();
-        df.setMaximumFractionDigits(2);
-        df.setMinimumFractionDigits(0);
-        df.setGroupingUsed(false);
 
         newDinner = Dinner.builder().build();
         refresh();
     }
 
     private void refresh() {
-        dania = dinnerService.getAll();
+        dinner = dinnerService.getAll();
     }
 
     public String formatPrice(BigDecimal price) {
-        return df.format(price);
+        return DecimalFormatter.format(price);
     }
 
-    public void addDinner() {
+    public void add() {
+        dinnerService.add(newDinner);
 
-        if (!edycja) {
-            dinnerService.add(newDinner);
-        }
         newDinner = Dinner.builder().build();
-        edycja = false;
+        edit = false;
         refresh();
     }
 
-    public void removeDinner(Dinner dinner) {
+    public void remove(Dinner dinner) {
         dinnerService.remove(dinner);
         refresh();
     }
 
-    public void edytujDanie(Dinner dinner) {
+    public void editDinner(Dinner dinner) {
         newDinner = dinner;
-        edycja = true;
+        edit = true;
     }
 
-    public void anulujEdycje() {
+    public void abort() {
         newDinner = Dinner.builder().build();
-        edycja = false;
+        edit = false;
     }
 }

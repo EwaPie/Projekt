@@ -31,7 +31,7 @@ public class TableController {
 
     @Getter
     @Setter
-    private Table stol = Table.builder().build();
+    private Table table = Table.builder().build();
 
     @Getter
     @Setter
@@ -39,75 +39,78 @@ public class TableController {
 
     @Getter
     @Setter
-    private String rabatNazwa;
+    private String discountName;
 
     public void refresh() {
-        stol = tableService.getById(id);
-    }
-
-    public void dodajDoRachunku(Dinner dinner) {
-        stol.getOrder().addDinner(dinner);
-    }
-
-    public void usunZRachunku(DinnerWrapper danie) {
-        stol.getOrder().getDinners().removeIf(d -> d.equals(danie));
-    }
-
-    public void usunJeden(DinnerWrapper danie) {
-        danie.setCount(danie.getCount() - 1);
-        if (danie.getCount() < 1) {
-            usunZRachunku(danie);
+        if (id != null) {
+            table = tableService.getById(id);
         }
     }
 
-    public void otworzRachunek() {
-        stol.setOrder(Order.builder().build());
+    public void addToOrder(Dinner dinner) {
+        table.getOrder().addDinner(dinner);
+        tableService.add(table);
     }
 
-    public void oplac() {
-        Order zamownie = stol.getOrder();
-        zamownie.setPaid(true);
-        BigDecimal wartoscZamowienia = zamownie
+    public void removeFromOrder(DinnerWrapper danie) {
+        table.getOrder().getDinners().removeIf(d -> d.equals(danie));
+        tableService.add(table);
+    }
+
+    public void removeOneFromOrder(DinnerWrapper danie) {
+        danie.setCount(danie.getCount() - 1);
+        if (danie.getCount() < 1) {
+            removeFromOrder(danie);
+        }
+        tableService.add(table);
+    }
+
+    public void openNewOrder() {
+        table.setOrder(Order.builder().build());
+    }
+
+    public void pays() {
+        Order order = table.getOrder();
+        order.setPaid(true);
+        BigDecimal orderAmount = order
                 .getDinners()
                 .stream()
                 .map(DinnerWrapper::getTotalGrossPrice)
                 .reduce(BigDecimal::add)
                 .orElse(BigDecimal.ZERO);
-        zamownie.setGrossPrice(wartoscZamowienia);
+        order.setGrossPrice(orderAmount);
+
+        tableService.add(table);
     }
 
-    public void zamknij() {
-        Order zamownie = stol.getOrder();
-        zamownie.setClose(true);
-        if (zamownie.getGrossPrice().compareTo(BigDecimal.ZERO) != 0) {
-            this.historyService.add(History.builder().table(stol).order(stol.getOrder()).build());
+    public void closeOrder() {
+        Order order = table.getOrder();
+        order.setClose(true);
+        if (order.getGrossPrice().compareTo(BigDecimal.ZERO) != 0) {
+            this.historyService.add(History.builder()
+                    .table(table)
+                    .order(order)
+                    .build());
         }
+
+        tableService.add(table);
     }
 
-    public void dodajRabat() {
-        Optional<Discount> rabat = discountService.getAll()
-                .stream()
-                .filter(r -> r.getName().equalsIgnoreCase(rabatNazwa))
-                .findAny();
-        if (!rabat.isPresent()) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bledna wartosc", "Podany discount nie istnieje");
-            PrimeFaces.current().dialog().showMessageDynamic(message);
+    public void addDiscount() {
+        Optional<Discount> discount = discountService.findDiscount(discountName);
+        if (discount.isPresent()) {
+            table.getOrder().setDiscount(discount.get());
+            tableService.add(table);
             return;
         }
-        stol.getOrder().setDiscount(rabat.get());
+
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bledna wartosc", "Podany rabat nie istnieje");
+        PrimeFaces.current().dialog().showMessageDynamic(message);
     }
 
-    public void usunRabat() {
-        Optional<Discount> rabat = discountService.getAll()
-                .stream()
-                .filter(r -> r.getName().equalsIgnoreCase(rabatNazwa))
-                .findAny();
-        if (!rabat.isPresent()) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bledna wartosc", "Podany discount nie istnieje");
-            PrimeFaces.current().dialog().showMessageDynamic(message);
-            return;
-        }
-        stol.getOrder().setDiscount(Discount.EMPTY);
-        rabatNazwa = null;
+    public void removeDiscount() {
+        table.getOrder().setDiscount(Discount.EMPTY);
+        discountName = null;
+        tableService.add(table);
     }
 }

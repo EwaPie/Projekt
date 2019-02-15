@@ -21,21 +21,21 @@
                     <p:panel header="Dodanie stolika">
                         <h:panelGrid columns="2" cellpadding="4">
                             <h:outputText value="Ilosc miejsc: "/>
-                            <p:inputNumber id="iloscMiejsc" value="#{hallController.nowyStol.numberOfSeats}"
+                            <p:inputNumber id="iloscMiejsc" value="#{hallController.table.numberOfSeats}"
                                            required="true" minValue="0" padControl="false"/>
 
                             <b:commandButton id="submit" value="Dodaj"
                                              update="Sala" look="primary"
-                                             rendered="#{!hallController.edycja}"
-                                             actionListener="#{hallController.dodajStol()}"/>
+                                             rendered="#{!hallController.edit}"
+                                             actionListener="#{hallController.add()}"/>
 
-                            <h:panelGrid id="edycja" rendered="#{hallController.edycja}">
+                            <h:panelGrid id="edycja" rendered="#{hallController.edit}">
                                 <p:commandButton id="edytuj" value="Zapisz zmiany"
                                                  update="Sala"
-                                                 actionListener="#{hallController.dodajStol()}"/>
+                                                 actionListener="#{hallController.add()}"/>
                                 <p:commandButton id="anuluj" value="Anuluj"
                                                  update="Sala"
-                                                 actionListener="#{hallController.anulujEdycje()}"/>
+                                                 actionListener="#{hallController.abortEdit()}"/>
                             </h:panelGrid>
                         </h:panelGrid>
                     </p:panel>
@@ -60,12 +60,12 @@
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="przyciskUsuniecia" value="Usun"
                                                      update="Sala" look="danger"
-                                                     actionListener="#{hallController.usunStol(s)}"/>
+                                                     actionListener="#{hallController.remove(s)}"/>
                                 </b:column>
                                 <b:column span="2" offset="2">
                                     <b:commandButton id="edytujPrzycisk" value="Edytuj"
                                                      update="Sala" look="info"
-                                                     actionListener="#{hallController.edytujStol(s)}"/>
+                                                     actionListener="#{hallController.editTable(s)}"/>
                                 </b:column>
                             </b:row>
                         </p:column>

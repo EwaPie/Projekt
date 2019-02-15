@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class Dinner {
     private BigDecimal netPrice;
     private Integer taxAmount;
 
-    @OneToMany(mappedBy = "dinner")
+    @OneToMany(mappedBy = "dinner", cascade = CascadeType.ALL)
     private List<DinnerToOrder> orders;
 
 }

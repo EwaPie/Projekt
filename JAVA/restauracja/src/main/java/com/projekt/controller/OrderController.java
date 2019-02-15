@@ -26,13 +26,13 @@ public class OrderController {
 
     @Getter
     @Setter
-    private Order newOrder;
+    private Order order;
 
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
 
         items = new ArrayList<>();
-        newOrder = new Order();
+        order = new Order();
         refresh();
     }
 
@@ -40,24 +40,27 @@ public class OrderController {
         items.add(dinner);
     }
 
-    public void usunItem(Dinner dinner)
-    {
+    public void removeFromOrder(Dinner dinner) {
         items.remove(dinner);
     }
 
-    public void makeOrder()
-    {
+    public void makeOrder() {
         for (Dinner dinner : items) {
-            newOrder.addDinner(dinner);
+            order.addDinner(dinner);
         }
-        orderService.add(newOrder);
+        if (order.getDiscount().isEmpty()) {
+            order.setDiscount(null);
+        }
+
+        orderService.add(order);
         items = new ArrayList<>();
 
         refresh();
     }
 
-    private void refresh(){orders = orderService.getAll();}
-
+    private void refresh() {
+        orders = orderService.getAll();
+    }
 
 
 }

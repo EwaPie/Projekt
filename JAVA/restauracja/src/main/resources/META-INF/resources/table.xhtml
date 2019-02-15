@@ -24,39 +24,39 @@
         <h:outputStylesheet library="css" name="tables-style.css"/>
     </h:head>
 
-    <h:form id="stol" style="text-align: center">
+    <h:form id="tableWdg" style="text-align: center">
         <b:row>
             <b:column span="5">
                 <h:panelGrid columns="2" style="width:100%" cellpadding="30" border="1" cellspacing="2">
                     <p:button value="Wroc do sali" outcome="index"/>
-                    <b:commandButton value="Otworz nowy rachunek" actionListener="#{tableController.otworzRachunek()}"
-                                     update="stol" look="primary"
-                                     disabled="#{!tableController.stol.order.paid
-                                      or !tableController.stol.order.close}"
+                    <b:commandButton value="Otworz nowy rachunek" actionListener="#{tableController.openNewOrder()}"
+                                     update="tableWdg" look="primary"
+                                     disabled="#{!tableController.table.order.paid
+                                      or !tableController.table.order.close}"
                     />
                     <p:outputLabel for="numer" value="Numer stolika"/>
-                    <p:outputLabel id="numer" value="#{tableController.stol.id}"/>
+                    <p:outputLabel id="numer" value="#{tableController.table.id}"/>
                     <p:outputLabel for="wartosc" value="Aktualna wartosc"/>
-                    <p:outputLabel id="wartosc" value="#{tableController.stol.order.actualPrice()}"/>
+                    <p:outputLabel id="wartosc" value="#{tableController.table.order.actualPrice()}"/>
 
-                    <b:commandButton value="Oplac" actionListener="#{tableController.oplac()}"
-                                     update="stol" look="info"
-                                     disabled="#{tableController.stol.order.paid or
-                                     tableController.stol.order.dinners.isEmpty()}"
+                    <b:commandButton value="Oplac" actionListener="#{tableController.pays()}"
+                                     update="tableWdg" look="info"
+                                     disabled="#{tableController.table.order.paid or
+                                     tableController.table.order.dinners.isEmpty()}"
                     />
-                    <b:commandButton value="Zamknij" actionListener="#{tableController.zamknij()}"
-                                     update="stol" look="warning"
-                                     disabled="#{tableController.stol.order.close or
-                                     tableController.stol.order.dinners.isEmpty()}"
+                    <b:commandButton value="Zamknij" actionListener="#{tableController.closeOrder()}"
+                                     update="tableWdg" look="warning"
+                                     disabled="#{tableController.table.order.close or
+                                     tableController.table.order.dinners.isEmpty()}"
                     />
 
-                    <p:commandButton value="Dodaj rabat" actionListener="#{tableController.dodajRabat()}"
-                                     update="stol" rendered="#{tableController.stol.order.discount.isEmpty()}"/>
+                    <p:commandButton value="Dodaj rabat" actionListener="#{tableController.addDiscount()}"
+                                     update="tableWdg" rendered="#{tableController.table.order.discount.isEmpty()}"/>
 
-                    <p:commandButton value="Usun rabat" actionListener="#{tableController.usunRabat()}"
-                                     update="stol" rendered="#{!tableController.stol.order.discount.isEmpty()}"/>
-                    <p:inputText placeholder="Rabat" value="#{tableController.rabatNazwa}"
-                                 disabled="#{!tableController.stol.order.discount.isEmpty()}"/>
+                    <p:commandButton value="Usun rabat" actionListener="#{tableController.removeDiscount()}"
+                                     update="tableWdg" rendered="#{!tableController.table.order.discount.isEmpty()}"/>
+                    <p:inputText placeholder="Rabat" value="#{tableController.discountName}"
+                                 disabled="#{!tableController.table.order.discount.isEmpty()}"/>
 
                 </h:panelGrid>
             </b:column>
@@ -85,16 +85,16 @@
         </b:row>
         <b:row>
             <b:column span="6">
-                <p:dataTable id="makeOrderTable" value="#{menuController.dania}" var="dinner"
+                <p:dataTable id="makeOrderTable" value="#{menuController.dinner}" var="dinner"
                              styleClass="order-table"
                              style="margin: 1%"
                              headerClass="order-table-header"
                              rowClasses="order-table-odd-row,order-table-even-row">
                     <p:column>
-                        <b:commandButton id="addToOrderButton" update="stol"
+                        <b:commandButton id="addToOrderButton" update="tableWdg"
                                          look="success"
-                                         disabled="#{tableController.stol.order.paid}"
-                                         actionListener="#{tableController.dodajDoRachunku(dinner)}"
+                                         disabled="#{tableController.table.order.paid}"
+                                         actionListener="#{tableController.addToOrder(dinner)}"
                                          value="Dodaj do zamówienia"/>
                     </p:column>
                     <p:column>
@@ -110,20 +110,20 @@
                 </p:dataTable>
             </b:column>
             <b:column span="6">
-                <p:dataTable id="listaMenu" value="#{tableController.stol.order.dinners}" var="d"
+                <p:dataTable id="listaMenu" value="#{tableController.table.order.dinners}" var="d"
                              styleClass="order-table"
                              headerClass="order-table-header"
                              rowClasses="order-table-odd-row,order-table-even-row">
                     <p:column>
                         <p:commandButton id="przyciskUsuniecia" value="Usun zamowienie"
-                                         update="stol"
-                                         disabled="#{tableController.stol.order.paid}"
-                                         actionListener="#{tableController.usunZRachunku(d)}"/>
+                                         update="tableWdg"
+                                         disabled="#{tableController.table.order.paid}"
+                                         actionListener="#{tableController.removeFromOrder(d)}"/>
 
                         <p:commandButton id="usun1" value="Usun jedno dinner"
-                                         update="stol"
-                                         disabled="#{tableController.stol.order.paid}"
-                                         actionListener="#{tableController.usunJeden(d)}"/>
+                                         update="tableWdg"
+                                         disabled="#{tableController.table.order.paid}"
+                                         actionListener="#{tableController.removeOneFromOrder(d)}"/>
                     </p:column>
                     <p:column>
                         <f:facet name="header">Nazwa dania</f:facet>

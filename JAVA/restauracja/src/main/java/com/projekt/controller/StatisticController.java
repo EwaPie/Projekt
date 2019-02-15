@@ -23,6 +23,7 @@ import java.util.List;
 @Scope("view")
 @RequiredArgsConstructor
 public class StatisticController implements Serializable {
+
     private final HistoryService historyService;
     private final DinnerService dinnerService;
     private final TableService tableService;
@@ -41,61 +42,59 @@ public class StatisticController implements Serializable {
                     .map(Order::getDinners)
                     .flatMap(List::stream)
                     .filter(d -> d.getName().equals(dinner.getName()))
-                    .map(DinnerWrapper::getCount)
-                    .reduce((i1, i2) -> i1 + i2)
-                    .orElse(0);
+                    .mapToInt(DinnerWrapper::getCount)
+                    .sum();
 
             pieChart.set(dinner.getName(), count);
         }
         return pieChart;
     }
 
-    public BarChartModel rozkladKwotNaStolik() {
+    public BarChartModel amountPerTable() {
         BarChartModel model = new BarChartModel();
         model.setTitle("Rozkład obrotu na stoliki");
 
-        for (Table stol : tableService.getAll()) {
-            ChartSeries seria = new ChartSeries();
+        for (Table table : tableService.getAll()) {
+            ChartSeries series = new ChartSeries();
 
-            seria.setLabel(stol.getId().toString());
+            series.setLabel(table.getId().toString());
 
             BigDecimal count = historyService
-                    .getAllByTableId(stol.getId())
+                    .getAllByTableId(table.getId())
                     .stream()
                     .map(History::getOrder)
-                    .map(order -> order.getDiscount().applyDiscount(order.getGrossPrice()))
+                    .map(Order::actualPrice)
                     .reduce(BigDecimal::add)
                     .orElse(BigDecimal.ZERO);
 
-            seria.set(stol.getId(), count);
+            series.set(table.getId(), count);
 
-            model.addSeries(seria);
+            model.addSeries(series);
         }
         return model;
     }
 
-    public BarChartModel daniaNaStoliki() {
+    public BarChartModel dinnerPerTable() {
         BarChartModel model = new BarChartModel();
         model.setTitle("Rozkład dań na stoliki");
         for (Dinner dinner : dinnerService.getAll()) {
 
-            ChartSeries seria = new ChartSeries();
-            seria.setLabel(dinner.getName());
+            ChartSeries series = new ChartSeries();
+            series.setLabel(dinner.getName());
 
-            for (Table stol : tableService.getAll()) {
-                long count = historyService.getAllByTableId(stol.getId())
+            for (Table table : tableService.getAll()) {
+                long count = historyService.getAllByTableId(table.getId())
                         .stream()
                         .map(History::getOrder)
                         .map(Order::getDinners)
                         .flatMap(List::stream)
                         .filter(d -> d.getName().equals(dinner.getName()))
-                        .map(DinnerWrapper::getCount)
-                        .reduce((i1, i2) -> i1 + i2)
-                        .orElse(0);
+                        .mapToInt(DinnerWrapper::getCount)
+                        .sum();
 
-                seria.set(stol.getId(), count);
+                series.set(table.getId(), count);
             }
-            model.addSeries(seria);
+            model.addSeries(series);
         }
         return model;
     }

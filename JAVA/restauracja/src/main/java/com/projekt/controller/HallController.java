@@ -1,6 +1,5 @@
 package com.projekt.controller;
 
-import com.projekt.dto.Order;
 import com.projekt.dto.Table;
 import com.projekt.service.TableService;
 import lombok.Getter;
@@ -22,11 +21,11 @@ public class HallController {
 
     @Getter
     @Setter
-    private Table nowyStol = Table.builder().build();
+    private Table table = Table.builder().build();
 
     @Getter
     @Setter
-    private boolean edycja = false;
+    private boolean edit = false;
 
     public HallController(TableService tableService) {
         this.tableService = tableService;
@@ -34,44 +33,31 @@ public class HallController {
     }
 
 
-    public void dodajStol() {
-        if (!edycja) {
-            tableService.add(nowyStol);
-        }
-        nowyStol = Table.builder().build();
-        edycja = false;
+    public void add() {
+        tableService.add(table);
+        table = Table.builder().build();
+        edit = false;
 
         refresh();
     }
 
-    public void usunStol(Table stol) {
+    public void remove(Table stol) {
         tableService.remove(stol);
         refresh();
     }
 
-    public void edytujStol(Table stol) {
-        nowyStol = stol;
-        edycja = true;
+    public void editTable(Table stol) {
+        table = stol;
+        edit = true;
     }
 
-    public void anulujEdycje() {
-        nowyStol = Table.builder().build();
-        edycja = false;
+    public void abortEdit() {
+        table = Table.builder().build();
+        edit = false;
     }
 
     private void refresh() {
         tables = tableService.getAll();
     }
 
-    public String zamknietyClass(Order rachunek) {
-        return rachunek.isClose() ? " close" : "";
-    }
-
-    public String oplaconyClass(Order rachunek) {
-        return rachunek.isPaid() ? " paid" : "";
-    }
-
-    public String nowyClass(Order rachunek) {
-        return !rachunek.isPaid() && !rachunek.isClose() ? " nowy" : "";
-    }
 }

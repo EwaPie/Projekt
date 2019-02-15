@@ -1,9 +1,6 @@
 package com.projekt.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -14,6 +11,8 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(exclude = "orders")
+@ToString(exclude = "orders")
 public class Table {
 
     @Id
@@ -21,7 +20,7 @@ public class Table {
     private Integer id;
     private Integer numberOfSeats;
 
-    @OneToMany(mappedBy = "table")
+    @OneToMany(mappedBy = "table", cascade = CascadeType.ALL)
     private List<Order> orders;
 
 }
