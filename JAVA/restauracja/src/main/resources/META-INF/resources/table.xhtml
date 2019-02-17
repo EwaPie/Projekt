@@ -51,12 +51,14 @@
                     />
 
                     <p:commandButton value="Dodaj rabat" actionListener="#{tableController.addDiscount()}"
-                                     update="tableWdg" rendered="#{tableController.table.order.discount.isEmpty()}"/>
+                                     update="tableWdg" rendered="#{tableController.isNewDiscount()}"
+                                     disabled="#{tableController.table.order.paid}"/>
 
                     <p:commandButton value="Usun rabat" actionListener="#{tableController.removeDiscount()}"
-                                     update="tableWdg" rendered="#{!tableController.table.order.discount.isEmpty()}"/>
+                                     update="tableWdg" rendered="#{!tableController.isNewDiscount()}"
+                                     disabled="#{tableController.table.order.paid}"/>
                     <p:inputText placeholder="Rabat" value="#{tableController.discountName}"
-                                 disabled="#{!tableController.table.order.discount.isEmpty()}"/>
+                                 disabled="#{!tableController.isNewDiscount() || tableController.table.order.paid}"/>
 
                 </h:panelGrid>
             </b:column>

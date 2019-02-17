@@ -5,7 +5,6 @@ import lombok.*;
 import java.math.BigDecimal;
 
 @Data
-@Builder
 @EqualsAndHashCode(of = {"id"})
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,6 +15,7 @@ public class Dinner {
     private String name;
     @Builder.Default
     private BigDecimal netPrice = BigDecimal.ZERO;
+
     @Builder.Default
     private Integer taxAmount = 0;
 

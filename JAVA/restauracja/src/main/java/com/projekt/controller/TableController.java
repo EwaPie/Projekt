@@ -1,7 +1,6 @@
 package com.projekt.controller;
 
 import com.projekt.dto.*;
-import com.projekt.dto.Dinner;
 import com.projekt.service.DiscountService;
 import com.projekt.service.HistoryService;
 import com.projekt.service.TableService;
@@ -31,7 +30,7 @@ public class TableController {
 
     @Getter
     @Setter
-    private Table table = Table.builder().build();
+    private Table table = new Table();
 
     @Getter
     @Setter
@@ -66,7 +65,7 @@ public class TableController {
     }
 
     public void openNewOrder() {
-        table.setOrder(Order.builder().build());
+        table.setOrder(new Order());
     }
 
     public void pays() {
@@ -87,13 +86,11 @@ public class TableController {
         Order order = table.getOrder();
         order.setClose(true);
         if (order.getGrossPrice().compareTo(BigDecimal.ZERO) != 0) {
-            this.historyService.add(History.builder()
-                    .table(table)
-                    .order(order)
-                    .build());
+            this.historyService.add(new History(order, table));
         }
 
         tableService.add(table);
+        discountName = null;
     }
 
     public void addDiscount() {
@@ -112,5 +109,9 @@ public class TableController {
         table.getOrder().setDiscount(Discount.EMPTY);
         discountName = null;
         tableService.add(table);
+    }
+
+    public boolean isNewDiscount() {
+        return table.getOrder().getDiscount() == null || table.getOrder().getDiscount().isEmpty();
     }
 }

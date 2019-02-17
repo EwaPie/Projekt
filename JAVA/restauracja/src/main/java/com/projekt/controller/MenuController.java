@@ -31,7 +31,7 @@ public class MenuController {
     public MenuController(DinnerService danieService) {
         this.dinnerService = danieService;
 
-        newDinner = Dinner.builder().build();
+        newDinner = new Dinner();
         refresh();
     }
 
@@ -46,7 +46,7 @@ public class MenuController {
     public void add() {
         dinnerService.add(newDinner);
 
-        newDinner = Dinner.builder().build();
+        newDinner = new Dinner();
         edit = false;
         refresh();
     }
@@ -62,7 +62,7 @@ public class MenuController {
     }
 
     public void abort() {
-        newDinner = Dinner.builder().build();
+        newDinner = new Dinner();
         edit = false;
     }
 }

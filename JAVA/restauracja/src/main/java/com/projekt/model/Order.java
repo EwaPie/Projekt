@@ -8,12 +8,12 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-@Builder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(exclude = "dinner")
-@EqualsAndHashCode(exclude = "dinner")
+@ToString(exclude = "dinners")
+@EqualsAndHashCode(exclude = "dinners")
 @Entity
 @javax.persistence.Table(name = "ORDERS")
 public class Order {
@@ -24,23 +24,20 @@ public class Order {
 
     private BigDecimal grossPrice;
 
-    @Builder.Default
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<DinnerToOrder> dinner = new ArrayList<>();
+    private List<DinnerWrapper> dinners = new ArrayList<>();
 
     private boolean paid;
     private boolean close;
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn
     private Discount discount;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "table_id")
     private Table table;
-
-
 
 }

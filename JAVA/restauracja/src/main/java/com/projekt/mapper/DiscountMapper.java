@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper
+@Mapper(uses = {TableMapper.class, OrderMapper.class})
 public interface DiscountMapper {
 
     Discount entityToDto(com.projekt.model.Discount entity);

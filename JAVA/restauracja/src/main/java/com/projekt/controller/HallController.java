@@ -21,7 +21,7 @@ public class HallController {
 
     @Getter
     @Setter
-    private Table table = Table.builder().build();
+    private Table table = new Table();
 
     @Getter
     @Setter
@@ -35,7 +35,7 @@ public class HallController {
 
     public void add() {
         tableService.add(table);
-        table = Table.builder().build();
+        table = new Table();
         edit = false;
 
         refresh();
@@ -52,7 +52,7 @@ public class HallController {
     }
 
     public void abortEdit() {
-        table = Table.builder().build();
+        table = new Table();
         edit = false;
     }
 

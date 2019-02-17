@@ -1,5 +1,6 @@
 package com.projekt.service;
 
+import com.projekt.CycleAvoidingMappingContext;
 import com.projekt.dto.Order;
 import com.projekt.mapper.OrderMapper;
 import com.projekt.repository.OrderRepository;
@@ -18,10 +19,18 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     public List<Order> getAll() {
-        return mapper.entityToDto(orderRepository.findAll());
+        return toDto(orderRepository.findAll());
     }
 
     public void add(Order order) {
-        this.orderRepository.save(mapper.dtoToEntity(order));
+        this.orderRepository.save(toEntity(order));
+    }
+
+    private List<Order> toDto(List<com.projekt.model.Order> entities) {
+        return mapper.entityToDto(entities, new CycleAvoidingMappingContext());
+    }
+
+    private com.projekt.model.Order toEntity(Order entity) {
+        return mapper.dtoToEntity(entity, new CycleAvoidingMappingContext());
     }
 }

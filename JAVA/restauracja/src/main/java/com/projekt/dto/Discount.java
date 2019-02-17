@@ -1,28 +1,24 @@
 package com.projekt.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Discount {
 
     public static final Discount EMPTY = new Discount();
 
-    private String id;
+    private Integer id;
 
     private String name;
 
-    @Builder.Default
     private BigDecimal netDiscountValue = BigDecimal.ZERO;
 
-    @Builder.Default
     private Integer percentage = 0;
 
     public BigDecimal applyDiscount(BigDecimal actualPrice) {
@@ -41,7 +37,7 @@ public class Discount {
             return false;
         }
 
-        return netDiscountValue == null;
+        return netDiscountValue == null || BigDecimal.ZERO.compareTo(netDiscountValue) == 0;
     }
 
 }

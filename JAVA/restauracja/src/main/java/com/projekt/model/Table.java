@@ -3,11 +3,9 @@ package com.projekt.model;
 import lombok.*;
 
 import javax.persistence.*;
-
 import java.util.List;
 
 @Data
-@Builder
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor

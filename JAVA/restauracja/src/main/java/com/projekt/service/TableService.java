@@ -1,5 +1,6 @@
 package com.projekt.service;
 
+import com.projekt.CycleAvoidingMappingContext;
 import com.projekt.dto.Table;
 import com.projekt.mapper.TableMapper;
 import com.projekt.repository.TableRepository;
@@ -7,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,9 +21,10 @@ public class TableService {
     private final TableRepository tableRepository;
 
     public List<Table> getAll() {
-        return mapper.entityToDto(tableRepository.findAll());
+        return mapper.entityToDto(tableRepository.findAll(), new CycleAvoidingMappingContext());
     }
 
+    @Transactional
     public void add(Table table) {
         if (table.getId() != null) {
             Optional<com.projekt.model.Table> entity = tableRepository.findById(table.getId());
@@ -31,7 +34,7 @@ public class TableService {
                 return;
             }
         }
-        tableRepository.save(mapper.dtoToEntity(table));
+        tableRepository.save(mapper.dtoToEntity(table, new CycleAvoidingMappingContext()));
 
     }
 
@@ -40,6 +43,6 @@ public class TableService {
     }
 
     public Table getById(Integer id) {
-        return mapper.entityToDto(tableRepository.findById(id).orElse(null));
+        return mapper.entityToDto(tableRepository.findById(id).orElse(null), new CycleAvoidingMappingContext());
     }
 }

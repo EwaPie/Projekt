@@ -1,25 +1,29 @@
 package com.projekt.dto;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.math.BigDecimal;
 
-@RequiredArgsConstructor
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString(callSuper = true)
 public class DinnerWrapper {
 
-    @Getter
-    @Setter
+    private Integer id;
+
     private Integer count = 0;
 
-    @Getter
-    private final Dinner dinner;
+    private Dinner dinner;
 
-    private Integer getId() {
-        return dinner.getId();
+    private Order order;
+
+    public DinnerWrapper(Dinner dinner, Order order) {
+        this.dinner = dinner;
+        this.order = order;
     }
 
     public BigDecimal getNetPrice() {

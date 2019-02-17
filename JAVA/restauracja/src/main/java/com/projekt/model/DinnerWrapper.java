@@ -1,13 +1,17 @@
 package com.projekt.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-@Data
+@Getter
+@Setter
 @RequiredArgsConstructor
 @Entity
-public class DinnerToOrder {
+public class DinnerWrapper implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,9 +19,9 @@ public class DinnerToOrder {
 
     private Integer count;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Dinner dinner;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Order order;
 }
