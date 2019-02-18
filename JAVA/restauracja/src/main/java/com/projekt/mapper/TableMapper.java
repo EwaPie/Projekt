@@ -16,13 +16,17 @@ public interface TableMapper {
     default void orderEntityToDto(@MappingTarget Table target, com.projekt.model.Table source, @Context CycleAvoidingMappingContext context) {
         final OrderMapper orderMapper = Mappers.getMapper(OrderMapper.class);
 
-        target.setOrder(source
-                .getOrders()
-                .stream()
-                .filter(order -> !order.isClose())
-                .map(order -> orderMapper.entityToDto(order, context))
-                .findAny()
-                .orElse(new Order()));
+        if (source.getOrders() != null) {
+            target.setOrder(source
+                    .getOrders()
+                    .stream()
+                    .filter(order -> !order.isClose())
+                    .map(order -> orderMapper.entityToDto(order, context))
+                    .findAny()
+                    .orElse(new Order()));
+        } else {
+            target.setOrder(new Order());
+        }
     }
 
     @Mapping(target = "order", ignore = true)

@@ -44,6 +44,14 @@
                     <h:outputText id="wartosc" value="#{historyDetailsController.history.order.grossPrice}" />
                 </b:column>
 
+                <b:column>
+                    <p:outputLabel for="discount" value="Rabat:"/>
+                </b:column>
+
+                <b:column>
+                    <h:outputText id="discount" value="#{historyDetailsController.history.order.discount.name}"/>
+                </b:column>
+
             </h:panelGrid>
         </b:column>
         <b:column span="8">

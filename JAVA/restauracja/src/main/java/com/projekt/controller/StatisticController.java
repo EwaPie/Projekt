@@ -1,10 +1,6 @@
 package com.projekt.controller;
 
-import com.projekt.dto.Dinner;
-import com.projekt.dto.DinnerWrapper;
-import com.projekt.dto.History;
-import com.projekt.dto.Order;
-import com.projekt.dto.Table;
+import com.projekt.dto.*;
 import com.projekt.service.DinnerService;
 import com.projekt.service.HistoryService;
 import com.projekt.service.TableService;
@@ -30,7 +26,7 @@ public class StatisticController implements Serializable {
 
     public PieChartModel createPieChart() {
         PieChartModel pieChart = new PieChartModel();
-        pieChart.setTitle("Najchetniej kupowane newDinner");
+        pieChart.setTitle("Najchetniej kupowane danie");
         pieChart.setLegendPosition("w");
         pieChart.setShadow(false);
 

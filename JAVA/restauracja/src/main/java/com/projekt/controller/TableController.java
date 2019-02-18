@@ -32,16 +32,14 @@ public class TableController {
     @Setter
     private Table table = new Table();
 
-    @Getter
-    @Setter
-    private Dinner dinner;
+    private boolean open = true;
 
     @Getter
     @Setter
     private String discountName;
 
     public void refresh() {
-        if (id != null) {
+        if (id != null && open) {
             table = tableService.getById(id);
         }
     }
@@ -65,6 +63,8 @@ public class TableController {
     }
 
     public void openNewOrder() {
+        discountName = null;
+        open = true;
         table.setOrder(new Order());
     }
 
@@ -90,7 +90,7 @@ public class TableController {
         }
 
         tableService.add(table);
-        discountName = null;
+        open = false;
     }
 
     public void addDiscount() {
